@@ -5,7 +5,7 @@ A game made while participating in GGJ 2024 via the Wellington, NZ jam site, aff
 ## Team Members
 
 - [Adam Goodyear](https://github.com/zedxc), Programmer and Pixel Artist
-- [Josef](#), Sound Designer and Audio Extraordinaire!
+- [Josef](https://www.youtube.com/@Panda-wh8zk), Sound Designer and Audio Extraordinaire!
 - [Tessa Power](https://github.com/tessapower), Programmer and Project Manager
 
 ## Theme
