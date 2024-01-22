@@ -1,4 +1,4 @@
-extends "res://scenes/managers/Minigame.gd"
+extends "res://scripts/managers/Minigame.gd"
 
 var hasClicked : bool = false
 var clickable : bool = false
