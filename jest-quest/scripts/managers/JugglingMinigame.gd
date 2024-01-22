@@ -1,4 +1,4 @@
-extends Node2D
+extends "res://scenes/managers/Minigame.gd"
 
 var hasClicked : bool = false
 var clickable : bool = false
@@ -17,6 +17,7 @@ func _process(delta):
 			print("Hit! = " + str(score))
 	else:
 		if Input.is_action_just_pressed("LeftClick"):
+			failed()
 			score -= 1
 			print("Missclick = " + str(score))
 			
@@ -28,6 +29,7 @@ func toggleClickable():
 		if hasClicked:
 			clickable = false
 		else:
+			failed()
 			score -= 1
 			clickable = false
 			print("Missed = " + str(score))
