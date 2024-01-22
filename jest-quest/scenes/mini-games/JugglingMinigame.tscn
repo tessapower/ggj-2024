@@ -279,6 +279,7 @@ _data = {
 
 [node name="Juggling" type="Node2D"]
 position = Vector2(0, 164)
+scale = Vector2(0.5, 0.5)
 script = ExtResource("1_f75hu")
 
 [node name="Click" type="Node2D" parent="."]
