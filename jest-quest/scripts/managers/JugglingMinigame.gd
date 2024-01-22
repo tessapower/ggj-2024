@@ -12,11 +12,11 @@ func _process(delta):
 	if clickable:
 		if Input.is_action_just_pressed("LeftClick"):
 			score += 1
-			print(score)
+			print("Hit! = " + str(score))
 	else:
 		if Input.is_action_just_pressed("LeftClick"):
 			score -= 1
-			print(score)
+			print("Miss = " + str(score))
 			
 func toggleClickable():
 	clickable = !clickable
