@@ -1,14 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://b1j8htkomgdaw"]
+[gd_scene load_steps=3 format=3 uid="uid://b1j8htkomgdaw"]
+
+[ext_resource type="PackedScene" uid="uid://cf005hv5tq7tn" path="res://scenes/managers/MainSceneManager.tscn" id="1_mji4p"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_sil4k"]
 
 [node name="MainScene" type="Node2D"]
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="MainSceneManager" parent="." instance=ExtResource("1_mji4p")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_priority = -10
+visible = false
 
 [node name="Background" type="TextureRect" parent="CanvasLayer"]
 anchors_preset = 15
