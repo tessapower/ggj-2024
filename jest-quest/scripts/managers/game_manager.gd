@@ -4,7 +4,8 @@ var score = 0
 var mini_games : Array = []
 var rng = RandomNumberGenerator.new()
 
-@onready var juggling = preload("res://scenes/mini_games/juggling.tscn")
+const juggling = preload("res://scenes/mini_games/juggling.tscn")
+const knife_throwing = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 
 func _ready():
     mini_games.append(juggling)
