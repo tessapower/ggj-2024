@@ -14,6 +14,10 @@ config/name="Jest to Impress"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GamestateManager="*res://scripts/managers/gamestate_manager.gd"
+
 [display]
 
 window/show_image=false

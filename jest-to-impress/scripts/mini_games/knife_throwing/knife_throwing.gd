@@ -1,8 +1,14 @@
 extends "res://scripts/mini_games/mini_game.gd"
 
+# knife_throwing.gd: This script contains the code for the knife-throwing
+#                    mini-game.
+#
+# Author(s): Tessa Power
+
 # Mini-game Details
 var game_name = "Knife-throwing"
-var game_description = "Throw knives at the target. The closer to the center, the more points you get."
+var game_description = "Throw knives at the target. The closer to the center,
+the more points you get."
 
 # Mini-game State
 var current_round = 1
