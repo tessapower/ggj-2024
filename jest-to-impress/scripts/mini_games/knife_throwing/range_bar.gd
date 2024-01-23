@@ -14,14 +14,14 @@ extends Area2D
 @onready var collision_shape = get_node('CollisionShape')
 
 func _ready() -> void:
-    # Set the color of the color rect to the color of the node
-    color_rect.color = color
-    # Set the width of the collision shape to the width scale of the node
-    update_width_scale(width_scale)
+	# Set the color of the color rect to the color of the node
+	color_rect.color = color
+	# Set the width of the collision shape to the width scale of the node
+	update_width_scale(width_scale)
 
 
 func update_width_scale(new_width_scale) -> void:
-    # Update the width scale of the node
-    width_scale = new_width_scale
-    # Update the width of the collision shape
-    collision_shape.scale.x *= width_scale
+	# Update the width scale of the node
+	width_scale = new_width_scale
+	# Update the width of the collision shape
+	collision_shape.scale.x *= width_scale
