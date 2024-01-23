@@ -1,8 +1,8 @@
 [gd_scene load_steps=9 format=3 uid="uid://cil4apycqd7fj"]
 
-[ext_resource type="Script" path="res://scripts/managers/JugglingMinigame.gd" id="1_f75hu"]
-[ext_resource type="Texture2D" uid="uid://b48wpnvtc76kg" path="res://assets/graphics/Ball.png" id="2_sjeu5"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="2_ticim"]
+[ext_resource type="Script" path="res://scripts/mini_games/juggling.gd" id="1_jewf7"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="2_7rg26"]
+[ext_resource type="Texture2D" uid="uid://b48wpnvtc76kg" path="res://assets/graphics/Ball.png" id="3_pfop8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_clxta"]
 font_size = 100
@@ -280,7 +280,7 @@ _data = {
 [node name="Juggling" type="Node2D"]
 position = Vector2(0, 164)
 scale = Vector2(0.5, 0.5)
-script = ExtResource("1_f75hu")
+script = ExtResource("1_jewf7")
 
 [node name="Click" type="Node2D" parent="."]
 position = Vector2(0, -160)
@@ -291,7 +291,7 @@ offset_left = -143.097
 offset_top = -72.283
 offset_right = 143.903
 offset_bottom = 65.717
-theme_override_fonts/font = ExtResource("2_ticim")
+theme_override_fonts/font = ExtResource("2_7rg26")
 theme_override_font_sizes/font_size = 500
 text = "CLICK"
 label_settings = SubResource("LabelSettings_clxta")
@@ -300,16 +300,16 @@ vertical_alignment = 1
 
 [node name="Ball1" type="Sprite2D" parent="."]
 position = Vector2(-200, 0)
-texture = ExtResource("2_sjeu5")
+texture = ExtResource("3_pfop8")
 
 [node name="Ball2" type="Sprite2D" parent="."]
 position = Vector2(0, -400)
 rotation = 18.8496
-texture = ExtResource("2_sjeu5")
+texture = ExtResource("3_pfop8")
 
 [node name="Ball3" type="Sprite2D" parent="."]
 position = Vector2(200, 0)
-texture = ExtResource("2_sjeu5")
+texture = ExtResource("3_pfop8")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

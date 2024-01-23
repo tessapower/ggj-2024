@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://b1j8htkomgdaw"]
 
-[ext_resource type="PackedScene" uid="uid://cf005hv5tq7tn" path="res://scenes/managers/MainSceneManager.tscn" id="1_mji4p"]
-[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_pw0d2"]
+[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_5hmxv"]
+[ext_resource type="PackedScene" uid="uid://cf005hv5tq7tn" path="res://scenes/managers/game_manager.tscn" id="2_snwhe"]
 
-[node name="MainScene" type="Node2D"]
+[node name="Game" type="Node2D"]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -16,9 +16,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1, 0.995931)
-texture = ExtResource("1_pw0d2")
+texture = ExtResource("1_5hmxv")
 expand_mode = 1
 
-[node name="MainSceneManager" parent="." instance=ExtResource("1_mji4p")]
+[node name="GameManager" parent="." instance=ExtResource("2_snwhe")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
