@@ -12,6 +12,7 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjvk2"]
 
 [node name="KnifeThrowing" type="Node2D"]
+position = Vector2(-576, -300)
 script = ExtResource("1_g8mqh")
 
 [node name="AimPath" type="Path2D" parent="."]

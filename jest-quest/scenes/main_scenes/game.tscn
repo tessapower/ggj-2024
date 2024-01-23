@@ -7,6 +7,7 @@
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
+visible = false
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
 z_index = -10

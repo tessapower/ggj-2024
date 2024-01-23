@@ -6,8 +6,8 @@ signal failure
 signal finish
 
 func finished():
-    emit_signal("finish")
+	emit_signal("finish")
 
 
 func failed():
-    emit_signal("failure")
+	emit_signal("failure")
