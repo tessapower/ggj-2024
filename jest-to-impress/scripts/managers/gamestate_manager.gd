@@ -13,8 +13,8 @@ extends Node2D
 var score : int = 0
 var speed : float = 1.0
 const speed_change : float = 0.5
-var mood_meter : float = 0.5
-const mood_change : float = 0.1
+var attention_meter : float = 0.5
+const attention_change : float = 0.1
 var current_round : int = 1
 
 # Game state
@@ -27,7 +27,7 @@ func _ready():
 func reset() -> void:
 	score = 0
 	speed = 1.0
-	mood_meter = 0.5
+	attention_meter = 0.5
 	current_round = 1
 
 
@@ -35,12 +35,12 @@ func increase_score(points_won : int) -> void:
 	score += points_won
 
 
-func increase_mood_meter() -> void:
-	mood_meter += mood_change
+func increase_attention_meter() -> void:
+	attention_meter += attention_change
 
 
-func decrease_mood_meter() -> void:
-	mood_meter -= mood_change
+func decrease_attention_meter() -> void:
+	attention_meter -= attention_change
 
 
 func next_round() -> void:
@@ -53,7 +53,7 @@ func increase_speed() -> void:
 
 
 func is_game_over() -> bool:
-	return mood_meter <= 0.0
+	return attention_meter <= 0.0
 
 
 # Pauses the game, including the background music.
