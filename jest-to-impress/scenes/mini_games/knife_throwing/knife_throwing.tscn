@@ -12,7 +12,6 @@ point_count = 4
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xjvk2"]
 
 [node name="KnifeThrowing" type="Node2D"]
-position = Vector2(-576, -300)
 script = ExtResource("1_g8mqh")
 
 [node name="AimPath" type="Path2D" parent="."]
@@ -21,7 +20,7 @@ curve = SubResource("Curve2D_trhui")
 
 [node name="PathFollow" type="PathFollow2D" parent="AimPath"]
 position = Vector2(280, 544)
-rotation = -0.00564651
+rotation = -0.00564785
 loop = false
 
 [node name="AimBar" type="Area2D" parent="AimPath/PathFollow"]

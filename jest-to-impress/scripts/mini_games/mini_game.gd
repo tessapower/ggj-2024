@@ -1,5 +1,6 @@
 extends Node2D
 
+# TODO: possibly remove this if it is unused?
 var is_done : bool = false;
 
 signal failure
