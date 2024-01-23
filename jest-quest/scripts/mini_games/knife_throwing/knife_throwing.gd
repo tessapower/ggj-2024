@@ -1,5 +1,6 @@
 extends "res://scripts/mini_games/mini_game.gd"
 
+# Mini-game Details
 var game_name = "Knife-throwing"
 var game_description = "Throw knives at the target. The closer to the center, the more points you get."
 
@@ -15,10 +16,12 @@ var score = 0
 @onready var aim_bar = get_node('AimPath/PathFollow/AimBar')
 @onready var aim_bar_path = get_node("AimPath/PathFollow")
 
+# Speed
 @export var speed_multiplier = 1.0
 var speed = 0.2
 var did_click = false
 
+# Ranges
 enum RANGES {MISSED = 0, AVERAGE, GOOD, PERFECT}
 @onready var missed = get_node("Missed")
 @onready var average = get_node("Average")
@@ -58,8 +61,7 @@ func _unhandled_input(event) -> void:
         var points_won = get_overlapping_range()
 
         # TODO: remove this in favor of waiting on the animation
-
-
+        await get_tree().create_timer(1.0).timeout
         # Either update score or increased the missed count
         if points_won == 0:
             # TODO: Pause for a second to show some poor knife-throwing animation
@@ -74,6 +76,7 @@ func _unhandled_input(event) -> void:
             # TODO: play sfx
             # TODO: Eventually include a mood meter score multiplier?
             score += points_won
+            print("new score: " + str(score))
 
         # Go to the next round
         if current_round == MAX_ROUNDS:
