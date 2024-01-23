@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Jest Quest"
+config/name="Jest to Impress"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://icon.svg"
 
