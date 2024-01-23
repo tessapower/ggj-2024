@@ -1,5 +1,11 @@
 extends Area2D
 
+# range_bar.gd: This script contains the code for for the range bars used in the
+#               knife-throwing mini-game.
+#
+# Author(s): Tessa Power
+
+
 @export var width_scale = 1.0
 @export var color = Color(1, 1, 1, 1)
 

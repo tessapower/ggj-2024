@@ -1,5 +1,9 @@
 extends "res://scripts/mini_games/mini_game.gd"
 
+# juggling.gd: This script contains the code for the juggling mini-game.
+#
+# Author(s): Adam Goodyear
+
 var has_clicked : bool = false
 var clickable : bool = false
 var score = 0
