@@ -8,9 +8,9 @@ const juggling = preload("res://scenes/mini_games/juggling.tscn")
 const knife_throwing = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 
 func _ready():
-	mini_games.append(juggling)
-	mini_games.append(knife_throwing)
-	instantiate_random_scene()
+    mini_games.append(juggling)
+    mini_games.append(knife_throwing)
+    instantiate_random_scene()
 
 
 func instantiate_random_scene():
