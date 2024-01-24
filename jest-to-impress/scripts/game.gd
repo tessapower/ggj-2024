@@ -7,6 +7,9 @@ extends Node2D
 # Author(s): Adam Goodyear, Tessa Power
 
 # Mini-games
+var score = 0
+var multiplier = 1
+
 var mini_games : Array = []
 var current_idx = 0
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
@@ -56,6 +59,7 @@ func on_finished() -> void:
 	# TODO: display something or some kind of animation?
 	# TODO: maybe wait a second so the player has a bit of a break
 	# Load the next mini-game
+	increase_score()
 	next_mini_game()
 
 
@@ -74,3 +78,7 @@ func next_mini_game() -> void:
 
 	# Load the mini-game at the new index
 	load_mini_game(current_idx)
+	
+func increase_score() -> void:
+	score += 1 * multiplier
+	print(score)
