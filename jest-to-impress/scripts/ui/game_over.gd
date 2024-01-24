@@ -8,7 +8,7 @@ extends Node
 @onready var final_score_label = get_node("Content/FinalScore")
 
 func _ready() -> void:
-	final_score_label.text += "\n" + str(GamestateManager.score + 529)
+	final_score_label.text += "\n" + str(GamestateManager.score)
 
 
 func _on_play_again_pressed() -> void:
