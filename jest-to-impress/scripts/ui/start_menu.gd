@@ -5,6 +5,8 @@ extends CanvasLayer
 #
 # Author(s): Tessa Power
 
+# TODO: Ensure the submenus actually contain legitimate content
+
 @onready var buttons : Array = $Content/Buttons.get_children()
 
 func _on_start_pressed() -> void:
