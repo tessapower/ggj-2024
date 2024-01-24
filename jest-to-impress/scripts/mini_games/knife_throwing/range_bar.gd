@@ -9,6 +9,12 @@ extends Area2D
 @export var width_scale = 1.0
 @export var color = Color(1, 1, 1, 1)
 
+# range_bar.gd: This script handles the range bars used in the knife-throwing
+#               mini-game.
+#
+# Author(s): Tessa Power
+
+
 # Components of the range bar
 @onready var color_rect = get_node('CollisionShape/Color')
 @onready var collision_shape = get_node('CollisionShape')

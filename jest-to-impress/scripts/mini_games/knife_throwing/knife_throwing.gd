@@ -62,7 +62,7 @@ func _process(delta) -> void:
 
 func _unhandled_input(event) -> void:
 	# Respond to mouse clicks anywhere in the window except for buttons
-	if event.is_action_pressed("left_mouse_button"):
+	if event.is_action_pressed("LeftClick"):
 		did_click = true
 		var points_won = get_overlapping_range()
 
