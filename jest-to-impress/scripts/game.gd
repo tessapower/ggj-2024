@@ -11,12 +11,14 @@ var mini_games : Array = []
 var current_idx = 0
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
+const TYPING = preload("res://scenes/mini_games/typingMinigame.tscn")
 var mini_game_instance : Node = null
 
 func _ready():
 	# TODO: add mini-games here!
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
+	mini_games.append(TYPING)
 	load_mini_game(current_idx)
 
 

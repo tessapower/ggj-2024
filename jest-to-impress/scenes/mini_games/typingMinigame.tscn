@@ -1,0 +1,72 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhipbfagvmuei"]
+
+[ext_resource type="Script" path="res://scripts/mini_games/typingMinigame.gd" id="1_83inh"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="2_wk1fa"]
+[ext_resource type="Texture2D" uid="uid://b33q15vv7fl1o" path="res://assets/graphics/RopeBar.png" id="3_vncpp"]
+
+[node name="TypingMinigame" type="Node2D"]
+script = ExtResource("1_83inh")
+
+[node name="setup" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -187.0
+offset_top = -119.0
+offset_right = 188.0
+offset_bottom = -36.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03894, 1.0446)
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("2_wk1fa")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="punchline" type="RichTextLabel" parent="."]
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -157.0
+offset_top = -69.0
+offset_right = 157.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.03894, 1.0446)
+theme_override_colors/default_color = Color(0.203922, 0.203922, 0.203922, 1)
+theme_override_fonts/normal_font = ExtResource("2_wk1fa")
+theme_override_font_sizes/normal_font_size = 50
+bbcode_enabled = true
+text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Progress" type="TextureProgressBar" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -129.0
+offset_right = 471.0
+offset_bottom = 100.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.451444, 0.451444)
+max_value = 5.0
+step = 0.1
+value = 5.0
+texture_progress = ExtResource("3_vncpp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 6.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
