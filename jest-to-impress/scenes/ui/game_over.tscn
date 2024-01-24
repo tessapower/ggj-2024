@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3 uid="uid://xa8ipyyhywfs"]
+
+[ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_lj07j"]
+[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="2_pybyx"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
+
+[node name="GameOver" type="Node2D"]
+script = ExtResource("1_lj07j")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.599992, 0.600304)
+texture = ExtResource("2_pybyx")
+
+[node name="Content" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_vcul6")
+theme_override_font_sizes/font_size = 80
+text = "Game Over"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="FinalScore" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01sk1")
+theme_override_font_sizes/font_size = 60
+text = "Final Score:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="PlayAgain" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../ReturnToStart")
+focus_next = NodePath("../ReturnToStart")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01sk1")
+theme_override_font_sizes/font_size = 38
+text = "Play Again"
+
+[node name="ReturnToStart" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../PlayAgain")
+focus_previous = NodePath("../PlayAgain")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01sk1")
+theme_override_font_sizes/font_size = 38
+text = "Return to Start Menu"
+
+[node name="Exit" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01sk1")
+theme_override_font_sizes/font_size = 38
+text = "Exit"
+
+[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
