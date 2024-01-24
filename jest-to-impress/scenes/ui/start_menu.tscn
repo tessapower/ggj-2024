@@ -1,0 +1,167 @@
+[gd_scene load_steps=5 format=3 uid="uid://cr775t71eq8de"]
+
+[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_6wsac"]
+[ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
+[ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
+
+[node name="StartMenu" type="CanvasLayer"]
+script = ExtResource("1_iq0sx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 1920.0
+offset_bottom = 1080.0
+scale = Vector2(0.599992, 0.600304)
+texture = ExtResource("1_6wsac")
+
+[node name="Content" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 80
+text = "Jest to Impress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Buttons" type="VBoxContainer" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+alignment = 1
+
+[node name="Start" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_bottom = NodePath("../HowToPlay")
+focus_next = NodePath("../HowToPlay")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "Play Game"
+
+[node name="HowToPlay" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Start")
+focus_neighbor_bottom = NodePath("../HighScores")
+focus_next = NodePath("../HighScores")
+focus_previous = NodePath("../Start")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "How to Play"
+
+[node name="Submenu" parent="Content/Buttons/HowToPlay" instance=ExtResource("4_w43ci")]
+handle_input_locally = false
+title = "How to Play!"
+visible = false
+text_content = "How to Play! 
+
+This is meant to show a bunch of text on the screen. Lorem ipsum sit dolor amet!"
+
+[node name="HighScores" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../HowToPlay")
+focus_neighbor_bottom = NodePath("../Settings")
+focus_next = NodePath("../Settings")
+focus_previous = NodePath("../HowToPlay")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "High Scores"
+
+[node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
+visible = false
+text_content = "High scores will appear here when they are available and have implemented them."
+
+[node name="Settings" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../HighScores")
+focus_neighbor_bottom = NodePath("../Credits")
+focus_next = NodePath("../Credits")
+focus_previous = NodePath("../HighScores")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "Settings"
+
+[node name="Submenu" parent="Content/Buttons/Settings" instance=ExtResource("4_w43ci")]
+visible = false
+text_content = "This is a placeholder submenu until we introduce the sound manager, and then we will have a settings submenu where the user can change the volume settings."
+
+[node name="Credits" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Settings")
+focus_neighbor_bottom = NodePath("../Exit")
+focus_next = NodePath("../Exit")
+focus_previous = NodePath("../Settings")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "Credits"
+
+[node name="Submenu" parent="Content/Buttons/Credits" instance=ExtResource("4_w43ci")]
+visible = false
+text_content = "Artwork: Timothy Green
+Music & SFX: Josef Schultewolter
+Programmers: Adam Goodyear, Tessa Power"
+
+[node name="Exit" type="Button" parent="Content/Buttons"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_neighbor_top = NodePath("../Credits")
+focus_previous = NodePath("../Credits")
+theme_type_variation = &"FlatButton"
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 38
+text = "Exit"
+
+[connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/HowToPlay" to="Content/Buttons/HowToPlay/Submenu" method="_on_show"]
+[connection signal="close_requested" from="Content/Buttons/HowToPlay/Submenu" to="." method="_on_submenu_closed"]
+[connection signal="pressed" from="Content/Buttons/HighScores" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/HighScores" to="Content/Buttons/HighScores/Submenu" method="_on_show"]
+[connection signal="close_requested" from="Content/Buttons/HighScores/Submenu" to="." method="_on_submenu_closed"]
+[connection signal="pressed" from="Content/Buttons/Settings" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/Settings" to="Content/Buttons/Settings/Submenu" method="_on_show"]
+[connection signal="close_requested" from="Content/Buttons/Settings/Submenu" to="." method="_on_submenu_closed"]
+[connection signal="pressed" from="Content/Buttons/Credits" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/Credits" to="Content/Buttons/Credits/Submenu" method="_on_show"]
+[connection signal="close_requested" from="Content/Buttons/Credits/Submenu" to="." method="_on_submenu_closed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]

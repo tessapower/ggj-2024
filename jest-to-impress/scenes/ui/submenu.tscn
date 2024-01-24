@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://bcb2f8o11jadh"]
+
+[ext_resource type="Script" path="res://scripts/ui/submenu.gd" id="1_6wa3a"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="2_tr4rq"]
+
+[node name="Submenu" type="Window"]
+initial_position = 1
+size = Vector2i(500, 400)
+borderless = true
+script = ExtResource("1_6wa3a")
+
+[node name="Content" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 400)
+offset_right = 500.0
+offset_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="TextContent" type="Label" parent="Content"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_tr4rq")
+theme_override_font_sizes/font_size = 28
+text = " Close "
+
+[connection signal="window_input" from="." to="." method="_on_window_input"]
+[connection signal="pressed" from="Content/Button" to="." method="_on_hide"]
