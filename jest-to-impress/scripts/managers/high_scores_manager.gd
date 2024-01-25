@@ -43,7 +43,7 @@ func save_to_disk() -> void:
 # entry after the game ends.
 func is_high_score(score : int) -> bool:
 	# Compare the given score to the lowest high score
-	return score >= high_scores.back() if not high_scores.is_empty() else true
+	return score >= high_scores.back()[1] if not high_scores.is_empty() else true
 
 
 # Loads the high scores from disk. This function should ideally only be called
