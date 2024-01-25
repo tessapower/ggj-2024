@@ -8,7 +8,9 @@ extends Node2D
 
 # Mini-games
 var mini_games : Array = []
+var played_games : Array = []
 var current_idx = 0
+
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 var mini_game_instance : Node = null
@@ -35,6 +37,9 @@ func load_mini_game(idx : int) -> void:
 	mini_game_instance.connect("failure", self.on_failure)
 	mini_game_instance.connect("finish", self.on_finished)
 	add_child(mini_game_instance)
+	if GamestateManager.showTutorial and !played_games.has(idx):
+		played_games.append(idx)
+		$Tutorial.show_text(idx)
 
 
 # Unloads the current mini-game and disconnects the callback functions

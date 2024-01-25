@@ -16,6 +16,7 @@ const speed_change : float = 0.5
 var attention_meter : float = 0.5
 const attention_change : float = 0.1
 var current_round : int = 1
+var showTutorial : bool = true
 
 # Game state
 var is_paused : bool = false

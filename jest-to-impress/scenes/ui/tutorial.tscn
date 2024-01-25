@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://bo74xp5pm233q"]
+
+[ext_resource type="Texture2D" uid="uid://bbi2slctbi4xo" path="res://assets/graphics/woodPanel.png" id="1_cd13y"]
+[ext_resource type="Script" path="res://scripts/ui/tutorial.gd" id="1_hpgst"]
+[ext_resource type="FontFile" uid="uid://dao4lk1xb6owj" path="res://assets/graphics/Fonts/Aniron/anirb___.ttf" id="3_mbqhc"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="4_pclry"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wnmam"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wm2av"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pgqj2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_w1yp8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tpepy"]
+
+[node name="Tutorial" type="Node2D"]
+script = ExtResource("1_hpgst")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.0
+offset_top = -167.0
+offset_right = 100.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+texture = ExtResource("1_cd13y")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -266.0
+offset_top = -147.0
+offset_right = 259.0
+offset_bottom = 49.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_mbqhc")
+theme_override_fonts/bold_font = ExtResource("3_mbqhc")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[center][b]Hello[/b][/center]
+[center]This will be an explanation of how to play the game and what the general rules are![/center]"
+fit_content = true
+
+[node name="Button" type="Button" parent="CanvasLayer/Control"]
+process_mode = 2
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -82.0
+offset_top = 58.0
+offset_right = 80.0
+offset_bottom = 121.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.439216, 0.439216, 0.439216, 1)
+theme_override_colors/font_hover_color = Color(0.615686, 0.615686, 0.615686, 1)
+theme_override_fonts/font = ExtResource("4_pclry")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wnmam")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_wm2av")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_pgqj2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_w1yp8")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tpepy")
+text = "OK!"
+
+[connection signal="button_down" from="CanvasLayer/Control/Button" to="." method="_on_button_button_down"]

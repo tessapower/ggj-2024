@@ -25,3 +25,7 @@ func _on_submenu_opened() -> void:
 func _on_submenu_closed() -> void:
 	for button in buttons:
 		button.disabled = false
+
+
+func _on_check_box_toggled(toggled_on):
+	GamestateManager.showTutorial = toggled_on
