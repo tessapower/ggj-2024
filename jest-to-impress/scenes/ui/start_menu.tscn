@@ -1,22 +1,56 @@
 [gd_scene load_steps=5 format=3 uid="uid://cr775t71eq8de"]
 
-[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_6wsac"]
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
+[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
+[ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_vsobi"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1344.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
 scale = Vector2(0.599992, 0.600304)
-texture = ExtResource("1_6wsac")
+texture = ExtResource("2_0pe6g")
+
+[node name="king" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -101.0
+offset_top = -281.0
+offset_right = 207.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.677)
+texture = ExtResource("3_vsobi")
 
 [node name="Content" type="VBoxContainer" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 40
@@ -25,6 +59,8 @@ alignment = 1
 [node name="Title" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.960784, 0.960784, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 80
 text = "Jest to Impress"
@@ -65,6 +101,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Play Game"
@@ -84,6 +121,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "How to Play"
@@ -111,6 +149,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "High Scores"
@@ -134,6 +173,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Settings"
@@ -157,6 +197,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Credits"
@@ -180,6 +221,7 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
