@@ -29,6 +29,13 @@ func _ready():
 	mini_games.append(KNIFE_THROWING)
 	mini_games.append(TYPING)
 	load_mini_game(current_idx)
+	GamestateManager.reset()
+
+
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("Pause"):
+		$PausePopup.show()
+		GamestateManager.pause()
 
 
 # Loads the mini-game at the given index and hooks it up to the appropriate
@@ -49,11 +56,12 @@ func unload_mini_game() -> void:
 
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
-	decrease_attention_meter(10)
-	# Decide whether or not to continue the game based on the mood meter
+  decrease_attention_meter(10)
+	# Decide whether or not to continue the game based on the attention meter
 	if attention_meter_instance.get_attention() < 0:
-		end_game()
-		# TODO: create a game over screen and load that
+  	# TODO: display some game over animation?
+		# TODO: Stop the music
+    get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
 	else:
 		print("Next mini-game!")
 		next_mini_game()
