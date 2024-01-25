@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://b1j8htkomgdaw"]
+[gd_scene load_steps=4 format=3 uid="uid://b1j8htkomgdaw"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_vay0d"]
+[ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4oclp")
@@ -21,3 +22,6 @@ texture = ExtResource("1_vay0d")
 expand_mode = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="PausePopup" parent="." instance=ExtResource("3_prf1w")]
+visible = false

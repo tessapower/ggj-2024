@@ -4,9 +4,12 @@
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="2_tr4rq"]
 
 [node name="Submenu" type="Window"]
-initial_position = 1
+initial_position = 2
 size = Vector2i(500, 400)
+exclusive = true
+unresizable = true
 borderless = true
+popup_window = true
 script = ExtResource("1_6wa3a")
 
 [node name="Content" type="VBoxContainer" parent="."]

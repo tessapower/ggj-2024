@@ -21,6 +21,12 @@ func _ready():
 	GamestateManager.reset()
 
 
+func _unhandled_input(event) -> void:
+	if event.is_action_pressed("Pause"):
+		$PausePopup.show()
+		GamestateManager.pause()
+
+
 # Loads the mini-game at the given index and hooks it up to the appropriate
 # callback functions
 func load_mini_game(idx : int) -> void:
