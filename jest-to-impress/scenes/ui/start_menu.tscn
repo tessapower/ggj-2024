@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cr775t71eq8de"]
+[gd_scene load_steps=6 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_6wsac"]
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="4_b0cg7"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 
 [node name="StartMenu" type="CanvasLayer"]
@@ -19,7 +20,7 @@ offset_right = 1152.0
 offset_bottom = 648.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 100
+theme_override_constants/separation = 40
 alignment = 1
 
 [node name="Title" type="Label" parent="Content"]
@@ -47,7 +48,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "Play Game"
 
@@ -63,7 +64,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "How to Play"
 
@@ -87,7 +88,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "High Scores"
 
@@ -107,7 +108,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "Settings"
 
@@ -127,7 +128,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "Credits"
 
@@ -147,7 +148,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_fonts/font = ExtResource("4_b0cg7")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
 
