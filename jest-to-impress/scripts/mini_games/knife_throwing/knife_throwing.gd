@@ -116,10 +116,10 @@ func next_round() -> void:
 func game_lost() -> void:
 	# Display game lost animation
 	print("you lost :(")
-	failed()
+	finished(0)
 
 
 func game_won() -> void:
 	# Display game won animation
 	print("you won!")
-	finished()
+	finished(1)

@@ -11,9 +11,5 @@ var is_done : bool = false;
 signal failure
 signal finish
 
-func finished():
-	emit_signal("finish")
-
-
-func failed():
-	emit_signal("failure")
+func finished(evaluation):
+	emit_signal("finish",evaluation)

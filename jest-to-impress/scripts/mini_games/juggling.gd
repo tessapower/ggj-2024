@@ -14,11 +14,6 @@ func _process(_delta):
 			has_clicked = true
 			score += 1
 			print("Hit! = " + str(score))
-	else:
-		if Input.is_action_just_pressed("LeftClick"):
-			score -= 1
-			print("Missclick = " + str(score))
-
 
 func toggle_clickable():
 	if not clickable:
@@ -33,8 +28,12 @@ func toggle_clickable():
 			print("Missed = " + str(score))
 
 func finish_juggling():
-	if score < -2:
-		failed()
-	
-	finished()
+	if score < -1:
+		finished(0)
+	elif score < 1:
+		finished(1)
+	elif score < 3:
+		finished(2)
+	else:
+		finished(3)
 	

@@ -67,13 +67,22 @@ func on_key_pressed(key: String):
 	print("Player Input: " + playerInput)
 	if playerInput.capitalize() == currentJoke.capitalize():
 		on_sentence_complete()
+
+func evaluateFinish() -> int:
+	var finishTime = $Timer.time_left
+	if finishTime > ($Timer.wait_time / 2):
+		return 3
+	elif finishTime > ($Timer.wait_time / 4):
+		return 2
+	else:
+		return 1
 		
 func on_sentence_complete():
 	print("WORD DONE")
-	finished()
+	var evaluation = evaluateFinish()
+	finished(evaluation)
 	start_new_joke()
 
 func _on_timer_timeout():
-	failed()
-	finished()
+	finished(0)
 	start_new_joke()
