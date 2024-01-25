@@ -12,6 +12,7 @@ const MAX_SCORES = 10
 
 func _ready() -> void:
 	load_from_disk()
+	sort_high_scores()
 
 
 # Update the list of high scores, which are kept in sorted order from highest
@@ -30,6 +31,7 @@ func sort_high_scores() -> void:
 	# Only keep the top 10 high scores
 	sorted.slice(0, MAX_SCORES, 1, true)
 	high_scores = sorted.duplicate(true)
+
 
 # Saves the high scores to disk. This function should ideally only be called
 # right before exiting the game (using _exit_tree()) to avoid too many costly
@@ -53,6 +55,9 @@ func load_from_disk():
 	if FileAccess.file_exists(HS_FILEPATH):
 		high_scores_data = ResourceLoader.load(HS_FILEPATH).duplicate(true)
 		high_scores = high_scores_data.high_scores
+		# ⚠️ FOR DEVELOPMENT PURPOSES ONLY! ⚠️
+		# Uncomment this to clear highscores.
+		#high_scores.clear()
 	else:
 		printerr("No save file found at path!")
 		print("Creating new save file...")
