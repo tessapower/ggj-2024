@@ -53,7 +53,6 @@ func on_failure() -> void:
 		# TODO: Stop the music
 		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
 	else:
-		print("Next mini-game!")
 		next_mini_game()
 
 
