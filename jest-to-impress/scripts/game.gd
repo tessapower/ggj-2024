@@ -18,6 +18,7 @@ func _ready():
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
 	load_mini_game(current_idx)
+	GamestateManager.reset()
 
 
 func _unhandled_input(event) -> void:
@@ -46,10 +47,11 @@ func unload_mini_game() -> void:
 
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
-	# Decide whether or not to continue the game based on the mood meter
+	# Decide whether or not to continue the game based on the attention meter
 	if GamestateManager.is_game_over():
-		GamestateManager.reset()
-		# TODO: create a game over screen and load that
+		# TODO: display some game over animation?
+		# TODO: Stop the music
+		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
 	else:
 		print("Next mini-game!")
 		next_mini_game()
