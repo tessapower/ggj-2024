@@ -10,12 +10,12 @@ extends Node2D
 var mini_games : Array = []
 var played_games : Array = []
 var current_idx = 0
-const attention_meter = preload("res://scenes/ui/attentionMeter.tscn")
+const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
 var attention_meter_instance : Node
 
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
-const TYPING = preload("res://scenes/mini_games/typingMinigame.tscn")
+const TYPING = preload("res://scenes/mini_games/typing.tscn")
 var mini_game_instance : Node = null
 
 func _ready():
