@@ -11,7 +11,7 @@
 process_mode = 2
 transparent_bg = true
 initial_position = 2
-size = Vector2i(300, 250)
+size = Vector2i(500, 400)
 transient = true
 exclusive = true
 unresizable = true
@@ -19,32 +19,39 @@ borderless = true
 transparent = true
 script = ExtResource("1_m7nv1")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 50.0
+offset_top = 40.0
+offset_right = 50.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("2_pwc1s")
+stretch_mode = 5
+flip_v = true
+
+[node name="Buttons" type="VBoxContainer" parent="."]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -122.96
-offset_top = -122.96
-offset_right = 377.04
-offset_bottom = 367.04
+offset_left = -100.0
+offset_top = -83.0
+offset_right = 100.0
+offset_bottom = 83.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.5, 0.5)
-size_flags_horizontal = 4
-texture = ExtResource("2_pwc1s")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(300, 250)
-offset_right = 40.0
-offset_bottom = 40.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+[node name="Resume" type="TextureButton" parent="Buttons"]
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
@@ -52,7 +59,7 @@ texture_normal = ExtResource("3_redeo")
 texture_pressed = ExtResource("4_hvmyk")
 texture_hover = ExtResource("5_0qhla")
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton"]
+[node name="Label" type="Label" parent="Buttons/Resume"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -67,11 +74,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
 theme_override_fonts/font = ExtResource("6_pb64w")
-theme_override_font_sizes/font_size = 30
-text = "Resume
-"
+theme_override_font_sizes/font_size = 26
+text = "Resume"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+[node name="StartMenu" type="TextureButton" parent="Buttons"]
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
@@ -79,7 +87,7 @@ texture_normal = ExtResource("3_redeo")
 texture_pressed = ExtResource("4_hvmyk")
 texture_hover = ExtResource("5_0qhla")
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton2"]
+[node name="Label" type="Label" parent="Buttons/StartMenu"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -94,10 +102,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
 theme_override_fonts/font = ExtResource("6_pb64w")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "Start Menu"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+[node name="Exit" type="TextureButton" parent="Buttons"]
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
@@ -105,7 +115,7 @@ texture_normal = ExtResource("3_redeo")
 texture_pressed = ExtResource("4_hvmyk")
 texture_hover = ExtResource("5_0qhla")
 
-[node name="Label" type="Label" parent="VBoxContainer/TextureButton3"]
+[node name="Label" type="Label" parent="Buttons/Exit"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -120,9 +130,11 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
 theme_override_fonts/font = ExtResource("6_pb64w")
-theme_override_font_sizes/font_size = 30
+theme_override_font_sizes/font_size = 26
 text = "Exit"
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="button_down" from="VBoxContainer/TextureButton" to="." method="_on_resume_pressed"]
-[connection signal="button_down" from="VBoxContainer/TextureButton2" to="." method="_on_start_menu_pressed"]
-[connection signal="button_down" from="VBoxContainer/TextureButton3" to="." method="_on_exit_pressed"]
+[connection signal="button_down" from="Buttons/Resume" to="." method="_on_resume_pressed"]
+[connection signal="button_down" from="Buttons/StartMenu" to="." method="_on_start_menu_pressed"]
+[connection signal="button_down" from="Buttons/Exit" to="." method="_on_exit_pressed"]
