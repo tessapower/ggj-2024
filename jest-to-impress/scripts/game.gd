@@ -41,7 +41,6 @@ func load_mini_game(idx : int) -> void:
 
 # Unloads the current mini-game and disconnects the callback functions
 func unload_mini_game() -> void:
-	# We assume that the most recently added child is our mini-game
 	mini_game_instance.disconnect("failure", self.on_failure)
 	mini_game_instance.disconnect("finish", self.on_finished)
 	mini_game_instance.queue_free()
@@ -54,7 +53,6 @@ func on_failure() -> void:
 		# TODO: Stop the music
 		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
 	else:
-		print("Next mini-game!")
 		next_mini_game()
 
 
