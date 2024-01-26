@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2ust2kqxaike"]
+
+[ext_resource type="Script" path="res://scripts/ui/high_score_entry.gd" id="1_54yt5"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_tih3e"]
+
+[node name="HighScoreEntry" type="Window"]
+initial_position = 2
+size = Vector2i(500, 400)
+exclusive = true
+unresizable = true
+borderless = true
+popup_window = true
+script = ExtResource("1_54yt5")
+
+[node name="Background" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Content" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(500, 400)
+offset_right = 500.0
+offset_bottom = 400.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Title" type="Label" parent="Content"]
+layout_mode = 2
+text = "New High Score!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EnterName" type="Label" parent="Content"]
+layout_mode = 2
+text = "Enter your initials:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextEntry" type="LineEdit" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+placeholder_text = "ABC"
+alignment = 1
+max_length = 3
+clear_button_enabled = true
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+drag_and_drop_selection_enabled = false
+caret_blink = true
+caret_force_displayed = true
+
+[node name="ErrorMessage" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.878431, 0.298039, 0.298039, 1)
+theme_override_font_sizes/font_size = 14
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Submit" type="Button" parent="Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("1_tih3e")
+theme_override_font_sizes/font_size = 28
+disabled = true
+text = " Submit "
+
+[connection signal="text_changed" from="Content/TextEntry" to="." method="_on_line_edit_text_changed"]
+[connection signal="text_submitted" from="Content/TextEntry" to="." method="_on_line_edit_text_submitted"]
+[connection signal="pressed" from="Content/Submit" to="." method="_on_submit_pressed"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://xa8ipyyhywfs"]
+[gd_scene load_steps=6 format=3 uid="uid://dugj2k0q86hy1"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_lj07j"]
 [ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="2_pybyx"]
 [ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
+[ext_resource type="PackedScene" uid="uid://d2ust2kqxaike" path="res://scenes/ui/high_score_entry.tscn" id="5_piy7r"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_lj07j")
@@ -36,7 +37,16 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 60
-text = "Final Score:"
+text = "Final Score: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewHighScore" type="Label" parent="Content"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_01sk1")
+theme_override_font_sizes/font_size = 40
+text = "New High Score!"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -85,6 +95,9 @@ theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
+
+[node name="HighScoreEntry" parent="." instance=ExtResource("5_piy7r")]
+visible = false
 
 [connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]

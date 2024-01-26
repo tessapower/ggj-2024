@@ -5,10 +5,20 @@ extends Node
 #
 # Author(s): Tessa Power
 
-@onready var final_score_label = get_node("Content/FinalScore")
+@onready var final_score = get_node("Content/FinalScore")
+@onready var new_high_score = get_node("Content/NewHighScore")
 
 func _ready() -> void:
-	final_score_label.text += "\n" + str(GamestateManager.score)
+	var score = GamestateManager.score
+	# Update the text to display the final score
+	final_score.text += str(score)
+	# Check if we got a high score
+	if HighScoresManager.is_high_score(score) and score > 0:
+		# TODO: Play some happy triumphant sound?
+		# Show the new high score entry popup
+		$HighScoreEntry.show()
+	else:
+		new_high_score.set_text("")
 
 
 func _on_play_again_pressed() -> void:
