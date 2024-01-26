@@ -21,6 +21,7 @@ GamestateManager="*res://scripts/managers/gamestate_manager.gd"
 
 [display]
 
+window/size/resizable=false
 window/show_image=false
 
 [input]
