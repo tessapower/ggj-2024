@@ -1,4 +1,4 @@
-extends "res://scripts/mini_games/mini_game.gd"
+extends MiniGame
 
 # juggling.gd: This script contains the code for the juggling mini-game.
 #
@@ -7,12 +7,12 @@ extends "res://scripts/mini_games/mini_game.gd"
 var has_clicked : bool = false
 var clickable : bool = false
 var score = 0
-static var tutorial = true
 
 func _ready():
-	if tutorial:
+	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
-		tutorial = false
+		has_played = true
+
 
 func _process(_delta):
 	if clickable:
@@ -22,7 +22,7 @@ func _process(_delta):
 			print("Hit! = " + str(score))
 	else:
 		if Input.is_action_just_pressed("LeftClick"):
-			failed()
+			failed(Rating.FAILED)
 			score -= 1
 			print("Missclick = " + str(score))
 
@@ -35,7 +35,8 @@ func toggle_clickable():
 		if has_clicked:
 			clickable = false
 		else:
-			failed()
+			failed(Rating.FAILED)
 			score -= 1
 			clickable = false
 			print("Missed = " + str(score))
+

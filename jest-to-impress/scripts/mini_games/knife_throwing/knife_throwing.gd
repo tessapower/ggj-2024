@@ -1,15 +1,10 @@
-extends "res://scripts/mini_games/mini_game.gd"
+extends MiniGame
 
 # knife_throwing.gd: This script contains the code for the knife-throwing
 #                    mini-game.
 #
 # Author(s): Tessa Power
 
-# Mini-game Details
-var game_name = "Knife-throwing"
-var game_description = "Throw knives at the target. The closer to the center,
-the more points you get."
-static var tutorial = true
 
 # Mini-game State
 var current_round = 1
@@ -39,9 +34,9 @@ enum RANGES {MISSED = 0, AVERAGE, GOOD, PERFECT}
 
 func _ready() -> void:
 	reset()
-	if tutorial:
+	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
-		tutorial = false
+		has_played = true
 
 # Reset the state of the mini-game
 func reset() -> void:
@@ -77,7 +72,7 @@ func _unhandled_input(event) -> void:
 			# TODO: play sfx
 			n_missed += 1
 			if n_missed == MAX_MISSED:
-				game_lost()
+				player_lost()
 				return
 		else:
 			# TODO: Pause for a second to show some knife-throwing animation
@@ -89,7 +84,7 @@ func _unhandled_input(event) -> void:
 
 		# Go to the next round
 		if current_round == MAX_ROUNDS:
-			game_won()
+			player_won()
 		else:
 			next_round()
 
@@ -116,13 +111,20 @@ func next_round() -> void:
 	did_click = false
 
 
-func game_lost() -> void:
-	# Display game lost animation
-	print("you lost :(")
-	failed()
+func player_lost() -> void:
+	# TODO: Display game lost animation?
+	# TODO: Play game lost sound?
+	# TODO: get rating based on performance
+	failed(Rating.FAILED)
 
 
-func game_won() -> void:
-	# Display game won animation
-	print("you won!")
-	finished()
+func player_won() -> void:
+	# TODO: Display game won animation?
+	# TODO: Play game won sound?
+	# TODO: get rating based on performance
+	finished(Rating.GOOD)
+
+
+func get_rating() -> Rating:
+	# Decide what rating the mini-game has based on the player's score
+	return Rating.GOOD

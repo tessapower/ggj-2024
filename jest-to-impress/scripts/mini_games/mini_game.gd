@@ -1,32 +1,31 @@
-extends Node2D
+class_name MiniGame extends Node2D
 
 # mini_game.gd: This script contains the base code for a mini-game.
 #
-# Author(s): Adam Goodyear
+# Author(s): Adam Goodyear, Tessa Power
 
-@export var tutorialText: String = "[center][b] TITLE [/b][/center][center] DESCRIPTION [/center]"
+var has_played : bool = false
+@onready var tutorial : Submenu = get_node("Tutorial")
+
+enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
 signal failure
 signal finish
-const TUTORIAL = preload("res://scenes/ui/submenu.tscn")
-var tutorialInstance : Node
-	
-func show_tutorial():
-	if GamestateManager.showTutorial:
-		tutorialInstance = TUTORIAL.instantiate()
-		tutorialInstance.set_text(tutorialText)
-		tutorialInstance.hide()
-		tutorialInstance.connect("close_requested", self.hide_tutorial)
-		add_child(tutorialInstance)
-		GamestateManager.pause()
-		tutorialInstance._on_show()
-	
-func hide_tutorial():
+
+func show_tutorial() -> void:
+	tutorial._on_show()
+	GamestateManager.pause()
+
+
+func hide_tutorial() -> void:
 	GamestateManager.resume()
 
-func finished():
+
+func finished(rating : Rating) -> void:
+	# TODO: update the score and attention meter appopriately
 	emit_signal("finish")
 
 
-func failed():
+func failed(rating : Rating) -> void:
+	# TODO: update the score and attention meter appopriately
 	emit_signal("failure")
