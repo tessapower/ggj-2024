@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://breroar7ddmc8"]
+[gd_scene load_steps=6 format=3 uid="uid://breroar7ddmc8"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/knife_throwing/knife_throwing.gd" id="1_g8mqh"]
 [ext_resource type="PackedScene" uid="uid://cxny6ekgbhs4k" path="res://scenes/mini_games/knife_throwing/range_bar.tscn" id="1_q3173"]
+[ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="3_gnbih"]
 
 [sub_resource type="Curve2D" id="Curve2D_trhui"]
 _data = {
@@ -65,3 +66,13 @@ color = Color(0.668524, 0.592517, 0, 1)
 [node name="Missed" parent="." instance=ExtResource("1_q3173")]
 position = Vector2(0, 248)
 color = Color(0.67451, 0.67451, 0.67451, 1)
+
+[node name="Tutorial" parent="." instance=ExtResource("3_gnbih")]
+visible = false
+text_content = "[center][b]Knife Throwing[/b][/center]
+
+[center]Knife throwing requires excellent aim! Left click with the mouse to stop the white bar. Try to get as close to the green segment as possible. [/center]
+
+"
+
+[connection signal="close_requested" from="Tutorial" to="." method="hide_tutorial"]

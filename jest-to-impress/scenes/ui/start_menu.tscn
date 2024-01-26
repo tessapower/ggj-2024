@@ -92,6 +92,22 @@ theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Play Game"
 
+[node name="CheckBox" type="CheckBox" parent="Content/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 30
+button_pressed = true
+text = "Tutorials"
+alignment = 1
+
 [node name="HowToPlay" type="Button" parent="Content/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -116,9 +132,10 @@ text = "How to Play"
 handle_input_locally = false
 title = "How to Play!"
 visible = false
-text_content = "How to Play! 
+text_content = "[center][b]How to Play![/b][/center]
+[center]This will be an explanation of how to play the game and what the general rules are! It shouldn't be too long but if it is, that's okay!
 
-This is meant to show a bunch of text on the screen. Lorem ipsum sit dolor amet!"
+This box is actually a fancy scroll container and will show a scroll bar on the side to indicate that there is more text to read, so you can type all of the text that you want![/center]"
 
 [node name="HighScores" type="Button" parent="Content/Buttons"]
 layout_mode = 2
@@ -143,7 +160,9 @@ script = ExtResource("6_fq4fe")
 
 [node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "There are no high scores."
+text_content = "[center][b]How to Play![/b][/center]
+[center]High scores will appear here when they are available and have implemented them.[/center]"
+
 
 [node name="Settings" type="Button" parent="Content/Buttons"]
 layout_mode = 2
@@ -214,6 +233,7 @@ theme_override_font_sizes/font_size = 38
 text = "Exit"
 
 [connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_submenu_opened"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="Content/Buttons/HowToPlay/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/HowToPlay/Submenu" to="." method="_on_submenu_closed"]

@@ -22,6 +22,7 @@ HighScoresManager="*res://scripts/managers/high_scores_manager.gd"
 
 [display]
 
+window/size/resizable=false
 window/show_image=false
 
 [input]

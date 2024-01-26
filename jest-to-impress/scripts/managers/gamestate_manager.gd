@@ -11,13 +11,14 @@ extends Node2D
 
 # Player stats
 var score : int = 0
+var show_tutorials : bool = true
+
+# Game state
 var speed : float = 1.0
 const speed_change : float = 0.5
 var attention_meter : float = 0.5
 const attention_change : float = 0.1
 var current_round : int = 1
-
-# Game state
 var is_paused : bool = false
 
 func _ready():

@@ -1,14 +1,10 @@
-extends "res://scripts/mini_games/mini_game.gd"
+extends MiniGame
 
 # knife_throwing.gd: This script contains the code for the knife-throwing
 #                    mini-game.
 #
 # Author(s): Tessa Power
 
-# Mini-game Details
-var game_name = "Knife-throwing"
-var game_description = "Throw knives at the target. The closer to the center,
-the more points you get."
 
 # Mini-game State
 var current_round = 1
@@ -23,7 +19,7 @@ var score = 0
 @onready var aim_bar_path = get_node("AimPath/PathFollow")
 
 # Speed
-@export var speed_multiplier = 1.0
+var direction = 1.0 # corresponds to going right
 var speed = 0.2
 var did_click = false
 
@@ -38,7 +34,9 @@ enum RANGES {MISSED = 0, AVERAGE, GOOD, PERFECT}
 
 func _ready() -> void:
 	reset()
-
+	if GamestateManager.show_tutorials and not has_played:
+		show_tutorial()
+		has_played = true
 
 # Reset the state of the mini-game
 func reset() -> void:
@@ -55,9 +53,9 @@ func _process(delta) -> void:
 	var progress_ratio = aim_bar_path.progress_ratio
 	if progress_ratio >= 1.0 or progress_ratio <= 0.0:
 		# Change the direction if we have hit the start or end of the path
-		speed *= -1.0
+		direction *= -1.0
 	# Keep moving the aim bar along the path
-	aim_bar_path.progress_ratio += speed * speed_multiplier * delta
+	aim_bar_path.progress_ratio += speed * direction * delta
 
 
 func _unhandled_input(event) -> void:
@@ -74,7 +72,7 @@ func _unhandled_input(event) -> void:
 			# TODO: play sfx
 			n_missed += 1
 			if n_missed == MAX_MISSED:
-				game_lost()
+				player_lost()
 				return
 		else:
 			# TODO: Pause for a second to show some knife-throwing animation
@@ -86,7 +84,7 @@ func _unhandled_input(event) -> void:
 
 		# Go to the next round
 		if current_round == MAX_ROUNDS:
-			game_won()
+			player_won()
 		else:
 			next_round()
 
@@ -113,13 +111,20 @@ func next_round() -> void:
 	did_click = false
 
 
-func game_lost() -> void:
-	# Display game lost animation
-	print("you lost :(")
-	failed()
+func player_lost() -> void:
+	# TODO: Display game lost animation?
+	# TODO: Play game lost sound?
+	# TODO: get rating based on performance
+	failed(Rating.FAILED)
 
 
-func game_won() -> void:
-	# Display game won animation
-	print("you won!")
-	finished()
+func player_won() -> void:
+	# TODO: Display game won animation?
+	# TODO: Play game won sound?
+	# TODO: get rating based on performance
+	finished(Rating.GOOD)
+
+
+func get_rating() -> Rating:
+	# Decide what rating the mini-game has based on the player's score
+	return Rating.GOOD

@@ -8,7 +8,9 @@ extends Node2D
 
 # Mini-games
 var mini_games : Array = []
+var played_games : Array = []
 var current_idx = 0
+
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 var mini_game_instance : Node = null
@@ -42,7 +44,6 @@ func unload_mini_game() -> void:
 	mini_game_instance.disconnect("failure", self.on_failure)
 	mini_game_instance.disconnect("finish", self.on_finished)
 	mini_game_instance.queue_free()
-
 
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
