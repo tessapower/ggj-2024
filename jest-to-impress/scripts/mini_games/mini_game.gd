@@ -9,7 +9,7 @@ extends Node2D
 var is_done : bool = false;
 
 signal failure
-signal finish
+signal finished
 
-func finished(evaluation):
-	emit_signal("finish",evaluation)
+func finish():
+	emit_signal("finished")

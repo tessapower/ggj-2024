@@ -80,9 +80,9 @@ func evaluate_finish() -> int:
 func on_sentence_complete():
 	print("WORD DONE")
 	var evaluation = evaluate_finish()
-	finished(evaluation)
-	start_new_joke()
+	GamestateManager.calculate_attention(evaluation)
+	finish()
 
 func _on_timer_timeout():
-	finished(0)
-	start_new_joke()
+	GamestateManager.calculate_attention(0)
+	finish()

@@ -1,9 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr775t71eq8de"]
+[gd_scene load_steps=5 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="1_6wsac"]
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="4_b0cg7"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 
 [node name="StartMenu" type="CanvasLayer"]
