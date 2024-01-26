@@ -12,31 +12,33 @@ extends Node2D
 # Player stats
 var score : int = 0
 var score_multipier : int = 1
+var show_tutorials : bool = true
+
+# Game state
 var speed : float = 1.0
 const speed_change : float = 0.5
 var current_round : int = 1
 
 var attention = Timer.new()
-var attention_meter_max : float = 30
+const ATTENTION_METER_MAX : float = 30
 
-enum attentionLevels {
+enum attention_levels {
 	BAD = 0,
 	OK = 1,
 	GOOD = 2,
 	GREAT = 3
 }
 
-# Game state
 var is_paused : bool = false
 
 func _ready():
-	attention.wait_time = attention_meter_max
+	attention.wait_time = ATTENTION_METER_MAX
 	attention.one_shot = true
 	add_child(attention)
 	reset()
 
 func reset() -> void:
-	attention.start(attention_meter_max)
+	attention.start(ATTENTION_METER_MAX)
 	score = 0
 	speed = 1.0
 	current_round = 1
@@ -67,11 +69,11 @@ func resume() -> void:
 	is_paused = false
 	get_tree().paused = false
 	#SoundManager.resume_music()
-	
+
 # Increases the time left on the attention meter
 func increase_attention_meter(attention_change : int) -> void:
-	if attention.time_left + attention_change > attention_meter_max:
-		attention.start(attention_meter_max)
+	if attention.time_left + attention_change > ATTENTION_METER_MAX:
+		attention.start(ATTENTION_METER_MAX)
 		score_multipier += 1
 	else:
 		attention.start(attention.time_left + attention_change)
@@ -88,17 +90,17 @@ func decrease_attention_meter(attention_change : int) -> void:
 # Sets the attention meters values
 func set_attention_meter(attention_change : int) -> void:
 	attention.start(attention_change)
-	
-func calculate_attention(arg1 : attentionLevels):
+
+func calculate_attention(arg1 : attention_levels):
 	match arg1:
-		attentionLevels.BAD:
+		attention_levels.BAD:
 			decrease_attention_meter(5)
-		attentionLevels.OK:
+		attention_levels.OK:
 			increase_attention_meter(5)
-		attentionLevels.GOOD:
+		attention_levels.GOOD:
 			increase_attention_meter(7)
-		attentionLevels.GREAT:
+		attention_levels.GREAT:
 			increase_attention_meter(10)
-		
+
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")

@@ -1,41 +1,107 @@
-[gd_scene load_steps=3 format=3 uid="uid://bcb2f8o11jadh"]
+[gd_scene load_steps=8 format=3 uid="uid://bcb2f8o11jadh"]
 
 [ext_resource type="Script" path="res://scripts/ui/submenu.gd" id="1_6wa3a"]
+[ext_resource type="Texture2D" uid="uid://bbi2slctbi4xo" path="res://assets/graphics/woodPanel.png" id="2_bvwqe"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="2_tr4rq"]
+[ext_resource type="FontFile" uid="uid://dao4lk1xb6owj" path="res://assets/graphics/Fonts/Aniron/anirb___.ttf" id="3_y6ca1"]
+[ext_resource type="Texture2D" uid="uid://c3stf4wialwd5" path="res://assets/graphics/scroll_lowQuality.png" id="4_ykf5b"]
+[ext_resource type="Texture2D" uid="uid://b4xxp0ogw7jw6" path="res://assets/graphics/scroll_lowQuality_Pressed.png" id="5_7jyj0"]
+[ext_resource type="Texture2D" uid="uid://s5snjrkv6e0e" path="res://assets/graphics/scroll_lowQuality_Hovered.png" id="6_vv0gi"]
 
 [node name="Submenu" type="Window"]
+transparent_bg = true
 initial_position = 2
-size = Vector2i(500, 400)
+size = Vector2i(600, 400)
 exclusive = true
 unresizable = true
 borderless = true
+transparent = true
 popup_window = true
 script = ExtResource("1_6wa3a")
+text_content = ""
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -300.83
+offset_top = -200.0
+offset_right = 99.17
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+size_flags_horizontal = 4
+texture = ExtResource("2_bvwqe")
 
 [node name="Content" type="VBoxContainer" parent="."]
-custom_minimum_size = Vector2(500, 400)
-offset_right = 500.0
-offset_bottom = 400.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -250.0
+offset_top = -235.0
+offset_right = 250.0
+offset_bottom = 215.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_constants/separation = 20
+theme_override_constants/separation = 10
 alignment = 1
 
-[node name="TextContent" type="Label" parent="Content"]
-custom_minimum_size = Vector2(400, 200)
+[node name="ScrollContainer" type="ScrollContainer" parent="Content"]
+custom_minimum_size = Vector2(500, 250)
 layout_mode = 2
-size_flags_horizontal = 4
-horizontal_alignment = 1
-vertical_alignment = 1
-autowrap_mode = 3
+horizontal_scroll_mode = 0
 
-[node name="Button" type="Button" parent="Content"]
+[node name="TextContent" type="RichTextLabel" parent="Content/ScrollContainer"]
+process_mode = 3
+custom_minimum_size = Vector2(500, 250)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/normal_font = ExtResource("3_y6ca1")
+theme_override_fonts/bold_font = ExtResource("3_y6ca1")
+theme_override_font_sizes/normal_font_size = 15
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[center][b]Submenu[/b][/center]
+[center]Here is some text on that will be displayed in the center of the popup window.
+
+This box is actually a fancy scroll container and will show a scroll bar on the side to indicate that there is more text to read, so you can type all of the text that you want![/center]"
+fit_content = true
+
+[node name="Close" type="TextureButton" parent="Content"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
+texture_normal = ExtResource("4_ykf5b")
+texture_pressed = ExtResource("5_7jyj0")
+texture_hover = ExtResource("6_vv0gi")
+
+[node name="Label" type="Label" parent="Content/Close"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -18.89
+offset_right = 21.0
+offset_bottom = 4.11
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
 theme_override_fonts/font = ExtResource("2_tr4rq")
-theme_override_font_sizes/font_size = 28
-text = " Close "
+theme_override_font_sizes/font_size = 26
+text = "Close
+"
 
 [connection signal="window_input" from="." to="." method="_on_window_input"]
-[connection signal="pressed" from="Content/Button" to="." method="_on_hide"]
+[connection signal="button_down" from="Content/Close" to="." method="_on_hide"]

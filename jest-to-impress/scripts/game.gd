@@ -8,6 +8,7 @@ extends Node2D
 
 # Mini-games
 var mini_games : Array = []
+var played_games : Array = []
 var current_idx = 0
 const attention_meter = preload("res://scenes/ui/attentionMeter.tscn")
 var attention_meter_instance : Node
@@ -21,7 +22,7 @@ func _ready():
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
-	
+
 	# TODO: add mini-games here!
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
@@ -50,6 +51,17 @@ func unload_mini_game() -> void:
 	# We assume that the most recently added child is our mini-game
 	mini_game_instance.disconnect("finished", self.on_finished)
 	mini_game_instance.queue_free()
+
+# A callback function intended to be called by a mini-game when the player loses
+func on_failure() -> void:
+	# Decide whether or not to continue the game based on the attention meter
+	if GamestateManager.is_game_over():
+		# TODO: display some game over animation?
+		# TODO: Stop the music
+		get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
+	else:
+		next_mini_game()
+
 
 # A callback function intended to be called by a mini-game when the player wins
 func on_finished() -> void:
