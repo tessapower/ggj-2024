@@ -1,6 +1,5 @@
 [gd_scene load_steps=7 format=3 uid="uid://cr775t71eq8de"]
 
-
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
@@ -161,9 +160,8 @@ script = ExtResource("6_fq4fe")
 
 [node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "[center][b]How to Play![/b][/center]
-[center]High scores will appear here when they are available and have implemented them.[/center]"
-
+text_content = "[center][b]High Scores[/b][/center]
+[center]There are no high scores yet.[/center]"
 
 [node name="Settings" type="Button" parent="Content/Buttons"]
 layout_mode = 2
