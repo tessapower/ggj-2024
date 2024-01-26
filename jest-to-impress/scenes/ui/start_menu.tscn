@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cr775t71eq8de"]
+[gd_scene load_steps=7 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
 [ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_vsobi"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
+[ext_resource type="Script" path="res://scripts/ui/high_scores_popup.gd" id="6_fq4fe"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
@@ -138,10 +139,11 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "High Scores"
+script = ExtResource("6_fq4fe")
 
 [node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "High scores will appear here when they are available and have implemented them."
+text_content = "There are no high scores."
 
 [node name="Settings" type="Button" parent="Content/Buttons"]
 layout_mode = 2
