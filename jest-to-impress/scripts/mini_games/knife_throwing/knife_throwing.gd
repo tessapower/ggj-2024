@@ -41,7 +41,8 @@ func reset() -> void:
 
 
 func _process(delta) -> void:
-	# Check if user did click, return early if true
+	# Check if user did click already, in which case we don't want the bar to
+	# keep moving so we return early
 	if did_click: return
 
 	# Check how far along the path the aim bar is
