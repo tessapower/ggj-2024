@@ -29,3 +29,4 @@ func finished(rating : Rating) -> void:
 func failed(rating : Rating) -> void:
 	# TODO: update the score and attention meter appopriately
 	emit_signal("failure")
+

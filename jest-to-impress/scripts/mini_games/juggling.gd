@@ -7,6 +7,7 @@ extends MiniGame
 var has_clicked : bool = false
 var clickable : bool = false
 var score = 0
+# TODO: track how the player is going and apply a rating based
 
 func _ready():
 	if GamestateManager.show_tutorials and not has_played:

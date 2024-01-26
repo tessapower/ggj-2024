@@ -131,9 +131,10 @@ text = "How to Play"
 handle_input_locally = false
 title = "How to Play!"
 visible = false
-text_content = "How to Play! 
+text_content = "[center][b]How to Play![/b][/center]
+[center]This will be an explanation of how to play the game and what the general rules are! It shouldn't be too long but if it is, that's okay!
 
-This is meant to show a bunch of text on the screen. Lorem ipsum sit dolor amet!"
+This box is actually a fancy scroll container and will show a scroll bar on the side to indicate that there is more text to read, so you can type all of the text that you want![/center]"
 
 [node name="HighScores" type="Button" parent="Content/Buttons"]
 layout_mode = 2
@@ -157,7 +158,8 @@ text = "High Scores"
 
 [node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "High scores will appear here when they are available and have implemented them."
+text_content = "[center][b]How to Play![/b][/center]
+[center]High scores will appear here when they are available and have implemented them.[/center]"
 
 [node name="Settings" type="Button" parent="Content/Buttons"]
 layout_mode = 2

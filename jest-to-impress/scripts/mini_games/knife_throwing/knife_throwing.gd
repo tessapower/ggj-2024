@@ -19,7 +19,7 @@ var score = 0
 @onready var aim_bar_path = get_node("AimPath/PathFollow")
 
 # Speed
-@export var speed_multiplier = 1.0
+var direction = 1.0 # corresponds to going right
 var speed = 0.2
 var did_click = false
 
@@ -53,9 +53,9 @@ func _process(delta) -> void:
 	var progress_ratio = aim_bar_path.progress_ratio
 	if progress_ratio >= 1.0 or progress_ratio <= 0.0:
 		# Change the direction if we have hit the start or end of the path
-		speed *= -1.0
+		direction *= -1.0
 	# Keep moving the aim bar along the path
-	aim_bar_path.progress_ratio += speed * speed_multiplier * delta
+	aim_bar_path.progress_ratio += speed * direction * delta
 
 
 func _unhandled_input(event) -> void:
