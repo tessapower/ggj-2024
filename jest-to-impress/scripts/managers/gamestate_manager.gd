@@ -19,6 +19,13 @@ var current_round : int = 1
 var attention = Timer.new()
 var attention_meter_max : float = 30
 
+enum attentionLevels {
+	BAD = 0,
+	OK = 1,
+	GOOD = 2,
+	GREAT = 3
+}
+
 # Game state
 var is_paused : bool = false
 
@@ -82,15 +89,16 @@ func decrease_attention_meter(attention_change : int) -> void:
 func set_attention_meter(attention_change : int) -> void:
 	attention.start(attention_change)
 	
-func calculate_attention(arg1 : int):
-	if arg1 == 0:
-		decrease_attention_meter(5)
-	elif arg1 == 1:
-		increase_attention_meter(5)
-	elif arg1 == 2:
-		increase_attention_meter(7)
-	elif arg1 == 3:
-		increase_attention_meter(10)
+func calculate_attention(arg1 : attentionLevels):
+	match arg1:
+		attentionLevels.BAD:
+			decrease_attention_meter(5)
+		attentionLevels.OK:
+			increase_attention_meter(5)
+		attentionLevels.GOOD:
+			increase_attention_meter(7)
+		attentionLevels.GREAT:
+			increase_attention_meter(10)
 		
 func end_game():
 	get_tree().change_scene_to_file("res://scenes/ui/game_over.tscn")
