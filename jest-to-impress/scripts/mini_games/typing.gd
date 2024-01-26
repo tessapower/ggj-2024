@@ -63,7 +63,6 @@ func _input(event):
 
 
 func on_key_pressed(key: String):
-	print("Does " + key + " == " + current_joke[word_index].capitalize())
 	if key == " ":
 		if current_joke[word_index] == " ":
 			player_input += key
@@ -81,23 +80,22 @@ func on_key_pressed(key: String):
 		on_sentence_complete()
 
 
-func evaluate_finish() -> int:
+func evaluate_finish() -> Rating:
 	var finishTime = $Timer.time_left
 	if finishTime > ($Timer.wait_time / 2):
-		return 3
+		return Rating.PERFECT
 	elif finishTime > ($Timer.wait_time / 4):
-		return 2
+		return Rating.GOOD
 	else:
-		return 1
+		return Rating.AVERAGE
 
 
 func on_sentence_complete():
-	print("WORD DONE")
 	var evaluation = evaluate_finish()
 	GamestateManager.calculate_attention(evaluation)
 	on_finished()
 
 
 func _on_timer_timeout():
-	GamestateManager.calculate_attention(0)
+	GamestateManager.update_attention_meter(Rating.FAILED)
 	on_finished()

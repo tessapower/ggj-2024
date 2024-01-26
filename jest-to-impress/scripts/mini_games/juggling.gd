@@ -6,8 +6,6 @@ extends MiniGame
 
 var has_clicked : bool = false
 var clickable : bool = false
-var score = 0
-# TODO: track how the player is going and apply a rating based
 
 func _ready():
 	if GamestateManager.show_tutorials and not has_played:
@@ -19,8 +17,7 @@ func _process(_delta):
 	if clickable:
 		if Input.is_action_just_pressed("LeftClick"):
 			has_clicked = true
-			GamestateManager.calculate_attention(1)
-			print("Hit! = " + str(score))
+			GamestateManager.calculate_attention(Rating.GOOD)
 
 func toggle_clickable():
 	if not clickable:
@@ -30,10 +27,5 @@ func toggle_clickable():
 		if has_clicked:
 			clickable = false
 		else:
-			GamestateManager.calculate_attention(0)
+			GamestateManager.update_attention_meter(Rating.FAILED)
 			clickable = false
-			print("Missed = " + str(score))
-
-func finish_juggling():
-	finish()
-

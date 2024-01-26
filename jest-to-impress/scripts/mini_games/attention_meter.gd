@@ -15,5 +15,5 @@ func _ready():
 
 func _process(_delta):
 	progress_bar.value = GamestateManager.attention_meter.time_left
-	if GamestateManager.attention.time_left <= 0:
+	if GamestateManager.attention_meter.time_left <= 0:
 		emit_signal("attentionOut")

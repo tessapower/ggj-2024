@@ -68,8 +68,7 @@ func on_finished() -> void:
 	# TODO: display something or some kind of animation?
 	# TODO: maybe wait a second so the player has a bit of a break
 	# Load the next mini-game
-	GamestateManager.increase_score(1)
-	print("SCORE = " + str(GamestateManager.score))
+	GamestateManager.increase_score()
 	next_mini_game()
 
 # Loads the next mini-game, if there is one, otherwise starts playing again from
