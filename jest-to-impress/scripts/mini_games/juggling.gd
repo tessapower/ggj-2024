@@ -7,6 +7,12 @@ extends "res://scripts/mini_games/mini_game.gd"
 var has_clicked : bool = false
 var clickable : bool = false
 var score = 0
+static var tutorial = true
+
+func _ready():
+	if tutorial:
+		show_tutorial()
+		tutorial = false
 
 func _process(_delta):
 	if clickable:

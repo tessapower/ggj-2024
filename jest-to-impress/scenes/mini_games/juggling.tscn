@@ -281,6 +281,7 @@ _data = {
 position = Vector2(0, 164)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_jewf7")
+tutorialText = "[center][b] JUGGLING [/b][/center][center] Wait for the countdown to end and when the jester catches a ball in both hands left click. The text on screen will flash red when you should click! [/center]"
 
 [node name="Click" type="Node2D" parent="."]
 position = Vector2(0, -160)

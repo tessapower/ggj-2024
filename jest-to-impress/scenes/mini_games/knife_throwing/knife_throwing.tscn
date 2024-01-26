@@ -13,6 +13,7 @@ point_count = 4
 
 [node name="KnifeThrowing" type="Node2D"]
 script = ExtResource("1_g8mqh")
+tutorialText = "[center][b] KNIFE THROWING [/b][/center][center] Throwing a knife is all about timing. Wait for the white bar to reach the green segment of the range then left click. [/center]"
 
 [node name="AimPath" type="Path2D" parent="."]
 position = Vector2(-578, -294)

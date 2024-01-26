@@ -73,22 +73,6 @@ size_flags_horizontal = 4
 size_flags_vertical = 8
 alignment = 1
 
-[node name="CheckBox" type="CheckBox" parent="Content/Buttons"]
-layout_mode = 2
-theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_pressed_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_wqwh4")
-theme_override_font_sizes/font_size = 20
-button_pressed = true
-text = "Tutorials"
-alignment = 1
-
 [node name="Start" type="Button" parent="Content/Buttons"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -106,6 +90,22 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Play Game"
+
+[node name="CheckBox" type="CheckBox" parent="Content/Buttons"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_pressed_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_wqwh4")
+theme_override_font_sizes/font_size = 30
+button_pressed = true
+text = "Tutorials"
+alignment = 1
 
 [node name="HowToPlay" type="Button" parent="Content/Buttons"]
 layout_mode = 2
@@ -227,8 +227,8 @@ theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
 
-[connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_submenu_opened"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="Content/Buttons/HowToPlay/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/HowToPlay/Submenu" to="." method="_on_submenu_closed"]

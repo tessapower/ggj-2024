@@ -37,9 +37,6 @@ func load_mini_game(idx : int) -> void:
 	mini_game_instance.connect("failure", self.on_failure)
 	mini_game_instance.connect("finish", self.on_finished)
 	add_child(mini_game_instance)
-	if GamestateManager.showTutorial and !played_games.has(idx):
-		played_games.append(idx)
-		$Tutorial.show_text(idx)
 
 
 # Unloads the current mini-game and disconnects the callback functions
@@ -48,7 +45,6 @@ func unload_mini_game() -> void:
 	mini_game_instance.disconnect("failure", self.on_failure)
 	mini_game_instance.disconnect("finish", self.on_finished)
 	mini_game_instance.queue_free()
-
 
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:

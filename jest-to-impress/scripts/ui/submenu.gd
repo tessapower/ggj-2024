@@ -10,6 +10,9 @@ extends Window
 func _ready() -> void:
 	$Content/TextContent.set_text(text_content)
 
+func set_text(text : String) -> void:
+	print(text)
+	text_content = text
 
 func _on_show() -> void:
 	show()

@@ -9,6 +9,7 @@ extends "res://scripts/mini_games/mini_game.gd"
 var game_name = "Knife-throwing"
 var game_description = "Throw knives at the target. The closer to the center,
 the more points you get."
+static var tutorial = true
 
 # Mini-game State
 var current_round = 1
@@ -38,7 +39,9 @@ enum RANGES {MISSED = 0, AVERAGE, GOOD, PERFECT}
 
 func _ready() -> void:
 	reset()
-
+	if tutorial:
+		show_tutorial()
+		tutorial = false
 
 # Reset the state of the mini-game
 func reset() -> void:
