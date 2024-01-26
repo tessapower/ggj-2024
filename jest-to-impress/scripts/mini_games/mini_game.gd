@@ -12,13 +12,14 @@ const TUTORIAL = preload("res://scenes/ui/submenu.tscn")
 var tutorialInstance : Node
 	
 func show_tutorial():
-	tutorialInstance = TUTORIAL.instantiate()
-	tutorialInstance.set_text(tutorialText)
-	tutorialInstance.hide()
-	tutorialInstance.connect("close_requested", self.hide_tutorial)
-	add_child(tutorialInstance)
-	GamestateManager.pause()
-	tutorialInstance._on_show()
+	if GamestateManager.showTutorial:
+		tutorialInstance = TUTORIAL.instantiate()
+		tutorialInstance.set_text(tutorialText)
+		tutorialInstance.hide()
+		tutorialInstance.connect("close_requested", self.hide_tutorial)
+		add_child(tutorialInstance)
+		GamestateManager.pause()
+		tutorialInstance._on_show()
 	
 func hide_tutorial():
 	GamestateManager.resume()
