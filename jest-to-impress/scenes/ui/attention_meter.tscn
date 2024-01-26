@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg4xba3rimpm0"]
 
-[ext_resource type="Texture2D" uid="uid://cix00xtm3n5l4" path="res://assets/graphics/AttentionBar.png" id="1_q462l"]
-[ext_resource type="Script" path="res://scripts/ui/attentionMeter.gd" id="1_qg5b4"]
+[ext_resource type="Script" path="res://scripts/mini_games/attention_meter.gd" id="1_gxdww"]
+[ext_resource type="Texture2D" uid="uid://cix00xtm3n5l4" path="res://assets/graphics/AttentionBar.png" id="2_hcn2c"]
 
 [node name="AttentionMeter" type="Node2D"]
-script = ExtResource("1_qg5b4")
+script = ExtResource("1_gxdww")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -17,4 +17,4 @@ scale = Vector2(0.496892, 0.496892)
 max_value = 10.0
 step = 0.01
 value = 10.0
-texture_progress = ExtResource("1_q462l")
+texture_progress = ExtResource("2_hcn2c")
