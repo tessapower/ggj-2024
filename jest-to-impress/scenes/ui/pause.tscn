@@ -1,17 +1,39 @@
-[gd_scene load_steps=3 format=3 uid="uid://dagqkuuipwjlv"]
+[gd_scene load_steps=7 format=3 uid="uid://dagqkuuipwjlv"]
 
 [ext_resource type="Script" path="res://scripts/ui/pause.gd" id="1_m7nv1"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="1_whyb1"]
+[ext_resource type="Texture2D" uid="uid://bbi2slctbi4xo" path="res://assets/graphics/woodPanel.png" id="2_pwc1s"]
+[ext_resource type="Texture2D" uid="uid://c3stf4wialwd5" path="res://assets/graphics/scroll_lowQuality.png" id="3_redeo"]
+[ext_resource type="Texture2D" uid="uid://b4xxp0ogw7jw6" path="res://assets/graphics/scroll_lowQuality_Pressed.png" id="4_hvmyk"]
+[ext_resource type="Texture2D" uid="uid://s5snjrkv6e0e" path="res://assets/graphics/scroll_lowQuality_Hovered.png" id="5_0qhla"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="6_pb64w"]
 
 [node name="Pause" type="Window"]
 process_mode = 2
+transparent_bg = true
 initial_position = 2
 size = Vector2i(300, 250)
 transient = true
 exclusive = true
 unresizable = true
 borderless = true
+transparent = true
 script = ExtResource("1_m7nv1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -122.96
+offset_top = -122.96
+offset_right = 377.04
+offset_bottom = 367.04
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+texture = ExtResource("2_pwc1s")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 custom_minimum_size = Vector2(300, 250)
@@ -22,51 +44,85 @@ size_flags_vertical = 4
 theme_override_constants/separation = 8
 alignment = 1
 
-[node name="Resume" type="Button" parent="VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_fonts/font = ExtResource("1_whyb1")
-theme_override_font_sizes/font_size = 38
-text = "Resume"
+texture_normal = ExtResource("3_redeo")
+texture_pressed = ExtResource("4_hvmyk")
+texture_hover = ExtResource("5_0qhla")
 
-[node name="StartMenu" type="Button" parent="VBoxContainer"]
+[node name="Label" type="Label" parent="VBoxContainer/TextureButton"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -18.89
+offset_right = 21.0
+offset_bottom = 4.11
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("6_pb64w")
+theme_override_font_sizes/font_size = 30
+text = "Resume
+"
+
+[node name="TextureButton2" type="TextureButton" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_fonts/font = ExtResource("1_whyb1")
-theme_override_font_sizes/font_size = 38
+texture_normal = ExtResource("3_redeo")
+texture_pressed = ExtResource("4_hvmyk")
+texture_hover = ExtResource("5_0qhla")
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureButton2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -18.89
+offset_right = 21.0
+offset_bottom = 4.11
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("6_pb64w")
+theme_override_font_sizes/font_size = 30
 text = "Start Menu"
 
-[node name="Exit" type="Button" parent="VBoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="VBoxContainer"]
+process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_type_variation = &"FlatButton"
-theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_colors/font_hover_pressed_color = Color(0.67451, 0, 0, 1)
-theme_override_colors/font_disabled_color = Color(0.188235, 0.568627, 0.792157, 1)
-theme_override_fonts/font = ExtResource("1_whyb1")
-theme_override_font_sizes/font_size = 38
+texture_normal = ExtResource("3_redeo")
+texture_pressed = ExtResource("4_hvmyk")
+texture_hover = ExtResource("5_0qhla")
+
+[node name="Label" type="Label" parent="VBoxContainer/TextureButton3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -18.89
+offset_right = 21.0
+offset_bottom = 4.11
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.152941, 0.152941, 0.152941, 1)
+theme_override_fonts/font = ExtResource("6_pb64w")
+theme_override_font_sizes/font_size = 30
 text = "Exit"
 
-[connection signal="pressed" from="VBoxContainer/Resume" to="." method="_on_resume_pressed"]
-[connection signal="pressed" from="VBoxContainer/StartMenu" to="." method="_on_start_menu_pressed"]
-[connection signal="pressed" from="VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="button_down" from="VBoxContainer/TextureButton" to="." method="_on_resume_pressed"]
+[connection signal="button_down" from="VBoxContainer/TextureButton2" to="." method="_on_start_menu_pressed"]
+[connection signal="button_down" from="VBoxContainer/TextureButton3" to="." method="_on_exit_pressed"]
