@@ -8,6 +8,8 @@
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_lj07j")
+background_music_file = "res://assets/audio/jingles/ Game-Over Jingel.mp3"
+click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 1920.0
@@ -100,5 +102,8 @@ text = "Exit"
 visible = false
 
 [connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_button_pressed"]

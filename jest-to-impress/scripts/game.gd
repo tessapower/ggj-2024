@@ -18,6 +18,12 @@ const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_thr
 const TYPING = preload("res://scenes/mini_games/typing.tscn")
 var mini_game_instance : Node = null
 
+# Background Music & SFX
+@export_category("Background Music")
+@export_file var background_music_file
+var background_music : AudioStream
+const BG_MUSIC_VOLUME : float = -5.0
+
 func _ready():
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
@@ -31,6 +37,11 @@ func _ready():
 	mini_games.append(TYPING)
 	load_mini_game(current_idx)
 	GamestateManager.reset()
+
+	# Music
+	if background_music_file:
+		background_music = load(background_music_file)
+		SoundManager.play_music_at_volume(background_music, BG_MUSIC_VOLUME)
 
 
 func _unhandled_input(event) -> void:
@@ -54,6 +65,7 @@ func unload_mini_game() -> void:
 	mini_game_instance.disconnect("finished", self.on_finished)
 	mini_game_instance.queue_free()
 
+
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
 	# Decide whether or not to continue the game based on the attention meter
@@ -72,6 +84,7 @@ func on_finished() -> void:
 	# Load the next mini-game
 	GamestateManager.increase_score()
 	next_mini_game()
+
 
 # Loads the next mini-game, if there is one, otherwise starts playing again from
 # the beginning of the list

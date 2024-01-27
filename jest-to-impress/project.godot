@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 GamestateManager="*res://scripts/managers/gamestate_manager.gd"
 HighScoresManager="*res://scripts/managers/high_scores_manager.gd"
+SoundManager="*res://addons/sound_manager/sound_manager.gd"
 
 [display]
 

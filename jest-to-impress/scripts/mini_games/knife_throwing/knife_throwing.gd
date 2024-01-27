@@ -27,8 +27,23 @@ enum Ranges {MISSED = 0, AVERAGE, GOOD, PERFECT}
 @onready var good = get_node("Good")
 @onready var perfect = get_node("Perfect")
 
+# for the soundeffects
+var random = RandomNumberGenerator.new()
+
+# SFX
+@export_category("Sound Effect Files")
+@export_file var sfx_file_1
+@export_file var sfx_file_2
+var sfx = []
+
 func _ready() -> void:
 	reset()
+	# Load SFX
+	if sfx_file_1:
+		sfx.append(load(sfx_file_1))
+	if sfx_file_2:
+		sfx.append(load(sfx_file_2))
+	# Show tutorial
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
@@ -58,6 +73,8 @@ func _unhandled_input(event) -> void:
 	# Respond to mouse clicks anywhere in the window except for buttons
 	if event.is_action_pressed("LeftClick"):
 		did_click = true
+		# Play one of the sound effects
+		SoundManager.play_sound_with_pitch(sfx.pick_random(), randf_range(0.8, 1.2))
 		# TODO: remove this in favor of waiting on the animation
 		await get_tree().create_timer(1.0).timeout
 
@@ -77,12 +94,12 @@ func update_attention_meter() -> void:
 	# Either update score or increased the missed count
 	if r == Ranges.MISSED:
 		# TODO: Pause for a second to show some poor knife-throwing animation
-		# TODO: play sfx
+		play_failed_sound()
 		n_missed += 1
-	#else:
+	else:
 		# TODO: Pause for a second to show some knife-throwing animation
 		# and a change to the score
-		# TODO: play sfx
+		play_success_sound()
 
 	GamestateManager.update_attention_meter(r)
 
