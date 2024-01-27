@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://sx6vi8eyoxid"
-path="res://.godot/imported/King_Bored.png-f21be997db516be83ca88dade80cb8d5.ctex"
+uid="uid://ijtwebfk50md"
+path="res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/King_Bored.png"
-dest_files=["res://.godot/imported/King_Bored.png-f21be997db516be83ca88dade80cb8d5.ctex"]
+source_file="res://assets/King_Laughing.png"
+dest_files=["res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"]
 
 [params]
 
