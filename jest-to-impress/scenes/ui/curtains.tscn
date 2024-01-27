@@ -1,0 +1,57 @@
+[gd_scene load_steps=5 format=3 uid="uid://clofjv0gkpj67"]
+
+[ext_resource type="Script" path="res://scripts/ui/curtains.gd" id="1_3q2sf"]
+[ext_resource type="Texture2D" uid="uid://7a4g2geujhrk" path="res://assets/graphics/Curtain.png" id="1_p203o"]
+
+[sub_resource type="Animation" id="Animation_o5s15"]
+resource_name = "Transition"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.2, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, -688), Vector2(1, 0), Vector2(1, 0), Vector2(1, -688)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_curtainsDown"
+}, {
+"args": [],
+"method": &"_finishedAnimation"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pqc35"]
+_data = {
+"Transition": SubResource("Animation_o5s15")
+}
+
+[node name="Curtains" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_3q2sf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 5
+position = Vector2(1, -688)
+scale = Vector2(0.614815, 0.614815)
+texture = ExtResource("1_p203o")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_pqc35")
+}

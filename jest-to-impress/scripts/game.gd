@@ -28,6 +28,8 @@ func _ready():
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
+	
+	$curtains.connect("curtainsDown", self.on_curtains_down)
 
 	# TODO: add mini-games here!
 	mini_games.append(JUGGLING)
@@ -87,9 +89,11 @@ func on_finished() -> void:
 # Loads the next mini-game, if there is one, otherwise starts playing again from
 # the beginning of the list
 func next_mini_game() -> void:
+	$curtains._beginAnimation()
+
+func on_curtains_down() -> void:
 	# Remove current mini-game from the scene
 	unload_mini_game()
-
 	# Move on to the next mini-game, if there is one, otherwise start a new
 	# round from the beginning with increased speed!
 	current_idx += 1
