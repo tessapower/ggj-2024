@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
-[ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_vsobi"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/King_Neutral.png" id="3_vsobi"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 [ext_resource type="Script" path="res://scripts/ui/high_scores_popup.gd" id="6_fq4fe"]
 [ext_resource type="AudioStream" uid="uid://dtesbss4fj6v3" path="res://assets/audio/music/Jester rondeau.mp3" id="7_miird"]
