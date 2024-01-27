@@ -29,6 +29,8 @@ enum AttentionChange {BAD = -5, OK = 5, GOOD = 7, GREAT = 10}
 # SFX
 @onready var pause_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Pause.mp3")
 @onready var resume_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Resume.mp3")
+@onready var cheering : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdCheering.mp3")
+@onready var booing : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdBooing.mp3")
 
 func _ready():
 	attention_meter.wait_time = ATTENTION_METER_MAX
@@ -94,6 +96,11 @@ func update_attention_meter(rating : MiniGame.Rating):
 		MiniGame.Rating.AVERAGE: 	change = AttentionChange.OK
 		MiniGame.Rating.GOOD: 		change = AttentionChange.GOOD
 		MiniGame.Rating.PERFECT: 	change = AttentionChange.GREAT
+
+	if change > 0:
+		SoundManager.play_sound(cheering)
+	else:
+		SoundManager.play_sound(booing)
 
 	# Add the change to the time left on the attention meter
 	var new_val = attention_meter.time_left + change
