@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_gndin"]
-[ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_da7vg"]
 [ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
+[ext_resource type="PackedScene" uid="uid://clofjv0gkpj67" path="res://scenes/ui/curtains.tscn" id="4_w85xl"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4oclp")
@@ -33,9 +33,10 @@ offset_bottom = 72.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.677)
-texture = ExtResource("3_da7vg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PausePopup" parent="." instance=ExtResource("3_prf1w")]
 visible = false
+
+[node name="curtains" parent="." instance=ExtResource("4_w85xl")]
