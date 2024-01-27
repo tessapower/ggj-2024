@@ -17,7 +17,7 @@ const MAX_MISSED = 2
 
 # Speed
 var direction = 1.0 # corresponds to going right
-var speed = 0.2
+var speed = 0.5
 var did_click = false
 
 # Ranges

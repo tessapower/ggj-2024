@@ -15,8 +15,7 @@ const SCORE_INCREASE : int = 1
 var score_multipier : int = 1
 
 # Game state
-var speed : float = 1.0
-const speed_change : float = 0.5
+const speed_change : float = 0.05
 var current_round : int = 1
 var is_paused : bool = false
 var show_tutorials : bool = true
@@ -36,7 +35,7 @@ func _ready():
 func reset() -> void:
 	attention_meter.start(ATTENTION_METER_MAX)
 	score = 0
-	speed = 1.0
+	Engine.time_scale = 1.0
 	current_round = 1
 	score_multipier = 1
 
@@ -51,7 +50,7 @@ func next_round() -> void:
 
 
 func increase_speed() -> void:
-	speed += speed_change
+	Engine.time_scale += speed_change
 
 
 # Pauses the game, including the background music.
