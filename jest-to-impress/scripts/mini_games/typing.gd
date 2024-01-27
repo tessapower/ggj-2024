@@ -26,7 +26,6 @@ func _ready():
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
-
 	start_new_joke()
 	$Progress.max_value = $Timer.wait_time
 
@@ -51,13 +50,13 @@ func update_sentence_label():
 	if player_input.length() > 0:
 		$Punchline.text += "[center][color=red]"
 		for i in range(0,player_input.length()):
-			$Punchline.text += current_punchline[i]
-		$Punchline.text += "[/color]"
-		for i in range(player_input.length(), current_punchline.length()):
-			$Punchline.text += current_punchline[i]
-		$Punchline.text += "[/center]"
+			$punchline.text += JOKES[current_joke][i]
+		$punchline.text += "[/color]"
+		for i in range(player_input.length(), JOKES[current_joke].length()):
+			$punchline.text += JOKES[current_joke][i]
+		$punchline.text += "[/center]"
 	else:
-		$Punchline.text = "[center]" + current_punchline + "[/center]"
+		$punchline.text = "[center]" + JOKES[current_joke] + "[/center]"
 
 
 func _input(event):
@@ -69,19 +68,19 @@ func _input(event):
 
 func on_key_pressed(key: String):
 	if key == " ":
-		if current_punchline[word_index] == " ":
+		if JOKES[current_joke][word_index] == " ":
 			player_input += key
-			if word_index < current_punchline.length() - 2:
+			if word_index < JOKES[current_joke].length()-2:
 				word_index += 1
 				update_sentence_label()
-	elif current_punchline[word_index].capitalize() == key.capitalize():
+	elif JOKES[current_joke][word_index].capitalize() == key.capitalize():
 		player_input += key
-		if word_index < current_punchline.length() - 1:
+		if word_index < JOKES[current_joke].length()-1:
 			word_index += 1
 		update_sentence_label()
 
 	print("Player Input: " + player_input)
-	if player_input.capitalize() == current_punchline.capitalize():
+	if player_input.capitalize() == JOKES[current_joke].capitalize():
 		on_sentence_complete()
 
 
