@@ -37,7 +37,7 @@ func start_new_joke():
 	word_index = 0
 	current_joke = JOKES.keys().pick_random()
 
-	$setup.text.set_text("[center]" + current_joke + "[/center]")
+	$setup.text = "[center]" + current_joke + "[/center]"
 	update_sentence_label()
 
 

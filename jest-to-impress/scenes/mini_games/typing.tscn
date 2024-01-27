@@ -1,10 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://dhipbfagvmuei"]
+[gd_scene load_steps=5 format=3 uid="uid://dhipbfagvmuei"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/typing.gd" id="1_83inh"]
 [ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="2_wk1fa"]
 [ext_resource type="Texture2D" uid="uid://b33q15vv7fl1o" path="res://assets/graphics/RopeBar.png" id="3_vncpp"]
+[ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_ohrlj"]
 
-[node name="TypingMinigame" type="Node2D"]
+[node name="Typing" type="Node2D"]
 script = ExtResource("1_83inh")
 
 [node name="setup" type="RichTextLabel" parent="."]
@@ -68,5 +69,11 @@ texture_progress = ExtResource("3_vncpp")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
 autostart = true
+
+[node name="Tutorial" parent="." instance=ExtResource("4_ohrlj")]
+visible = false
+text_content = "[center][b]Telling Jokes[/b][/center]
+
+[center]When telling jokes, timing is key! Type the punch line to the joke as fast as you can before the timer runs out.[/center]"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -25,7 +25,7 @@ func on_finished() -> void:
 	# TODO: Display game won animation?
 	# TODO: Play game won sound?
 	GamestateManager.increase_score()
-	emit_signal("finish")
+	emit_signal("finished")
 
 
 # TODO: check where this is used, remove if unused
