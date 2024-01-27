@@ -73,10 +73,10 @@ func update_attention_meter(rating : MiniGame.Rating):
 	# Calculate the change based on the given rating
 	var change = 0
 	match rating:
-		MiniGame.Rating.FAILED: change  = AttentionChange.BAD
-		MiniGame.Rating.AVERAGE: change = AttentionChange.OK
-		MiniGame.Rating.GOOD: change    = AttentionChange.GOOD
-		MiniGame.Rating.PERFECT: change = AttentionChange.GREAT
+		MiniGame.Rating.FAILED: 	change = AttentionChange.BAD
+		MiniGame.Rating.AVERAGE: 	change = AttentionChange.OK
+		MiniGame.Rating.GOOD: 		change = AttentionChange.GOOD
+		MiniGame.Rating.PERFECT: 	change = AttentionChange.GREAT
 
 	# Add the change to the time left on the attention meter
 	var new_val = attention_meter.time_left + change
