@@ -24,7 +24,7 @@ theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_wk1fa")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
-text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
+text = "hello [color=blue]blue[/color] and [color=red]red[/color]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -44,7 +44,7 @@ theme_override_colors/default_color = Color(0.203922, 0.203922, 0.203922, 1)
 theme_override_fonts/normal_font = ExtResource("2_wk1fa")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
-text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
+text = "hello [color=blue]blue[/color] and [color=red]red[/color]"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -77,3 +77,4 @@ text_content = "[center][b]Telling Jokes[/b][/center]
 [center]When telling jokes, timing is key! Type the punch line to the joke as fast as you can before the timer runs out.[/center]"
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="close_requested" from="Tutorial" to="." method="hide_tutorial"]
