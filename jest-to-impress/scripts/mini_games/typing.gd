@@ -72,16 +72,15 @@ func _input(event):
 func on_key_pressed(key: String):
 	var attempted_input = player_input + key.to_lower()
 
-	# If the strings match exactly, player is done
-	if current_punchline.nocasecmp_to(attempted_input) == 0:
-		on_sentence_complete()
-		return
-
 	# If the start of the punchline matches the player's attempted input,
 	# then update the player input and the punchline label
 	if current_punchline.to_lower().begins_with(attempted_input):
 		player_input = attempted_input
 		update_punchline_label()
+
+	# If the strings match exactly, player is done
+	if current_punchline.nocasecmp_to(attempted_input) == 0:
+		on_sentence_complete()
 
 
 func evaluate_finish() -> Rating:
