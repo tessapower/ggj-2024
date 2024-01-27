@@ -23,6 +23,9 @@ var player_input : String = ""
 var word_text_edit : TextEdit
 
 func _ready():
+	if GamestateManager.show_tutorials and not has_played:
+		show_tutorial()
+		has_played = true
 	start_new_joke()
 	$Progress.max_value = $Timer.wait_time
 
