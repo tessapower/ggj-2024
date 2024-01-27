@@ -1,70 +1,77 @@
-[gd_scene load_steps=5 format=3 uid="uid://dhipbfagvmuei"]
+[gd_scene load_steps=7 format=3 uid="uid://dhipbfagvmuei"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/typing.gd" id="1_83inh"]
+[ext_resource type="Texture2D" uid="uid://mke05j27cu4p" path="res://assets/graphics/SpeechBubble_Bubble.png" id="2_06xry"]
 [ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="2_wk1fa"]
-[ext_resource type="Texture2D" uid="uid://b33q15vv7fl1o" path="res://assets/graphics/RopeBar.png" id="3_vncpp"]
+[ext_resource type="Texture2D" uid="uid://bh5cl0wefkbae" path="res://assets/graphics/RopeBar_Smaller.png" id="3_7l0dh"]
+[ext_resource type="Texture2D" uid="uid://v7ojmowwrxr3" path="res://assets/graphics/SpeechBubble_Speech.png" id="3_tt132"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_ohrlj"]
 
 [node name="Typing" type="Node2D"]
 script = ExtResource("1_83inh")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -311.0
+offset_top = -35.0
+offset_right = 289.0
+offset_bottom = 565.0
+scale = Vector2(1, 0.5556)
+texture = ExtResource("2_06xry")
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 248.0
+offset_top = 126.0
+offset_right = 848.0
+offset_bottom = 726.0
+rotation = -0.103322
+scale = Vector2(0.172185, 0.176366)
+texture = ExtResource("3_tt132")
+metadata/_edit_use_anchors_ = true
+
 [node name="setup" type="RichTextLabel" parent="."]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -187.0
-offset_top = -119.0
-offset_right = 188.0
-offset_bottom = -36.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.03894, 1.0446)
+offset_left = -233.0
+offset_top = 12.0
+offset_right = 217.0
+offset_bottom = 112.0
+size_flags_horizontal = 4
+size_flags_vertical = 3
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_fonts/normal_font = ExtResource("2_wk1fa")
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
-fit_content = true
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="punchline" type="RichTextLabel" parent="."]
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -157.0
-offset_top = -69.0
-offset_right = 157.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.03894, 1.0446)
-theme_override_colors/default_color = Color(0.203922, 0.203922, 0.203922, 1)
+offset_left = -233.0
+offset_top = 115.0
+offset_right = 217.0
+offset_bottom = 205.0
+theme_override_colors/default_color = Color(0.388235, 0.388235, 0.388235, 1)
 theme_override_fonts/normal_font = ExtResource("2_wk1fa")
 theme_override_font_sizes/normal_font_size = 50
 bbcode_enabled = true
 text = "hello[color=blue]blue[/color] and [color=red]red[/color]"
-fit_content = true
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
 
 [node name="Progress" type="TextureProgressBar" parent="."]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -129.0
-offset_right = 471.0
-offset_bottom = 100.0
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(0.451444, 0.451444)
+offset_left = -232.0
+offset_top = 190.0
+offset_right = 68.0
+offset_bottom = 240.0
+scale = Vector2(1.5, 1.3)
+size_flags_horizontal = 0
+size_flags_vertical = 3
 max_value = 5.0
 step = 0.1
 value = 5.0
-texture_progress = ExtResource("3_vncpp")
+texture_progress = ExtResource("3_7l0dh")
+metadata/_edit_use_anchors_ = true
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 6.0
@@ -77,5 +84,9 @@ text_content = "[center][b]Telling Jokes[/b][/center]
 [center]When telling jokes, timing is key! Type the punch line to the joke as fast as you can before the timer runs out.[/center]"
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
