@@ -1,33 +1,25 @@
-extends Area2D
+class_name RangeBar extends TextureRect
 
 # range_bar.gd: This script contains the code for for the range bars used in the
 #               knife-throwing mini-game.
 #
 # Author(s): Tessa Power
 
+@onready var missed = get_node("Missed")
+@onready var average = get_node("Average")
+@onready var good = get_node("Good")
+@onready var perfect = get_node("Perfect")
 
-@export var width_scale = 1.0
-@export var color = Color(1, 1, 1, 1)
+enum Ranges {MISSED = 0, AVERAGE, GOOD, PERFECT}
+var current_range = Ranges.MISSED
 
-# range_bar.gd: This script handles the range bars used in the knife-throwing
-#               mini-game.
-#
-# Author(s): Tessa Power
-
-
-# Components of the range bar
-@onready var color_rect = get_node('CollisionShape/Color')
-@onready var collision_shape = get_node('CollisionShape')
-
-func _ready() -> void:
-	# Set the color of the color rect to the color of the node
-	color_rect.color = color
-	# Set the width of the collision shape to the width scale of the node
-	update_width_scale(width_scale)
-
-
-func update_width_scale(new_width_scale) -> void:
-	# Update the width scale of the node
-	width_scale = new_width_scale
-	# Update the width of the collision shape
-	collision_shape.scale.x *= width_scale
+func _on_area_entered(_area, range_entered):
+	match range_entered:
+		"missed":
+			current_range = Ranges.MISSED
+		"average":
+			current_range = Ranges.AVERAGE
+		"good":
+			current_range = Ranges.GOOD
+		"perfect":
+			current_range = Ranges.PERFECT

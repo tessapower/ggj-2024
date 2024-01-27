@@ -21,11 +21,12 @@ var speed = 0.5
 var did_click = false
 
 # Ranges
-enum Ranges {MISSED = 0, AVERAGE, GOOD, PERFECT}
-@onready var missed = get_node("Missed")
-@onready var average = get_node("Average")
-@onready var good = get_node("Good")
-@onready var perfect = get_node("Perfect")
+@onready var range_bars : Dictionary = {
+	1: get_node("Round1"),
+	2: get_node("Round2"),
+	3: get_node("Round3")
+}
+var range_bar : Node = null
 
 func _ready() -> void:
 	reset()
@@ -37,6 +38,7 @@ func _ready() -> void:
 # Reset the state of the mini-game
 func reset() -> void:
 	current_round = 1
+	range_bar = range_bars[current_round]
 	n_missed = 0
 
 
@@ -73,9 +75,8 @@ func _unhandled_input(event) -> void:
 
 
 func update_attention_meter() -> void:
-	var r = get_overlapping_range()
 	# Either update score or increased the missed count
-	if r == Ranges.MISSED:
+	if range_bar.current_range == RangeBar.Ranges.MISSED:
 		# TODO: Pause for a second to show some poor knife-throwing animation
 		# TODO: play sfx
 		n_missed += 1
@@ -84,24 +85,18 @@ func update_attention_meter() -> void:
 		# and a change to the score
 		# TODO: play sfx
 
-	GamestateManager.update_attention_meter(r)
-
-
-# Returns the range that the aim bar is overlapping
-func get_overlapping_range() -> Ranges:
-	var overlapping = aim_bar.get_overlapping_areas()
-	if overlapping.has(perfect):
-		return Ranges.PERFECT
-	elif overlapping.has(good):
-		return Ranges.GOOD
-	elif overlapping.has(average):
-		return Ranges.AVERAGE
-	return Ranges.MISSED
+	GamestateManager.update_attention_meter(range_bar.current_range)
 
 
 func next_round() -> void:
 	# Increase the round number
 	current_round += 1
+
+	# Replace the current range bar with the range bar for the next round
+	range_bar.queue_free()
+	range_bar = range_bars[current_round]
+	range_bar.visible = true
+
 	# Reset the aim bar position
 	# TODO: reset to either start or end, chosen at random
 	aim_bar_path.progress_ratio = 0.0
