@@ -51,4 +51,4 @@ func _on_submenu_closed() -> void:
 
 
 func _on_check_box_toggled(toggled_on):
-	GamestateManager.show_tutorial = toggled_on
+	GamestateManager.show_tutorials = toggled_on
