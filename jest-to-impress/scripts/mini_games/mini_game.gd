@@ -4,13 +4,17 @@ class_name MiniGame extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
+signal failure
+signal finished
+
 var has_played : bool = false
 @onready var tutorial : Submenu = get_node("Tutorial")
 
 enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
-signal failure
-signal finished
+# SFX
+@onready var good_sound: AudioStream = load("res://assets/audio/sfx/DoneSomething/Done_Something Right.mp3")
+@onready var bad_sound: AudioStream = load("res://assets/audio/sfx/DoneSomething/DoneSomethingWrong.mp3")
 
 func show_tutorial() -> void:
 	tutorial._on_show()
@@ -19,6 +23,14 @@ func show_tutorial() -> void:
 
 func hide_tutorial() -> void:
 	GamestateManager.resume()
+
+
+func play_success_sound() -> void:
+	SoundManager.play_sound(good_sound)
+
+
+func play_failed_sound() -> void:
+	SoundManager.play_sound(bad_sound)
 
 
 func on_finished() -> void:

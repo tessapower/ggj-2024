@@ -1,13 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1j8htkomgdaw"]
+[gd_scene load_steps=5 format=3 uid="uid://b1j8htkomgdaw"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_gndin"]
-[ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_da7vg"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/King_Neutral.png" id="3_da7vg"]
 [ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
-[ext_resource type="AudioStream" uid="uid://dgreaiqw1frlm" path="res://assets/audio/music/Let the show begin.wav" id="5_kbtrc"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4oclp")
+background_music_file = "res://assets/audio/music/Let the show begin.wav"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -40,9 +40,3 @@ texture = ExtResource("3_da7vg")
 
 [node name="PausePopup" parent="." instance=ExtResource("3_prf1w")]
 visible = false
-
-[node name="music" type="AudioStreamPlayer" parent="."]
-process_mode = 3
-stream = ExtResource("5_kbtrc")
-volume_db = -5.0
-autoplay = true

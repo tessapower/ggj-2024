@@ -1,12 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://breroar7ddmc8"]
+[gd_scene load_steps=6 format=3 uid="uid://breroar7ddmc8"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/knife_throwing/knife_throwing.gd" id="1_g8mqh"]
 [ext_resource type="PackedScene" uid="uid://cxny6ekgbhs4k" path="res://scenes/mini_games/knife_throwing/range_bar.tscn" id="1_q3173"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="3_gnbih"]
-[ext_resource type="AudioStream" uid="uid://jefhdxpl24sw" path="res://assets/audio/sfx/KnifeThrow/KnifeThrow1.mp3" id="4_157vp"]
-[ext_resource type="AudioStream" uid="uid://dmvwd2upnfkmu" path="res://assets/audio/sfx/KnifeThrow/KnifeThrow2.mp3" id="5_ec456"]
-[ext_resource type="AudioStream" uid="uid://d2pc7muam0hqh" path="res://assets/audio/sfx/DoneSomething/Done_Something Right.mp3" id="6_e70ym"]
-[ext_resource type="AudioStream" uid="uid://cgpqqqtw431pf" path="res://assets/audio/sfx/DoneSomething/DoneSomethingWrong.wav" id="7_66ha8"]
 
 [sub_resource type="Curve2D" id="Curve2D_trhui"]
 _data = {
@@ -18,6 +14,8 @@ point_count = 4
 
 [node name="KnifeThrowing" type="Node2D"]
 script = ExtResource("1_g8mqh")
+sfx_file_1 = "res://assets/audio/sfx/KnifeThrow/KnifeThrow1.mp3"
+sfx_file_2 = "res://assets/audio/sfx/KnifeThrow/KnifeThrow2.mp3"
 
 [node name="AimPath" type="Path2D" parent="."]
 position = Vector2(-578, -294)
@@ -78,17 +76,5 @@ text_content = "[center][b]Knife Throwing[/b][/center]
 [center]Knife throwing requires excellent aim! Left click with the mouse to stop the white bar. Try to get as close to the green segment as possible. [/center]
 
 "
-
-[node name="KnifeThrow1" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("4_157vp")
-
-[node name="KnifeThrow2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_ec456")
-
-[node name="DoneSomethingRight" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_e70ym")
-
-[node name="DoneSomethingWrong" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_66ha8")
 
 [connection signal="close_requested" from="Tutorial" to="." method="hide_tutorial"]
