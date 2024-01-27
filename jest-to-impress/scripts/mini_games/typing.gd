@@ -14,7 +14,7 @@ const JOKES : Dictionary = {
 	"How does Satan like his pasta?": "al dante"
 }
 
-var current_punchline : String = ""
+var current_joke : String = ""
 var word_index : int = 0
 var rng = RandomNumberGenerator.new()
 
@@ -38,17 +38,16 @@ func start_new_joke():
 	$Timer.start()
 	player_input = ""
 	word_index = 0
-	var current_joke = JOKES.keys().pick_random()
-	current_punchline = JOKES.get(current_joke)
+	current_joke = JOKES.keys().pick_random()
 
-	$Setup.text = "[center]" + current_joke + "[/center]"
+	$setup.text = "[center]" + current_joke + "[/center]"
 	update_sentence_label()
 
 
 func update_sentence_label():
-	$Punchline.text = ""
+	$punchline.text = ""
 	if player_input.length() > 0:
-		$Punchline.text += "[center][color=red]"
+		$punchline.text += "[center][color=red]"
 		for i in range(0,player_input.length()):
 			$punchline.text += JOKES[current_joke][i]
 		$punchline.text += "[/color]"
