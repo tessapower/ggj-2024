@@ -27,6 +27,9 @@ enum Ranges {MISSED = 0, AVERAGE, GOOD, PERFECT}
 @onready var good = get_node("Good")
 @onready var perfect = get_node("Perfect")
 
+# for the soundeffects
+var random = RandomNumberGenerator.new()
+
 func _ready() -> void:
 	reset()
 	if GamestateManager.show_tutorials and not has_played:
@@ -58,6 +61,15 @@ func _unhandled_input(event) -> void:
 	# Respond to mouse clicks anywhere in the window except for buttons
 	if event.is_action_pressed("LeftClick"):
 		did_click = true
+		random = randi_range (1,2)
+		if random == 1:
+			$KnifeThrow1.pitch_scale = randf_range(0.8, 1.2)
+			$KnifeThrow1.play()
+		if random == 2:
+			$KnifeThrow2.pitch_scale = randf_range(0.8, 1.2)
+			$KnifeThrow2.play()
+			
+		
 		# TODO: remove this in favor of waiting on the animation
 		await get_tree().create_timer(1.0).timeout
 
@@ -67,6 +79,7 @@ func _unhandled_input(event) -> void:
 		if current_round == MAX_ROUNDS or n_missed == MAX_MISSED:
 			# TODO: Display game won animation?
 			# TODO: Play game won sound?
+			
 			on_finished()
 		else:
 			next_round()
@@ -78,11 +91,14 @@ func update_attention_meter() -> void:
 	if r == Ranges.MISSED:
 		# TODO: Pause for a second to show some poor knife-throwing animation
 		# TODO: play sfx
+		$DoneSomethingWrong.play()
 		n_missed += 1
+		
 	#else:
 		# TODO: Pause for a second to show some knife-throwing animation
 		# and a change to the score
 		# TODO: play sfx
+		$DoneSomethingRight.play()
 
 	GamestateManager.update_attention_meter(r)
 

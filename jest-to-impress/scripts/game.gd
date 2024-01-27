@@ -39,6 +39,7 @@ func _unhandled_input(event) -> void:
 
 # Loads the mini-game at the given index and hooks it up to the appropriate
 # callback functions
+		
 func load_mini_game(idx : int) -> void:
 	var mini_game = mini_games[idx]
 	mini_game_instance = mini_game.instantiate()

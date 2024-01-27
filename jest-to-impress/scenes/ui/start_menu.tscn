@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cr775t71eq8de"]
+[gd_scene load_steps=9 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://ct5qlmrc27dwj" path="res://assets/graphics/King_Neutral.png" id="3_vsobi"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 [ext_resource type="Script" path="res://scripts/ui/high_scores_popup.gd" id="6_fq4fe"]
+[ext_resource type="AudioStream" uid="uid://dtesbss4fj6v3" path="res://assets/audio/music/Jester rondeau.mp3" id="7_miird"]
+[ext_resource type="AudioStream" uid="uid://cagoiv01ce5gx" path="res://assets/audio/sfx/Button_press.mp3" id="8_gpcix"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
@@ -230,6 +232,13 @@ theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
+
+[node name="music" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_miird")
+volume_db = -5.0
+
+[node name="buttonPressed" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_gpcix")
 
 [connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
