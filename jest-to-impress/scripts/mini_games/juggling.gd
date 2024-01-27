@@ -32,5 +32,5 @@ func toggle_clickable():
 			clickable = false
 
 
-func _on_finished(anim_name):
+func _on_finished(_anim_name):
 	on_finished()

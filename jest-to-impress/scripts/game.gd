@@ -6,6 +6,7 @@ extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
+# TODO: Maybe consider adding this to the game scene
 const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
 var attention_meter_instance : Node
 
@@ -20,6 +21,7 @@ var played_games : Array = []
 var current_idx = 0
 
 func _ready():
+	# TODO: Maybe consider adding the attention meter to the game scene
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
