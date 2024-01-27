@@ -18,11 +18,11 @@ enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
 func show_tutorial() -> void:
 	tutorial._on_show()
-	GamestateManager.pause()
+	GamestateManager.popup_window(true)
 
 
 func hide_tutorial() -> void:
-	GamestateManager.resume()
+	GamestateManager.popup_window(false)
 
 
 func play_success_sound() -> void:

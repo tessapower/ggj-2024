@@ -26,6 +26,10 @@ var attention_meter = Timer.new()
 const ATTENTION_METER_MAX : float = 30
 enum AttentionChange {BAD = -5, OK = 5, GOOD = 7, GREAT = 10}
 
+# SFX
+@onready var pause_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Pause.mp3")
+@onready var resume_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Resume.mp3")
+
 func _ready():
 	attention_meter.wait_time = ATTENTION_METER_MAX
 	attention_meter.one_shot = true
@@ -39,6 +43,8 @@ func reset() -> void:
 	speed = 1.0
 	current_round = 1
 	score_multipier = 1
+	is_paused = false
+	get_tree().paused = false
 
 
 func increase_score() -> void:
@@ -59,13 +65,24 @@ func pause() -> void:
 	is_paused = true
 	get_tree().paused = true
 	SoundManager.pause_music()
+	if pause_sfx:
+		SoundManager.play_ui_sound(pause_sfx)
 
 
 # Resumes the game, including the background music.
 func resume() -> void:
 	is_paused = false
 	get_tree().paused = false
+	if resume_sfx:
+		SoundManager.play_ui_sound(resume_sfx)
 	SoundManager.resume_music()
+
+
+# Halts gameplay while a popup window is shown, but does not play pause/resume
+# sound effects
+func popup_window(is_showing : bool) -> void:
+	is_paused = is_showing
+	get_tree().paused = is_showing
 
 
 # Updates the attention meter given the player's performance in a mini-game.
