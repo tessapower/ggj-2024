@@ -6,17 +6,19 @@ extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
-# Mini-games
-var mini_games : Array = []
-var played_games : Array = []
-var current_idx = 0
+# TODO: Maybe consider adding this to the game scene
 const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
 var attention_meter_instance : Node
 
+# Mini-games
+var mini_games : Array = []
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 const TYPING = preload("res://scenes/mini_games/typing.tscn")
+
 var mini_game_instance : Node = null
+var played_games : Array = []
+var current_idx = 0
 
 # Background Music & SFX
 @export_category("Background Music")
@@ -25,6 +27,7 @@ var background_music : AudioStream
 const BG_MUSIC_VOLUME : float = -5.0
 
 func _ready():
+	# TODO: Maybe consider adding the attention meter to the game scene
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
@@ -35,6 +38,7 @@ func _ready():
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
 	mini_games.append(TYPING)
+	mini_games.shuffle()
 	load_mini_game(current_idx)
 	GamestateManager.reset()
 
