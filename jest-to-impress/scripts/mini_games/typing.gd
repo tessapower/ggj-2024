@@ -1,5 +1,9 @@
 extends "res://scripts/mini_games/mini_game.gd"
 
+# typing.gd: This script contains the code for the joke typing mini-game.
+#
+# Author(s): Adam Goodyear, Tessa Power
+
 const JOKES : Dictionary = {
 	"What do sweet potatoes wear to bed?": "yammies",
 	"What do you call fake noodles?": "impastas",
