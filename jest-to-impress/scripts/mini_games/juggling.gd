@@ -17,7 +17,8 @@ func _process(_delta):
 	if clickable:
 		if Input.is_action_just_pressed("LeftClick"):
 			has_clicked = true
-			GamestateManager.calculate_attention(Rating.GOOD)
+			GamestateManager.update_attention_meter(Rating.GOOD)
+
 
 func toggle_clickable():
 	if not clickable:
@@ -29,3 +30,7 @@ func toggle_clickable():
 		else:
 			GamestateManager.update_attention_meter(Rating.FAILED)
 			clickable = false
+
+
+func _on_finished(anim_name):
+	on_finished()
