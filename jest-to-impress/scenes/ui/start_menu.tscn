@@ -11,6 +11,8 @@
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
+background_music_file = "res://assets/audio/music/Jester rondeau.mp3"
+click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8
@@ -241,17 +243,25 @@ volume_db = -5.0
 stream = ExtResource("8_gpcix")
 
 [connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="Content/Buttons/HowToPlay/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/HowToPlay/Submenu" to="." method="_on_submenu_closed"]
 [connection signal="pressed" from="Content/Buttons/HighScores" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/HighScores" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/HighScores" to="Content/Buttons/HowToPlay" method="_on_pressed"]
 [connection signal="pressed" from="Content/Buttons/HighScores" to="Content/Buttons/HighScores/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/HighScores/Submenu" to="." method="_on_submenu_closed"]
 [connection signal="pressed" from="Content/Buttons/Settings" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/Settings" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/Settings" to="Content/Buttons/Settings/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/Settings/Submenu" to="." method="_on_submenu_closed"]
 [connection signal="pressed" from="Content/Buttons/Credits" to="." method="_on_submenu_opened"]
+[connection signal="pressed" from="Content/Buttons/Credits" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/Credits" to="Content/Buttons/Credits/Submenu" method="_on_show"]
 [connection signal="close_requested" from="Content/Buttons/Credits/Submenu" to="." method="_on_submenu_closed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_button_pressed"]
