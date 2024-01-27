@@ -58,14 +58,14 @@ func increase_speed() -> void:
 func pause() -> void:
 	is_paused = true
 	get_tree().paused = true
-	#SoundManager.pause_music()
+	SoundManager.pause_music()
 
 
 # Resumes the game, including the background music.
 func resume() -> void:
 	is_paused = false
 	get_tree().paused = false
-	#SoundManager.resume_music()
+	SoundManager.resume_music()
 
 
 # Updates the attention meter given the player's performance in a mini-game.
