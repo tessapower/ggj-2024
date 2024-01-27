@@ -96,25 +96,25 @@ tracks/6/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "values": [{
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"toggleClickable"
+"method": &"toggle_clickable"
 }, {
 "args": [],
-"method": &"finished"
+"method": &"finish_juggling"
 }]
 }
 tracks/7/type = "value"
@@ -324,4 +324,5 @@ text_content = "[center][b]Juggling[/b][/center]
 
 [center]Wait for the countdown to end and left click when the jester catches a ball in both hands. The text on screen will flash red when you should click![/center]"
 
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_finished"]
 [connection signal="close_requested" from="Tutorial" to="." method="hide_tutorial"]

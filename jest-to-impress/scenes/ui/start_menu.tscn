@@ -160,9 +160,8 @@ script = ExtResource("6_fq4fe")
 
 [node name="Submenu" parent="Content/Buttons/HighScores" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "[center][b]How to Play![/b][/center]
-[center]High scores will appear here when they are available and have implemented them.[/center]"
-
+text_content = "[center][b]High Scores[/b][/center]
+[center]There are no high scores yet.[/center]"
 
 [node name="Settings" type="Button" parent="Content/Buttons"]
 layout_mode = 2

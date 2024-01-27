@@ -10,7 +10,7 @@ var has_played : bool = false
 enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
 signal failure
-signal finish
+signal finished
 
 func show_tutorial() -> void:
 	tutorial._on_show()
@@ -21,12 +21,16 @@ func hide_tutorial() -> void:
 	GamestateManager.resume()
 
 
-func finished(rating : Rating) -> void:
-	# TODO: update the score and attention meter appopriately
-	emit_signal("finish")
+func on_finished() -> void:
+	# TODO: Display game won animation?
+	# TODO: Play game won sound?
+	GamestateManager.increase_score()
+	emit_signal("finished")
 
 
-func failed(rating : Rating) -> void:
-	# TODO: update the score and attention meter appopriately
+# TODO: check where this is used, remove if unused
+func on_failed() -> void:
+	# TODO: Display game lost animation?
+	# TODO: Play game lost sound?
 	emit_signal("failure")
 
