@@ -34,13 +34,6 @@ var background_music : AudioStream
 const BG_MUSIC_VOLUME : float = -5.0
 
 func _ready():
-	# TODO: Maybe consider adding the attention meter to the game scene
-	attention_meter_instance = attention_meter.instantiate()
-	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
-	add_child(attention_meter_instance)
-
-	$curtains.connect("curtainsDown", self.on_curtains_down)
-
 	# TODO: add mini-games here!
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
@@ -49,9 +42,6 @@ func _ready():
 	mini_games.shuffle()
 	generate_round()
 	load_mini_game(current_idx)
-
-	# Ensure a clean state for the player
-	GamestateManager.reset()
 
 	# Setup and start the background music
 	if background_music_file:

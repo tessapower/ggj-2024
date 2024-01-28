@@ -44,8 +44,6 @@ func reset() -> void:
 	Engine.time_scale = 1.0
 	current_round = 1
 	score_multipier = 1
-	is_paused = true if show_tutorials else false
-	get_tree().paused = true if show_tutorials else false
 
 
 func increase_score() -> void:
