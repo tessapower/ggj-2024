@@ -135,9 +135,9 @@ handle_input_locally = false
 title = "How to Play!"
 visible = false
 text_content = "[center][b]How to Play![/b][/center]
-[center]This will be an explanation of how to play the game and what the general rules are! It shouldn't be too long but if it is, that's okay!
+[center]You are a jester that has been chosen to entertain the king, but don't let him get bored of you! Do your best to keep the king's attention by juggling, throwing knives, telling jokes, and more.
 
-This box is actually a fancy scroll container and will show a scroll bar on the side to indicate that there is more text to read, so you can type all of the text that you want![/center]"
+Follow the on-screen instructions to keep the king laughing, and be ready to use both your mouse and keyboard.  The better you do, the longer you'll play, and the higher your final score![/center]"
 
 [node name="HighScores" type="Button" parent="Content/Buttons"]
 layout_mode = 2
