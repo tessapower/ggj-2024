@@ -185,7 +185,7 @@ shape = SubResource("RectangleShape2D_mfewi")
 visible = false
 text_content = "[center][b]Knife Throwing[/b][/center]
 
-[center]Knife throwing requires excellent aim! Left click with the mouse to stop the white bar. Try to get as close to the green segment as possible. [/center]
+[center]Knife throwing requires excellent aim! Left click with the mouse to stop the knife. Try to get as close to the green segment as possible. [/center]
 
 "
 
