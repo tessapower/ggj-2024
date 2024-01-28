@@ -13,10 +13,6 @@ const king_laughing = preload("res://assets/King_Laughing.png")
 const king_neutral = preload("res://assets/King_Neutral.png")
 const king_pleased = preload("res://assets/King_Pleased.png")
 
-# TODO: Maybe consider adding this to the game scene
-const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
-var attention_meter_instance : Node
-
 # Mini-games
 var mini_games : Array = []
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
@@ -126,7 +122,8 @@ func on_finished() -> void:
 # Loads the next mini-game, if there is one, otherwise starts playing again from
 # the beginning of the list
 func next_mini_game() -> void:
-	$curtains._beginAnimation()
+	$Curtains._begin_animation()
+
 
 
 func on_curtains_down() -> void:
