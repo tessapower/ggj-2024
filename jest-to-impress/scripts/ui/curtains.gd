@@ -10,8 +10,3 @@ func _begin_animation():
 
 func _curtains_down():
 	emit_signal("curtains_down")
-
-
-func _finished_animation():
-	# Resume gameplay
-	GamestateManager.pause_gameplay(false)

@@ -47,6 +47,8 @@ func _ready() -> void:
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
+	else:
+		hide_tutorial()
 
 
 # Reset the state of the mini-game

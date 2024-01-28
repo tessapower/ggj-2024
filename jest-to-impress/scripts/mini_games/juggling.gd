@@ -13,6 +13,8 @@ func _ready():
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
+	else:
+		hide_tutorial()
 
 
 func _process(_delta):
