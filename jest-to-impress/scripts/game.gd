@@ -119,7 +119,7 @@ func next_mini_game() -> void:
 
 
 
-func on_curtains_down() -> void:
+func _on_curtains_down() -> void:
 	# Remove current mini-game from the scene
 	unload_mini_game()
 	# Move on to the next mini-game, if there is one, otherwise start a new
