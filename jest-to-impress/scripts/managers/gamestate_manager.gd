@@ -55,7 +55,6 @@ func increase_score() -> void:
 func next_round() -> void:
 	current_round += 1
 	increase_speed()
-	print("ROUND = " + str(current_round) + " SPEED = " + str(Engine.time_scale))
 
 
 func increase_speed() -> void:
