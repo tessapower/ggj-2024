@@ -676,7 +676,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"new_animation",
-"speed": 5.0
+"speed": 30.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_w23jx"]
@@ -818,6 +818,7 @@ scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_g30di")
 animation = &"new_animation"
 autoplay = "new_animation"
+frame_progress = 0.754898
 
 [node name="Gnome" type="AnimatedSprite2D" parent="."]
 position = Vector2(-96.9999, -18)
