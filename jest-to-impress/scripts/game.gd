@@ -49,9 +49,11 @@ func _ready():
 	mini_games.shuffle()
 	generate_round()
 	load_mini_game(current_idx)
+
+	# Ensure a clean state for the player
 	GamestateManager.reset()
 
-	# Music
+	# Setup and start the background music
 	if background_music_file:
 		background_music = load(background_music_file)
 		SoundManager.play_music_at_volume(background_music, BG_MUSIC_VOLUME)
@@ -99,6 +101,7 @@ func unload_mini_game() -> void:
 	mini_game_instance.queue_free()
 
 
+# TODO: check if this is used, remove if not
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
 	# Decide whether or not to continue the game based on the attention meter
