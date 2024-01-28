@@ -7,6 +7,8 @@ extends MiniGame
 var has_clicked : bool = false
 var clickable : bool = false
 
+static var has_played : bool = false
+
 func _ready():
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()

@@ -7,7 +7,6 @@ class_name MiniGame extends Node2D
 signal failure
 signal finished
 
-var has_played : bool = false
 @onready var tutorial : Submenu = get_node("Tutorial")
 
 enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}

@@ -10,6 +10,7 @@ var current_round = 1
 const MAX_ROUNDS = 3
 var n_missed = 0
 const MAX_MISSED = 2
+static var has_played : bool = false
 
 # Aim Bar
 @onready var aim_bar = get_node('AimPath/PathFollow/AimBar')
