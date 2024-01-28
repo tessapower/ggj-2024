@@ -11,7 +11,7 @@ script = ExtResource("1_gpjhu")
 visible = false
 text_content = "[center][b]Apple Shooting[/b][/center]
 
-[center]Apple Shooting requires excellent accuracy! Left click with the mouse on the apples on screen to try and break them all before time runs out [/center]"
+[center]Apple Shooting requires excellent accuracy! Left click with the mouse on the apples on screen to  break them. Get them all before time runs out [/center]"
 
 [node name="Progress" type="TextureProgressBar" parent="."]
 offset_left = -232.0
