@@ -90,3 +90,4 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="close_requested" from="Tutorial" to="." method="hide_tutorial"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ijtwebfk50md"
-path="res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"
+uid="uid://biuw3shlccmky"
+path="res://.godot/imported/AimBar_Round2.png-314bb0fd7d4d5e5aff75c172ef5e4af4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/King_Laughing.png"
-dest_files=["res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"]
+source_file="res://assets/graphics/AimBar_Round2.png"
+dest_files=["res://.godot/imported/AimBar_Round2.png-314bb0fd7d4d5e5aff75c172ef5e4af4.ctex"]
 
 [params]
 

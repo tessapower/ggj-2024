@@ -13,6 +13,9 @@ const ERROR_TEXT : String = "Please only use letters A - Z"
 @onready var max_len = text_entry.max_length
 @onready var regex = RegEx.new()
 
+# Sound Effects
+var cheering : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdCheering.mp3")
+
 func _ready():
 	text_entry.clear()
 	text_entry.grab_focus()
@@ -40,6 +43,8 @@ func _on_line_edit_text_submitted(new_text):
 	if new_text != "":
 		if is_text_valid(new_text):
 			# Add to the highscores
+			if cheering:
+				SoundManager.play_sound(cheering)
 			HighScoresManager.update_high_scores(new_text, GamestateManager.score)
 			# Clear the text entry field
 			text_entry.clear()

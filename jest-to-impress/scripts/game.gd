@@ -6,19 +6,28 @@ extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
-# Mini-games
-var mini_games : Array = []
-var played_games : Array = []
-var current_idx = 0
+# TODO: Maybe consider adding this to the game scene
 const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
 var attention_meter_instance : Node
 
+# Mini-games
+var mini_games : Array = []
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 const TYPING = preload("res://scenes/mini_games/typing.tscn")
+
 var mini_game_instance : Node = null
+var played_games : Array = []
+var current_idx = 0
+
+# Background Music & SFX
+@export_category("Background Music")
+@export_file var background_music_file
+var background_music : AudioStream
+const BG_MUSIC_VOLUME : float = -5.0
 
 func _ready():
+	# TODO: Maybe consider adding the attention meter to the game scene
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
@@ -29,8 +38,14 @@ func _ready():
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
 	mini_games.append(TYPING)
+	mini_games.shuffle()
 	load_mini_game(current_idx)
 	GamestateManager.reset()
+
+	# Music
+	if background_music_file:
+		background_music = load(background_music_file)
+		SoundManager.play_music_at_volume(background_music, BG_MUSIC_VOLUME)
 
 
 func _unhandled_input(event) -> void:
@@ -54,6 +69,7 @@ func unload_mini_game() -> void:
 	mini_game_instance.disconnect("finished", self.on_finished)
 	mini_game_instance.queue_free()
 
+
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
 	# Decide whether or not to continue the game based on the attention meter
@@ -72,6 +88,7 @@ func on_finished() -> void:
 	# Load the next mini-game
 	GamestateManager.increase_score()
 	next_mini_game()
+
 
 # Loads the next mini-game, if there is one, otherwise starts playing again from
 # the beginning of the list

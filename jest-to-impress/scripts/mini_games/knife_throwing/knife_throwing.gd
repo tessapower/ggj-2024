@@ -17,18 +17,34 @@ const MAX_MISSED = 2
 
 # Speed
 var direction = 1.0 # corresponds to going right
-var speed = 0.2
+var speed = 0.5
 var did_click = false
 
 # Ranges
-enum Ranges {MISSED = 0, AVERAGE, GOOD, PERFECT}
-@onready var missed = get_node("Missed")
-@onready var average = get_node("Average")
-@onready var good = get_node("Good")
-@onready var perfect = get_node("Perfect")
+@onready var range_bars : Dictionary = {
+	1: get_node("Round1"),
+	2: get_node("Round2"),
+	3: get_node("Round3")
+}
+var range_bar : Node = null
+
+# for the soundeffects
+var random = RandomNumberGenerator.new()
+
+# SFX
+@export_category("Sound Effect Files")
+@export_file var sfx_file_1
+@export_file var sfx_file_2
+var sfx = []
 
 func _ready() -> void:
 	reset()
+	# Load SFX
+	if sfx_file_1:
+		sfx.append(load(sfx_file_1))
+	if sfx_file_2:
+		sfx.append(load(sfx_file_2))
+	# Show tutorial
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
@@ -37,6 +53,7 @@ func _ready() -> void:
 # Reset the state of the mini-game
 func reset() -> void:
 	current_round = 1
+	range_bar = range_bars[current_round]
 	n_missed = 0
 
 
@@ -58,6 +75,8 @@ func _unhandled_input(event) -> void:
 	# Respond to mouse clicks anywhere in the window except for buttons
 	if event.is_action_pressed("LeftClick"):
 		did_click = true
+		# Play one of the sound effects
+		SoundManager.play_sound_with_pitch(sfx.pick_random(), randf_range(0.8, 1.2))
 		# TODO: remove this in favor of waiting on the animation
 		await get_tree().create_timer(1.0).timeout
 
@@ -73,35 +92,28 @@ func _unhandled_input(event) -> void:
 
 
 func update_attention_meter() -> void:
-	var r = get_overlapping_range()
 	# Either update score or increased the missed count
-	if r == Ranges.MISSED:
+	if range_bar.current_range == RangeBar.Ranges.MISSED:
 		# TODO: Pause for a second to show some poor knife-throwing animation
-		# TODO: play sfx
+		play_failed_sound()
 		n_missed += 1
-	#else:
+	else:
 		# TODO: Pause for a second to show some knife-throwing animation
 		# and a change to the score
-		# TODO: play sfx
+		play_success_sound()
 
-	GamestateManager.update_attention_meter(r)
-
-
-# Returns the range that the aim bar is overlapping
-func get_overlapping_range() -> Ranges:
-	var overlapping = aim_bar.get_overlapping_areas()
-	if overlapping.has(perfect):
-		return Ranges.PERFECT
-	elif overlapping.has(good):
-		return Ranges.GOOD
-	elif overlapping.has(average):
-		return Ranges.AVERAGE
-	return Ranges.MISSED
+	GamestateManager.update_attention_meter(range_bar.current_range)
 
 
 func next_round() -> void:
 	# Increase the round number
 	current_round += 1
+
+	# Replace the current range bar with the range bar for the next round
+	range_bar.queue_free()
+	range_bar = range_bars[current_round]
+	range_bar.visible = true
+
 	# Reset the aim bar position
 	# TODO: reset to either start or end, chosen at random
 	aim_bar_path.progress_ratio = 0.0

@@ -104,4 +104,5 @@ text = "Close
 "
 
 [connection signal="window_input" from="." to="." method="_on_window_input"]
-[connection signal="button_down" from="Content/Close" to="." method="_on_hide"]
+[connection signal="pressed" from="Content/Close" to="." method="_on_hide"]
+[connection signal="pressed" from="Content/Close" to="Content/Close" method="_on_pressed"]

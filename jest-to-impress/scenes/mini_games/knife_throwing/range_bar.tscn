@@ -1,19 +1,87 @@
-[gd_scene load_steps=3 format=3 uid="uid://cxny6ekgbhs4k"]
+[gd_scene load_steps=10 format=3 uid="uid://cxny6ekgbhs4k"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/knife_throwing/range_bar.gd" id="1_ma2en"]
+[ext_resource type="Texture2D" path="res://assets/graphics/AimBar_Round1.png" id="1_vka0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5gp8y"]
+resource_local_to_scene = true
+size = Vector2(5.43333, 11.3333)
 
-[node name="RangeBar" type="Area2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r70kf"]
+resource_local_to_scene = true
+size = Vector2(170, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnrm6"]
+resource_local_to_scene = true
+size = Vector2(49, 34)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6xehw"]
+resource_local_to_scene = true
+size = Vector2(48, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hfji6"]
+resource_local_to_scene = true
+size = Vector2(58, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vu1o7"]
+resource_local_to_scene = true
+size = Vector2(62, 33)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s7txe"]
+resource_local_to_scene = true
+size = Vector2(147, 32)
+
+[node name="RangeBar" type="TextureRect"]
+offset_right = 800.0
+offset_bottom = 60.0
+texture = ExtResource("1_vka0o")
 script = ExtResource("1_ma2en")
 
-[node name="CollisionShape" type="CollisionShape2D" parent="."]
+[node name="Missed" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Missed"]
+position = Vector2(133.5, 29)
 scale = Vector2(30, 3)
 shape = SubResource("RectangleShape2D_5gp8y")
-debug_color = Color(0, 0.6, 0.701961, 0.419608)
+debug_color = Color(1, 1, 1, 0.419608)
 
-[node name="Color" type="ColorRect" parent="CollisionShape"]
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
+[node name="Right" type="CollisionShape2D" parent="Missed"]
+position = Vector2(665, 28.5)
+shape = SubResource("RectangleShape2D_r70kf")
+debug_color = Color(1, 1, 1, 0.419608)
+
+[node name="Average" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Average"]
+position = Vector2(239.5, 29)
+shape = SubResource("RectangleShape2D_gnrm6")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Right" type="CollisionShape2D" parent="Average"]
+position = Vector2(556, 28.5)
+shape = SubResource("RectangleShape2D_6xehw")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Good" type="Area2D" parent="."]
+
+[node name="Left" type="CollisionShape2D" parent="Good"]
+position = Vector2(293, 29.5)
+shape = SubResource("RectangleShape2D_hfji6")
+debug_color = Color(1, 1, 0.701961, 0.419608)
+
+[node name="Right" type="CollisionShape2D" parent="Good"]
+position = Vector2(501, 28.5)
+shape = SubResource("RectangleShape2D_vu1o7")
+debug_color = Color(1, 1, 0.701961, 0.419608)
+
+[node name="Perfect" type="Area2D" parent="."]
+
+[node name="Center" type="CollisionShape2D" parent="Perfect"]
+position = Vector2(396.5, 29)
+shape = SubResource("RectangleShape2D_s7txe")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[connection signal="area_entered" from="Missed" to="." method="_on_area_entered" binds= [&"missed"]]
+[connection signal="area_entered" from="Average" to="." method="_on_area_entered" binds= [&"average"]]
+[connection signal="area_entered" from="Good" to="." method="_on_area_entered" binds= [&"good"]]
+[connection signal="area_entered" from="Perfect" to="." method="_on_area_entered" binds= [&"perfect"]]

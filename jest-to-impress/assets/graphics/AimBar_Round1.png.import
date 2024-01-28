@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ifpg5xelx75m"
-path="res://.godot/imported/King_Bored.png-e2eec9a81371aeedb162ee45162977fd.ctex"
+uid="uid://bog8x20m2nafa"
+path="res://.godot/imported/AimBar_Round1.png-dc69d806437346d667f2f4d7d0440c75.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/King_Bored.png"
-dest_files=["res://.godot/imported/King_Bored.png-e2eec9a81371aeedb162ee45162977fd.ctex"]
+source_file="res://assets/graphics/AimBar_Round1.png"
+dest_files=["res://.godot/imported/AimBar_Round1.png-dc69d806437346d667f2f4d7d0440c75.ctex"]
 
 [params]
 
