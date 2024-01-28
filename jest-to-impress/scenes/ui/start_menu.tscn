@@ -1,13 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://cr775t71eq8de"]
+[gd_scene load_steps=7 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
-[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/King_Neutral.png" id="3_vsobi"]
+[ext_resource type="Texture2D" uid="uid://cr20djc4x54m1" path="res://assets/King_Asleep.png" id="3_n8co6"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
 [ext_resource type="Script" path="res://scripts/ui/high_scores_popup.gd" id="6_fq4fe"]
-[ext_resource type="AudioStream" uid="uid://dtesbss4fj6v3" path="res://assets/audio/music/Jester rondeau.mp3" id="7_miird"]
-[ext_resource type="AudioStream" uid="uid://cagoiv01ce5gx" path="res://assets/audio/sfx/Button_press.mp3" id="8_gpcix"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
@@ -35,14 +33,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -281.0
-offset_right = 207.0
-offset_bottom = 72.0
+offset_left = -623.0
+offset_top = -342.0
+offset_right = 1297.0
+offset_bottom = 738.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.677)
-texture = ExtResource("3_vsobi")
+texture = ExtResource("3_n8co6")
 
 [node name="Content" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -235,15 +233,8 @@ theme_override_fonts/font = ExtResource("1_wqwh4")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
 
-[node name="music" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("7_miird")
-volume_db = -5.0
-
-[node name="buttonPressed" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("8_gpcix")
-
-[connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Content/Buttons/CheckBox" to="." method="_on_button_pressed"]
 [connection signal="toggled" from="Content/Buttons/CheckBox" to="." method="_on_check_box_toggled"]
 [connection signal="pressed" from="Content/Buttons/HowToPlay" to="." method="_on_submenu_opened"]
