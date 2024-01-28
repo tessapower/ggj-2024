@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dugj2k0q86hy1"]
+[gd_scene load_steps=7 format=3 uid="uid://dugj2k0q86hy1"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_lj07j"]
-[ext_resource type="Texture2D" uid="uid://b3fo2wqkwitp2" path="res://assets/graphics/SampleBackground.png" id="2_pybyx"]
+[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_ieauk"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/King_Neutral.png" id="3_1fhcv"]
 [ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
 [ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
 [ext_resource type="PackedScene" uid="uid://d2ust2kqxaike" path="res://scenes/ui/high_score_entry.tscn" id="5_piy7r"]
@@ -11,11 +12,32 @@ script = ExtResource("1_lj07j")
 background_music_file = "res://assets/audio/jingles/ Game-Over Jingel.mp3"
 click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_right = 1920.0
-offset_bottom = 1080.0
-scale = Vector2(0.599992, 0.600304)
-texture = ExtResource("2_pybyx")
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -10
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_ieauk")
+expand_mode = 1
+
+[node name="king" type="TextureRect" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -623.0
+offset_top = -342.0
+offset_right = 1297.0
+offset_bottom = 738.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.65, 0.677)
+texture = ExtResource("3_1fhcv")
 
 [node name="Content" type="VBoxContainer" parent="."]
 offset_right = 1152.0
@@ -28,6 +50,8 @@ alignment = 1
 [node name="Title" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0.709804, 0.929412, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_vcul6")
 theme_override_font_sizes/font_size = 80
 text = "Game Over"
@@ -37,6 +61,8 @@ vertical_alignment = 1
 [node name="FinalScore" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 60
 text = "Final Score: "
@@ -46,6 +72,8 @@ vertical_alignment = 1
 [node name="NewHighScore" type="Label" parent="Content"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.67451, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 40
 text = "New High Score!"
@@ -68,6 +96,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
 text = "Play Again"
@@ -82,6 +111,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
 text = "Return to Start Menu"
@@ -94,6 +124,7 @@ theme_type_variation = &"FlatButton"
 theme_override_colors/font_color = Color(0.188235, 0.568627, 0.792157, 1)
 theme_override_colors/font_pressed_color = Color(0.67451, 0, 0, 1)
 theme_override_colors/font_hover_color = Color(0.67451, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
 text = "Exit"
@@ -101,9 +132,9 @@ text = "Exit"
 [node name="HighScoreEntry" parent="." instance=ExtResource("5_piy7r")]
 visible = false
 
-[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
