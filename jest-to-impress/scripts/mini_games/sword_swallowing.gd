@@ -7,7 +7,6 @@ static var has_played : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Tutorial.connect("close_requested", self.hide_tutorial)
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
