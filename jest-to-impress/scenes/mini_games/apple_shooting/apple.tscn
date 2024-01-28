@@ -34,11 +34,12 @@ _data = [Vector2(0.0520231, 0.852941), 0.0, 0.0, 0, 0, Vector2(0.768786, 0.04411
 point_count = 2
 
 [node name="Apple" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+position = Vector2(0, 1)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_cdbta")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-rotation = -0.297867
+rotation = 0.178485
 texture = ExtResource("1_fwf7h")
 
 [node name="Area2D" type="Area2D" parent="Sprite2D"]

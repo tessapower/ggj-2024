@@ -8,7 +8,7 @@ _data = [Vector2(0.0520231, 0.852941), 0.0, 0.0, 0, 0, Vector2(0.768786, 0.04411
 point_count = 2
 
 [node name="apple_particles" type="Node2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.7, 0.7)
 script = ExtResource("1_2u2na")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]

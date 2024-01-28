@@ -41,9 +41,9 @@ func _process(delta):
 			GamestateManager.update_attention_meter(0)
 			
 	if apples.size() < 1:
-		print("Game Done")
 		on_finished()
 
 
 func _on_timer_2_timeout():
 	GamestateManager.update_attention_meter(0)
+	on_finished()
