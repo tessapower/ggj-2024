@@ -21,10 +21,14 @@ const JOKES : Dictionary = {
 var current_punchline : String = ""
 var player_input : String = ""
 
+static var has_played : bool = false
+
 func _ready():
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
+	else:
+		hide_tutorial()
 
 	start_new_joke()
 	$Progress.max_value = $Timer.wait_time

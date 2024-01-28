@@ -7,7 +7,6 @@ class_name MiniGame extends Node2D
 signal failure
 signal finished
 
-var has_played : bool = false
 @onready var tutorial : Submenu = get_node("Tutorial")
 
 enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
@@ -18,11 +17,11 @@ enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
 func show_tutorial() -> void:
 	tutorial._on_show()
-	GamestateManager.popup_window(true)
+	GamestateManager.pause_gameplay(true)
 
 
 func hide_tutorial() -> void:
-	GamestateManager.popup_window(false)
+	GamestateManager.pause_gameplay(false)
 
 
 func play_success_sound() -> void:

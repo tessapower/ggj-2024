@@ -3,9 +3,10 @@ extends "res://scripts/mini_games/mini_game.gd"
 var sword_offset
 var sword_hovered = false
 
+static var has_played : bool = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Tutorial.connect("close_requested", self.hide_tutorial)
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true

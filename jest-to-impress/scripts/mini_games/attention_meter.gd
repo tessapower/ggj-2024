@@ -5,15 +5,12 @@ extends Node2D
 #
 # Author(s): Adam Goodyear
 
-signal attentionOut
-
 @onready var progress_bar = get_node("CanvasLayer/TextureProgressBar")
 
 func _ready():
 	progress_bar.max_value = GamestateManager.ATTENTION_METER_MAX
 
-
+# Updates the visual appearance of the attention meter every frame based on the
+# attention left
 func _process(_delta):
 	progress_bar.value = GamestateManager.attention_meter.time_left
-	if GamestateManager.attention_meter.time_left <= 0:
-		emit_signal("attentionOut")

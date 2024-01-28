@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1j8htkomgdaw"]
+[gd_scene load_steps=7 format=3 uid="uid://b1j8htkomgdaw"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_gndin"]
-[ext_resource type="Texture2D" uid="uid://cr20djc4x54m1" path="res://assets/King_Asleep.png" id="3_5bad2"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/King_Neutral.png" id="3_b3qri"]
 [ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
-[ext_resource type="PackedScene" uid="uid://clofjv0gkpj67" path="res://scenes/ui/curtains.tscn" id="4_w85xl"]
+[ext_resource type="PackedScene" uid="uid://64hf4284r60k" path="res://scenes/ui/curtains.tscn" id="4_w85xl"]
+[ext_resource type="PackedScene" uid="uid://dg4xba3rimpm0" path="res://scenes/ui/attention_meter.tscn" id="5_lr4d6"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_4oclp")
@@ -35,11 +36,15 @@ offset_bottom = 738.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.677)
-texture = ExtResource("3_5bad2")
+texture = ExtResource("3_b3qri")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="PausePopup" parent="." instance=ExtResource("3_prf1w")]
 visible = false
 
-[node name="curtains" parent="." instance=ExtResource("4_w85xl")]
+[node name="Curtains" parent="." instance=ExtResource("4_w85xl")]
+
+[node name="AttentionMeter" parent="." instance=ExtResource("5_lr4d6")]
+
+[connection signal="curtains_down" from="Curtains" to="." method="_on_curtains_down"]

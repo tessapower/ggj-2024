@@ -10,6 +10,7 @@ var current_round = 1
 const MAX_ROUNDS = 3
 var n_missed = 0
 const MAX_MISSED = 2
+static var has_played : bool = false
 
 # Aim Bar
 @onready var aim_bar = get_node('AimPath/PathFollow/AimBar')
@@ -28,14 +29,11 @@ var did_click = false
 }
 var range_bar : Node = null
 
-# for the soundeffects
-var random = RandomNumberGenerator.new()
-
 # SFX
 @export_category("Sound Effect Files")
 @export_file var sfx_file_1
 @export_file var sfx_file_2
-var sfx = []
+var sfx : Array[AudioStream] = []
 
 func _ready() -> void:
 	reset()
@@ -44,10 +42,13 @@ func _ready() -> void:
 		sfx.append(load(sfx_file_1))
 	if sfx_file_2:
 		sfx.append(load(sfx_file_2))
+
 	# Show tutorial
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
 		has_played = true
+	else:
+		hide_tutorial()
 
 
 # Reset the state of the mini-game

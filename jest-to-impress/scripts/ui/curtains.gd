@@ -1,14 +1,12 @@
 extends Node2D
 
-signal curtainsDown
+signal curtains_down
 
-func _beginAnimation():
-	GamestateManager.pause()
+func _begin_animation():
+	# Pause gameplay (but not the music) while the curtains animation plays
+	GamestateManager.pause_gameplay(true)
 	$AnimationPlayer.play("Transition")
 
-func _curtainsDown():
-	emit_signal("curtainsDown")
 
-func _finishedAnimation():
-	if !GamestateManager.show_tutorials:
-		GamestateManager.resume()
+func _curtains_down():
+	emit_signal("curtains_down")

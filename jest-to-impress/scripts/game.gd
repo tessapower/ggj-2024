@@ -13,10 +13,6 @@ const king_laughing = preload("res://assets/King_Laughing.png")
 const king_neutral = preload("res://assets/King_Neutral.png")
 const king_pleased = preload("res://assets/King_Pleased.png")
 
-# TODO: Maybe consider adding this to the game scene
-const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
-var attention_meter_instance : Node
-
 # Mini-games
 var mini_games : Array = []
 const APPLE_SHOOTING = preload("res://scenes/mini_games/apple_shooting/apple_shooting.tscn")
@@ -39,13 +35,6 @@ var background_music : AudioStream
 const BG_MUSIC_VOLUME : float = -5.0
 
 func _ready():
-	# TODO: Maybe consider adding the attention meter to the game scene
-	attention_meter_instance = attention_meter.instantiate()
-	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
-	add_child(attention_meter_instance)
-
-	$curtains.connect("curtainsDown", self.on_curtains_down)
-
 	# TODO: add mini-games here!
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
@@ -55,9 +44,8 @@ func _ready():
 	mini_games.shuffle()
 	generate_round()
 	load_mini_game(current_idx)
-	GamestateManager.reset()
 
-	# Music
+	# Setup and start the background music
 	if background_music_file:
 		background_music = load(background_music_file)
 		SoundManager.play_music_at_volume(background_music, BG_MUSIC_VOLUME)
@@ -105,6 +93,7 @@ func unload_mini_game() -> void:
 	mini_game_instance.queue_free()
 
 
+# TODO: check if this is used, remove if not
 # A callback function intended to be called by a mini-game when the player loses
 func on_failure() -> void:
 	# Decide whether or not to continue the game based on the attention meter
@@ -128,10 +117,11 @@ func on_finished() -> void:
 # Loads the next mini-game, if there is one, otherwise starts playing again from
 # the beginning of the list
 func next_mini_game() -> void:
-	$curtains._beginAnimation()
+	$Curtains._begin_animation()
 
 
-func on_curtains_down() -> void:
+
+func _on_curtains_down() -> void:
 	# Remove current mini-game from the scene
 	unload_mini_game()
 	# Move on to the next mini-game, if there is one, otherwise start a new
