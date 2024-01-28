@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://bdiuluqbtepqw"]
+
+[ext_resource type="Script" path="res://scripts/mini_games/apple_shooting/apple_particles.gd" id="1_2u2na"]
+[ext_resource type="Texture2D" uid="uid://cnopb44f3jfrl" path="res://assets/graphics/AppleChunk.png" id="2_khjml"]
+
+[sub_resource type="Curve" id="Curve_hell0"]
+_data = [Vector2(0.0520231, 0.852941), 0.0, 0.0, 0, 0, Vector2(0.768786, 0.0441177), -3.07972, 0.0, 0, 0]
+point_count = 2
+
+[node name="apple_particles" type="Node2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_2u2na")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1, 0)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("2_khjml")
+emission_shape = 1
+emission_sphere_radius = 58.75
+direction = Vector2(0, 0)
+spread = 91.23
+initial_velocity_max = 200.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_hell0")
+
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]

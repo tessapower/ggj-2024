@@ -29,7 +29,7 @@ scale = Vector2(0.172185, 0.176366)
 texture = ExtResource("3_tt132")
 metadata/_edit_use_anchors_ = true
 
-[node name="setup" type="RichTextLabel" parent="."]
+[node name="Setup" type="RichTextLabel" parent="."]
 offset_left = -233.0
 offset_top = 12.0
 offset_right = 217.0
@@ -45,7 +45,7 @@ scroll_active = false
 autowrap_mode = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="punchline" type="RichTextLabel" parent="."]
+[node name="Punchline" type="RichTextLabel" parent="."]
 offset_left = -233.0
 offset_top = 115.0
 offset_right = 217.0
@@ -82,8 +82,6 @@ visible = false
 text_content = "[center][b]Telling Jokes[/b][/center]
 
 [center]When telling jokes, timing is key! Type the punch line to the joke as fast as you can before the timer runs out.[/center]"
-
-[node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="TextureRect3" type="TextureRect" parent="."]
 offset_right = 40.0

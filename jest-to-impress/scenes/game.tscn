@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_gndin"]
-[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/King_Neutral.png" id="3_da7vg"]
 [ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
 [ext_resource type="PackedScene" uid="uid://clofjv0gkpj67" path="res://scenes/ui/curtains.tscn" id="4_w85xl"]
 
