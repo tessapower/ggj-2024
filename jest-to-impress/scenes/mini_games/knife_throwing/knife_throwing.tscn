@@ -817,6 +817,7 @@ position = Vector2(395, -18)
 scale = Vector2(0.4, 0.4)
 sprite_frames = SubResource("SpriteFrames_g30di")
 animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="Gnome" type="AnimatedSprite2D" parent="."]
 position = Vector2(-96.9999, -18)
