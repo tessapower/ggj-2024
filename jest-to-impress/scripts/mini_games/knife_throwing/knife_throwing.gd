@@ -29,14 +29,11 @@ var did_click = false
 }
 var range_bar : Node = null
 
-# for the soundeffects
-var random = RandomNumberGenerator.new()
-
 # SFX
 @export_category("Sound Effect Files")
 @export_file var sfx_file_1
 @export_file var sfx_file_2
-var sfx = []
+var sfx : Array[AudioStream] = []
 
 func _ready() -> void:
 	reset()
