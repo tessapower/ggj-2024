@@ -3,9 +3,9 @@ extends MiniGame
 const APPLE = preload("res://scenes/mini_games/apple_shooting/apple.tscn")
 
 var apples : Array = []
-
 var rng = RandomNumberGenerator.new()
-# Called when the node enters the scene tree for the first time.
+static var has_played : bool = false
+
 func _ready():
 	$Tutorial.connect("close_requested", self.hide_tutorial)
 	if GamestateManager.show_tutorials and not has_played:
