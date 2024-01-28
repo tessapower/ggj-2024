@@ -211,9 +211,21 @@ text = "Credits"
 
 [node name="Submenu" parent="Content/Buttons/Credits" instance=ExtResource("4_w43ci")]
 visible = false
-text_content = "Artwork: Timothy Green
-Music & SFX: Josef Schultewolter
-Programmers: Adam Goodyear, Tessa Power"
+text_content = "[center][b]Credits[/b][/center]
+[center]ORIGINAL ARTWORK:
+Adam Goodyear, Timothy Green
+
+MUSIC & SFX:
+Josef Schultewolter
+
+PROGRAMMING:
+Adam Goodyear, Tessa Power
+
+FONTS:
+Aniron font by Pete Klassen
+Carta Magna font by deFharo Pro Fonts
+Prince Valiant font by Dieter Steffmann
+[/center]"
 
 [node name="Exit" type="Button" parent="Content/Buttons"]
 layout_mode = 2
