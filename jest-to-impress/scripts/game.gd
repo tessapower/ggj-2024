@@ -19,6 +19,7 @@ var attention_meter_instance : Node
 
 # Mini-games
 var mini_games : Array = []
+const APPLE_SHOOTING = preload("res://scenes/mini_games/apple_shooting/apple_shooting.tscn")
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 const TYPING = preload("res://scenes/mini_games/typing.tscn")
@@ -49,6 +50,7 @@ func _ready():
 	mini_games.append(JUGGLING)
 	mini_games.append(KNIFE_THROWING)
 	mini_games.append(TYPING)
+	mini_games.append(APPLE_SHOOTING)
 	mini_games.append(SWORD_SWALLOWING)
 	mini_games.shuffle()
 	generate_round()

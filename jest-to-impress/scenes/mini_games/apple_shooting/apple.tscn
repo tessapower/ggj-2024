@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bewx8bkxe04ws"]
+
+[ext_resource type="Script" path="res://scripts/mini_games/apple_shooting/apple.gd" id="1_cdbta"]
+[ext_resource type="Texture2D" uid="uid://ijnf0x17fv28" path="res://assets/graphics/Apple.png" id="1_fwf7h"]
+[ext_resource type="Texture2D" uid="uid://cnopb44f3jfrl" path="res://assets/graphics/AppleChunk.png" id="3_hnml3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5wj2u"]
+radius = 45.0111
+
+[sub_resource type="Animation" id="Animation_ps8sm"]
+resource_name = "slight_wobble"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.349066, -0.349066, 0.349066]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e5jbi"]
+_data = {
+"slight_wobble": SubResource("Animation_ps8sm")
+}
+
+[sub_resource type="Curve" id="Curve_kn5br"]
+_data = [Vector2(0.0520231, 0.852941), 0.0, 0.0, 0, 0, Vector2(0.768786, 0.0441177), -3.07972, 0.0, 0, 0]
+point_count = 2
+
+[node name="Apple" type="Node2D"]
+position = Vector2(0, 1)
+scale = Vector2(0.7, 0.7)
+script = ExtResource("1_cdbta")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.178485
+texture = ExtResource("1_fwf7h")
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(0, 3)
+shape = SubResource("CircleShape2D_5wj2u")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_e5jbi")
+}
+autoplay = "slight_wobble"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(1, 0)
+emitting = false
+amount = 20
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("3_hnml3")
+emission_shape = 1
+emission_sphere_radius = 58.75
+direction = Vector2(0, 0)
+spread = 91.23
+initial_velocity_max = 200.0
+angle_max = 360.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+scale_amount_curve = SubResource("Curve_kn5br")
+
+[connection signal="mouse_entered" from="Sprite2D/Area2D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Sprite2D/Area2D" to="." method="_on_mouse_exited"]
+[connection signal="finished" from="CPUParticles2D" to="." method="_on_cpu_particles_2d_finished"]
