@@ -15,7 +15,10 @@ func _ready():
 func scores_to_list(scores : Array) -> String:
 	if scores.is_empty(): return EMPTY_TEXT
 
-	var list = ""
+	var list = "[center][b]Highscores[/b][/center][center]"
 	for score in scores:
 		list += score[0] + " \t " + str(score[1]) + "\n"
+
+	list += "[/center]"
+
 	return list

@@ -1,7 +1,8 @@
-[gd_scene load_steps=175 format=3 uid="uid://breroar7ddmc8"]
+[gd_scene load_steps=176 format=3 uid="uid://breroar7ddmc8"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/knife_throwing/knife_throwing.gd" id="1_g8mqh"]
 [ext_resource type="PackedScene" uid="uid://cxny6ekgbhs4k" path="res://scenes/mini_games/knife_throwing/range_bar.tscn" id="1_q3173"]
+[ext_resource type="Texture2D" uid="uid://c1fftila8wuwr" path="res://assets/graphics/Knife.png" id="2_qqlxd"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="3_gnbih"]
 [ext_resource type="Texture2D" uid="uid://biuw3shlccmky" path="res://assets/graphics/AimBar_Round2.png" id="4_gvusj"]
 [ext_resource type="Texture2D" uid="uid://dqpe3drogogmm" path="res://assets/graphics/AimBar_Round3.png" id="4_tejh0"]
@@ -711,19 +712,13 @@ z_index = 4
 scale = Vector2(0.3, 4)
 shape = SubResource("RectangleShape2D_xjvk2")
 
-[node name="ColorRect" type="ColorRect" parent="AimPath/PathFollow/AimBar/CollisionShape"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.0
-offset_top = -10.0
-offset_right = 10.0
-offset_bottom = 10.0
-grow_horizontal = 2
-grow_vertical = 2
-metadata/_edit_use_anchors_ = true
+[node name="TextureRect" type="TextureRect" parent="AimPath/PathFollow/AimBar"]
+offset_left = -19.9351
+offset_top = -45.0288
+offset_right = 20.0649
+offset_bottom = 41.6379
+texture = ExtResource("2_qqlxd")
+expand_mode = 5
 
 [node name="Round1" parent="." instance=ExtResource("1_q3173")]
 use_parent_material = true
