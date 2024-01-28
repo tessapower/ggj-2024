@@ -80,11 +80,10 @@ func resume() -> void:
 	SoundManager.resume_music()
 
 
-# Halts gameplay while a popup window is shown, but does not play pause/resume
-# sound effects
-func popup_window(is_showing : bool) -> void:
-	is_paused = is_showing
-	get_tree().paused = is_showing
+# Halts gameplay but does not stop the music
+func pause_gameplay(paused : bool) -> void:
+	is_paused = paused
+	get_tree().paused = paused
 
 
 # Updates the attention meter given the player's performance in a mini-game.
