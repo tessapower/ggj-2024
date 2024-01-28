@@ -6,6 +6,13 @@ extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
+#King States
+const king_asleep = preload("res://assets/King_Asleep.png")
+const king_bored = preload("res://assets/King_Bored.png")
+const king_laughing = preload("res://assets/King_Laughing.png")
+const king_neutral = preload("res://assets/King_Neutral.png")
+const king_pleased = preload("res://assets/King_Pleased.png")
+
 # TODO: Maybe consider adding this to the game scene
 const attention_meter = preload("res://scenes/ui/attention_meter.tscn")
 var attention_meter_instance : Node
@@ -16,6 +23,10 @@ const APPLE_SHOOTING = preload("res://scenes/mini_games/apple_shooting/apple_sho
 const JUGGLING = preload("res://scenes/mini_games/juggling.tscn")
 const KNIFE_THROWING = preload("res://scenes/mini_games/knife_throwing/knife_throwing.tscn")
 const TYPING = preload("res://scenes/mini_games/typing.tscn")
+const SWORD_SWALLOWING = preload("res://scenes/mini_games/sword_swallowing.tscn")
+
+# Mini-games to play this round
+var current_round : Array = []
 
 var mini_game_instance : Node = null
 var played_games : Array = []
@@ -32,7 +43,7 @@ func _ready():
 	attention_meter_instance = attention_meter.instantiate()
 	attention_meter_instance.connect("attentionOut", GamestateManager.end_game)
 	add_child(attention_meter_instance)
-	
+
 	$curtains.connect("curtainsDown", self.on_curtains_down)
 
 	# TODO: add mini-games here!
@@ -40,7 +51,9 @@ func _ready():
 	mini_games.append(KNIFE_THROWING)
 	mini_games.append(TYPING)
 	mini_games.append(APPLE_SHOOTING)
+	mini_games.append(SWORD_SWALLOWING)
 	mini_games.shuffle()
+	generate_round()
 	load_mini_game(current_idx)
 	GamestateManager.reset()
 
@@ -50,16 +63,36 @@ func _ready():
 		SoundManager.play_music_at_volume(background_music, BG_MUSIC_VOLUME)
 
 
+func _process(_delta):
+	if GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 4):
+		$CanvasLayer/king.texture = king_laughing
+	elif GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 3):
+		$CanvasLayer/king.texture = king_pleased
+	elif GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 2):
+		$CanvasLayer/king.texture = king_neutral
+	elif GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5):
+		$CanvasLayer/king.texture = king_bored
+	else:
+		$CanvasLayer/king.texture = king_asleep
+
+
 func _unhandled_input(event) -> void:
 	if event.is_action_pressed("Pause"):
 		$PausePopup.show()
 		GamestateManager.pause()
 
 
+func generate_round():
+	current_round.clear()
+	mini_games.shuffle()
+	for i in range(0,3):
+		current_round.append(mini_games[i])
+
+
 # Loads the mini-game at the given index and hooks it up to the appropriate
 # callback functions
 func load_mini_game(idx : int) -> void:
-	var mini_game = mini_games[idx]
+	var mini_game = current_round[idx]
 	mini_game_instance = mini_game.instantiate()
 	mini_game_instance.connect("finished", self.on_finished)
 	add_child(mini_game_instance)
@@ -97,13 +130,15 @@ func on_finished() -> void:
 func next_mini_game() -> void:
 	$curtains._beginAnimation()
 
+
 func on_curtains_down() -> void:
 	# Remove current mini-game from the scene
 	unload_mini_game()
 	# Move on to the next mini-game, if there is one, otherwise start a new
 	# round from the beginning with increased speed!
 	current_idx += 1
-	if current_idx == mini_games.size():
+	if current_idx == current_round.size():
+		generate_round()
 		GamestateManager.next_round()
 		current_idx = 0
 
