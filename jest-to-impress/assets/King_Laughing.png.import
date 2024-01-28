@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bfidblon5xxvi"
-path="res://.godot/imported/King_Pleased.png-1a4396c2683ec6137d757ed809d2bc71.ctex"
+uid="uid://ijtwebfk50md"
+path="res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/King_Pleased.png"
-dest_files=["res://.godot/imported/King_Pleased.png-1a4396c2683ec6137d757ed809d2bc71.ctex"]
+source_file="res://assets/King_Laughing.png"
+dest_files=["res://.godot/imported/King_Laughing.png-5bf7ef5fe0f66b04d63e5013737bb9bd.ctex"]
 
 [params]
 

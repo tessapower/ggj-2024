@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://b1j8htkomgdaw"]
+[gd_scene load_steps=6 format=3 uid="uid://b1j8htkomgdaw"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_4oclp"]
 [ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_gndin"]
-[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/King_Neutral.png" id="3_da7vg"]
+[ext_resource type="Texture2D" uid="uid://cr20djc4x54m1" path="res://assets/King_Asleep.png" id="3_5bad2"]
 [ext_resource type="PackedScene" uid="uid://dagqkuuipwjlv" path="res://scenes/ui/pause.tscn" id="3_prf1w"]
 [ext_resource type="PackedScene" uid="uid://clofjv0gkpj67" path="res://scenes/ui/curtains.tscn" id="4_w85xl"]
 
@@ -28,13 +28,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -101.0
-offset_top = -281.0
-offset_right = 207.0
-offset_bottom = 72.0
+offset_left = -623.0
+offset_top = -342.0
+offset_right = 1297.0
+offset_bottom = 738.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.65, 0.677)
+texture = ExtResource("3_5bad2")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
