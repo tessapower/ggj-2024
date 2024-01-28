@@ -32,12 +32,10 @@ func _process(delta):
 		var hit = false
 		for i in range(apples.size() -1, -1, -1):
 			if apples[i] != null and apples[i].mouseDetected:
-				print("hit")
 				hit = true
 				apples[i].destroy_apple()
 				apples.remove_at(i)
 		if !hit:
-			print("missed")
 			GamestateManager.update_attention_meter(0)
 			
 	if apples.size() < 1:
