@@ -42,6 +42,7 @@ func _ready() -> void:
 		sfx.append(load(sfx_file_1))
 	if sfx_file_2:
 		sfx.append(load(sfx_file_2))
+
 	# Show tutorial
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
