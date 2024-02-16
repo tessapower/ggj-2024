@@ -1,17 +1,17 @@
 [gd_scene load_steps=8 format=3 uid="uid://cr775t71eq8de"]
 
 [ext_resource type="Script" path="res://scripts/ui/start_menu.gd" id="1_iq0sx"]
-[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
-[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_0pe6g"]
-[ext_resource type="Texture2D" uid="uid://cr20djc4x54m1" path="res://assets/King_Asleep.png" id="3_n8co6"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_wqwh4"]
+[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/ui/background.png" id="2_0pe6g"]
+[ext_resource type="Texture2D" uid="uid://cr20djc4x54m1" path="res://assets/graphics/king/king_asleep.png" id="3_n8co6"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="4_w43ci"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="5_hsqke"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/fonts/PrinceValiant/PrinceValiant.ttf" id="5_hsqke"]
 [ext_resource type="Script" path="res://scripts/ui/high_scores_popup.gd" id="6_fq4fe"]
 
 [node name="StartMenu" type="CanvasLayer"]
 script = ExtResource("1_iq0sx")
-background_music_file = "res://assets/audio/music/Jester rondeau.mp3"
-click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
+background_music_file = "res://assets/audio/music/jester_rondeau.mp3"
+click_sound_file = "res://assets/audio/sfx/ui/button_pressed.mp3"
 
 [node name="TextureRect" type="TextureRect" parent="."]
 anchors_preset = 8

@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://2rcfvap5gob1"
-path="res://.godot/imported/anirm___.ttf-365f56bfc8187200828ec39da48922c6.fontdata"
+path="res://.godot/imported/anirm___.ttf-054c197146efbd6de91d762e63dd9661.fontdata"
 
 [deps]
 
-source_file="res://assets/graphics/Fonts/Aniron/anirm___.ttf"
-dest_files=["res://.godot/imported/anirm___.ttf-365f56bfc8187200828ec39da48922c6.fontdata"]
+source_file="res://assets/graphics/fonts/Aniron/anirm___.ttf"
+dest_files=["res://.godot/imported/anirm___.ttf-054c197146efbd6de91d762e63dd9661.fontdata"]
 
 [params]
 

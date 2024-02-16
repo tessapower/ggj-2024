@@ -6,12 +6,14 @@ extends Node2D
 #
 # Author(s): Adam Goodyear, Tessa Power
 
-#King States
-const king_asleep = preload("res://assets/King_Asleep.png")
-const king_bored = preload("res://assets/King_Bored.png")
-const king_laughing = preload("res://assets/King_Laughing.png")
-const king_neutral = preload("res://assets/King_Neutral.png")
-const king_pleased = preload("res://assets/King_Pleased.png")
+
+# King States
+# TODO: turn this into a dictionary
+const king_asleep = preload("res://assets/graphics/king/king_asleep.png")
+const king_bored = preload("res://assets/graphics/king/king_bored.png")
+const king_laughing = preload("res://assets/graphics/king/king_laugh.png")
+const king_neutral = preload("res://assets/graphics/king/king_neutral.png")
+const king_pleased = preload("res://assets/graphics/king/king_pleased.png")
 
 # Mini-games
 var mini_games : Array = []

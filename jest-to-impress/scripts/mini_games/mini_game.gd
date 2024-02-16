@@ -12,8 +12,8 @@ signal finished
 enum Rating {FAILED = 0, AVERAGE, GOOD, PERFECT}
 
 # SFX
-@onready var good_sound: AudioStream = load("res://assets/audio/sfx/DoneSomething/Done_Something Right.mp3")
-@onready var bad_sound: AudioStream = load("res://assets/audio/sfx/DoneSomething/DoneSomethingWrong.mp3")
+@onready var good_sound: AudioStream = load("res://assets/audio/sfx/player_feedback/done_something_right.mp3")
+@onready var bad_sound: AudioStream = load("res://assets/audio/sfx/player_feedback/done_something_wrong.mp3")
 
 func show_tutorial() -> void:
 	tutorial._on_show()

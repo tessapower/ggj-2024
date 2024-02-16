@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://64hf4284r60k"]
 
 [ext_resource type="Script" path="res://scripts/ui/curtains.gd" id="1_3q2sf"]
-[ext_resource type="Texture2D" uid="uid://7a4g2geujhrk" path="res://assets/graphics/Curtain.png" id="1_p203o"]
+[ext_resource type="Texture2D" uid="uid://7a4g2geujhrk" path="res://assets/graphics/ui/curtain.png" id="1_p203o"]
 
 [sub_resource type="Animation" id="Animation_o5s15"]
 resource_name = "Transition"

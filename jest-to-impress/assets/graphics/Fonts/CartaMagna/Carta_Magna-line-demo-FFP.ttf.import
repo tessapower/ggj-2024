@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://xc3r2otv1jqa"
-path="res://.godot/imported/Carta_Magna-line-demo-FFP.ttf-c4fc609453a9035072f0d1c6a6f08296.fontdata"
+path="res://.godot/imported/Carta_Magna-line-demo-FFP.ttf-63727914628ee657fec1157458753430.fontdata"
 
 [deps]
 
-source_file="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf"
-dest_files=["res://.godot/imported/Carta_Magna-line-demo-FFP.ttf-c4fc609453a9035072f0d1c6a6f08296.fontdata"]
+source_file="res://assets/graphics/fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf"
+dest_files=["res://.godot/imported/Carta_Magna-line-demo-FFP.ttf-63727914628ee657fec1157458753430.fontdata"]
 
 [params]
 

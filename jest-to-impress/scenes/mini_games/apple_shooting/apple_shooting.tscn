@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/mini_games/apple_shooting/apple_shooting.gd" id="1_gpjhu"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="2_rohhc"]
-[ext_resource type="Texture2D" uid="uid://bh5cl0wefkbae" path="res://assets/graphics/RopeBar_Smaller.png" id="3_bp4qj"]
-[ext_resource type="PackedScene" uid="uid://reol4y1d7tvr" path="res://scenes/mini_games/apple_shooting/jester_bow.tscn" id="4_l270q"]
+[ext_resource type="Texture2D" uid="uid://bh5cl0wefkbae" path="res://assets/graphics/ui/rope_bar_smaller.png" id="3_bp4qj"]
+[ext_resource type="PackedScene" path="res://scenes/mini_games/apple_shooting/jester_bow.tscn" id="4_l270q"]
 
 [node name="AppleShooting" type="Node2D"]
 script = ExtResource("1_gpjhu")

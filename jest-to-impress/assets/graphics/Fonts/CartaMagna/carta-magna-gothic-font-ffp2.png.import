@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dy2l5bdthcpl"
-path="res://.godot/imported/carta-magna-gothic-font-ffp2.png-61666227af54b167503306cf8b0261cc.ctex"
+path="res://.godot/imported/carta-magna-gothic-font-ffp2.png-12a518acc21c24af2ff8987f6944a79c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/graphics/Fonts/CartaMagna/carta-magna-gothic-font-ffp2.png"
-dest_files=["res://.godot/imported/carta-magna-gothic-font-ffp2.png-61666227af54b167503306cf8b0261cc.ctex"]
+source_file="res://assets/graphics/fonts/CartaMagna/carta-magna-gothic-font-ffp2.png"
+dest_files=["res://.godot/imported/carta-magna-gothic-font-ffp2.png-12a518acc21c24af2ff8987f6944a79c.ctex"]
 
 [params]
 

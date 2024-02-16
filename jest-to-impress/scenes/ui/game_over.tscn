@@ -1,16 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://dugj2k0q86hy1"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_lj07j"]
-[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_ieauk"]
-[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/King_Neutral.png" id="3_1fhcv"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
-[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
+[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/ui/background.png" id="2_ieauk"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/king/king_neutral.png" id="3_1fhcv"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
 [ext_resource type="PackedScene" uid="uid://d2ust2kqxaike" path="res://scenes/ui/high_score_entry.tscn" id="5_piy7r"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_lj07j")
-background_music_file = "res://assets/audio/jingles/ Game-Over Jingel.mp3"
-click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
+background_music_file = "res://assets/audio/music/jingles/game_over_jingle.mp3"
+click_sound_file = "res://assets/audio/sfx/ui/button_pressed.mp3"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10

@@ -14,7 +14,7 @@ const ERROR_TEXT : String = "Please only use letters A - Z"
 @onready var regex = RegEx.new()
 
 # Sound Effects
-var cheering : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdCheering.mp3")
+var cheering : AudioStream = load("res://assets/audio/sfx/booing_and_cheering/crowd_cheering.mp3")
 
 func _ready():
 	text_entry.clear()
