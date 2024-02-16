@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dg4xba3rimpm0"]
 
-[ext_resource type="Script" path="res://scripts/mini_games/attention_meter.gd" id="1_gxdww"]
-[ext_resource type="Texture2D" uid="uid://cix00xtm3n5l4" path="res://assets/graphics/AttentionBar.png" id="2_hcn2c"]
+[ext_resource type="Script" path="res://scripts/ui/attention_meter.gd" id="1_gxdww"]
+[ext_resource type="Texture2D" uid="uid://cix00xtm3n5l4" path="res://assets/graphics/ui/attention_bar.png" id="2_hcn2c"]
 
 [node name="AttentionMeter" type="Node2D"]
 script = ExtResource("1_gxdww")

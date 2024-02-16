@@ -1,5 +1,10 @@
 extends Node2D
 
+## curtains.gd: This script manages the curtains that are lowered and raised
+##              in between mini-games.
+##
+## Author(s): Adam Goodyear
+
 signal curtains_down
 
 func _begin_animation():

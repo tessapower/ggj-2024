@@ -1,16 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://dugj2k0q86hy1"]
+[gd_scene load_steps=12 format=3 uid="uid://dugj2k0q86hy1"]
 
 [ext_resource type="Script" path="res://scripts/ui/game_over.gd" id="1_lj07j"]
-[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/Background.png" id="2_ieauk"]
-[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/King_Neutral.png" id="3_1fhcv"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
-[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
+[ext_resource type="Texture2D" uid="uid://d5yjt1b3bha5" path="res://assets/graphics/ui/background.png" id="2_ieauk"]
+[ext_resource type="Texture2D" uid="uid://bx1rw2ieaal8i" path="res://assets/graphics/king/king_neutral.png" id="3_1fhcv"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/fonts/PrinceValiant/PrinceValiant.ttf" id="3_01sk1"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="3_vcul6"]
 [ext_resource type="PackedScene" uid="uid://d2ust2kqxaike" path="res://scenes/ui/high_score_entry.tscn" id="5_piy7r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jdha1"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qgjag"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_7gjin"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tme30"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n682f"]
 
 [node name="GameOver" type="Node2D"]
 script = ExtResource("1_lj07j")
-background_music_file = "res://assets/audio/jingles/ Game-Over Jingel.mp3"
-click_sound_file = "res://assets/audio/sfx/Button_press.mp3"
+background_music_file = "res://assets/audio/music/jingles/game_over_jingle.mp3"
+click_sound_file = "res://assets/audio/sfx/ui/button_pressed.mp3"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -10
@@ -84,6 +94,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="PlayAgain" type="Button" parent="Content/Buttons"]
@@ -99,6 +110,11 @@ theme_override_colors/font_hover_color = Color(0.878431, 0.298039, 0.298039, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jdha1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qgjag")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7gjin")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tme30")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n682f")
 text = "Play Again"
 
 [node name="ReturnToStart" type="Button" parent="Content/Buttons"]
@@ -114,6 +130,11 @@ theme_override_colors/font_hover_color = Color(0.878431, 0.298039, 0.298039, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jdha1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qgjag")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7gjin")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tme30")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n682f")
 text = "Return to Start Menu"
 
 [node name="Exit" type="Button" parent="Content/Buttons"]
@@ -131,6 +152,11 @@ theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("3_01sk1")
 theme_override_font_sizes/font_size = 38
+theme_override_styles/normal = SubResource("StyleBoxEmpty_jdha1")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_qgjag")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_7gjin")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_tme30")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_n682f")
 text = "Exit"
 
 [node name="HighScoreEntry" parent="." instance=ExtResource("5_piy7r")]
@@ -140,5 +166,5 @@ visible = false
 [connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]

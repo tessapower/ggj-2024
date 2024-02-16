@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://bewx8bkxe04ws"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/apple_shooting/apple.gd" id="1_cdbta"]
-[ext_resource type="Texture2D" uid="uid://ijnf0x17fv28" path="res://assets/graphics/Apple.png" id="1_fwf7h"]
-[ext_resource type="Texture2D" uid="uid://cnopb44f3jfrl" path="res://assets/graphics/AppleChunk.png" id="3_hnml3"]
+[ext_resource type="Texture2D" uid="uid://ijnf0x17fv28" path="res://assets/graphics/apple_shooting/apple.png" id="1_fwf7h"]
+[ext_resource type="Texture2D" uid="uid://cnopb44f3jfrl" path="res://assets/graphics/apple_shooting/apple_chunk.png" id="3_hnml3"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wj2u"]
 radius = 45.0111

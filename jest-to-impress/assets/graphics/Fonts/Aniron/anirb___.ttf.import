@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dao4lk1xb6owj"
-path="res://.godot/imported/anirb___.ttf-e6d98efb6d077d370553f316df383700.fontdata"
+path="res://.godot/imported/anirb___.ttf-f2d684a7489f8167109c15e53110e3a8.fontdata"
 
 [deps]
 
-source_file="res://assets/graphics/Fonts/Aniron/anirb___.ttf"
-dest_files=["res://.godot/imported/anirb___.ttf-e6d98efb6d077d370553f316df383700.fontdata"]
+source_file="res://assets/graphics/fonts/Aniron/anirb___.ttf"
+dest_files=["res://.godot/imported/anirb___.ttf-f2d684a7489f8167109c15e53110e3a8.fontdata"]
 
 [params]
 

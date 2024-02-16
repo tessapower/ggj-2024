@@ -1,5 +1,10 @@
 extends Node2D
 
+## apple.gd: Handles detecting if the player has clicked on an apple, and if
+##           so, explodes it!
+##
+## Author(s): Adam Goodyear
+
 var mouse_detected = false
 const PARTICLES = preload("res://scenes/mini_games/apple_shooting/apple_particles.tscn")
 

@@ -1,9 +1,9 @@
 extends MiniGame
 
-# knife_throwing.gd: This script contains the code for the knife-throwing
-#                    mini-game.
-#
-# Author(s): Tessa Power
+## knife_throwing.gd: This script contains the code for the knife-throwing
+##                    mini-game.
+##
+## Author(s): Tessa Power
 
 # Mini-game State
 var current_round = 1

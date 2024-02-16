@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://dycxgvkx8y81j"]
 
 [ext_resource type="Script" path="res://scripts/mini_games/sword_swallowing.gd" id="1_qsmtj"]
-[ext_resource type="Texture2D" uid="uid://cd027twlfcwkh" path="res://assets/graphics/person_first_half.png" id="2_buklk"]
-[ext_resource type="Texture2D" uid="uid://cpe2a0dl1hrq4" path="res://assets/graphics/person_second_half.png" id="3_3cc02"]
-[ext_resource type="Texture2D" uid="uid://dgdna6r8sqirc" path="res://assets/graphics/Sword.png" id="4_uwae8"]
+[ext_resource type="Texture2D" uid="uid://cd027twlfcwkh" path="res://assets/graphics/sword_swallowing/person_first_half.png" id="2_buklk"]
+[ext_resource type="Texture2D" uid="uid://cpe2a0dl1hrq4" path="res://assets/graphics/sword_swallowing/person_second_half.png" id="3_3cc02"]
+[ext_resource type="Texture2D" uid="uid://dgdna6r8sqirc" path="res://assets/graphics/sword_swallowing/sword.png" id="4_plgcv"]
 [ext_resource type="PackedScene" uid="uid://bcb2f8o11jadh" path="res://scenes/ui/submenu.tscn" id="5_ynnyw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81lca"]
@@ -47,7 +47,7 @@ shape = SubResource("RectangleShape2D_pffmh")
 [node name="sword" type="Sprite2D" parent="Node2D"]
 position = Vector2(-40.1614, -900.461)
 scale = Vector2(0.9, 0.9)
-texture = ExtResource("4_uwae8")
+texture = ExtResource("4_plgcv")
 
 [node name="Area2D" type="Area2D" parent="Node2D/sword"]
 

@@ -1,9 +1,9 @@
 extends Node
 
-# game_over.gd: This script displays the player's final score on game over and
-#               responding to the player clicking any of the navigation buttons.
-#
-# Author(s): Tessa Power
+## game_over.gd: This script displays the player's final score on game over and
+##               responding to the player clicking any of the navigation buttons.
+##
+## Author(s): Tessa Power
 
 @onready var final_score = get_node("Content/FinalScore")
 @onready var new_high_score = get_node("Content/NewHighScore")

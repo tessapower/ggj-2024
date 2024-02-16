@@ -1,13 +1,13 @@
 extends Node2D
 
-# gamestate_manager.gd: This is a global node that is autoloaded and can be
-#                       accessed anywhere in the game. It keeps track of the
-#                       current mini-game, the player's score, and whether the
-#                       game is paused. It also contains functions to register
-#                       mini-games, pause the game, resume the game, and reset
-#                       the game to the default state.
-#
-# Author(s): Adam Goodyear, Tessa Power
+## gamestate_manager.gd: This is a global node that is autoloaded and can be
+##                       accessed anywhere in the game. It keeps track of the
+##                       current mini-game, the player's score, and whether the
+##                       game is paused. It also contains functions to register
+##                       mini-games, pause the game, resume the game, and reset
+##                       the game to the default state.
+##
+## Author(s): Adam Goodyear, Tessa Power
 
 # Player Score
 var score : int = 0
@@ -26,10 +26,10 @@ const ATTENTION_METER_MAX : float = 30
 enum AttentionChange {BAD = -5, OK = 5, GOOD = 7, GREAT = 10}
 
 # SFX
-@onready var pause_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Pause.mp3")
-@onready var resume_sfx : AudioStream = load("res://assets/audio/sfx/PauseAndResume/Resume.mp3")
-@onready var cheering : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdCheering.mp3")
-@onready var booing : AudioStream = load("res://assets/audio/sfx/BooingAndCheering/CrowdBooing.mp3")
+@onready var pause_sfx : AudioStream = load("res://assets/audio/sfx/pause_and_resume/pause_game.mp3")
+@onready var resume_sfx : AudioStream = load("res://assets/audio/sfx/pause_and_resume/resume_game.mp3")
+@onready var cheering : AudioStream = load("res://assets/audio/sfx/booing_and_cheering/crowd_cheering.mp3")
+@onready var booing : AudioStream = load("res://assets/audio/sfx/booing_and_cheering/crowd_booing.mp3")
 
 func _ready():
 	attention_meter.wait_time = ATTENTION_METER_MAX

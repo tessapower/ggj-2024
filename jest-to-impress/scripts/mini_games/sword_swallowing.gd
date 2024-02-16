@@ -1,11 +1,14 @@
 extends "res://scripts/mini_games/mini_game.gd"
 
+## sword_swallowing.gd: Manages the sword swallowing mini-game.
+##
+## Author(s): Adam Goodyear
+
 var sword_offset
 var sword_hovered = false
 
 static var has_played : bool = false
 
-# Called when the node enters the scene tree for the first time.
 func _ready():
 	if GamestateManager.show_tutorials and not has_played:
 		show_tutorial()
@@ -14,7 +17,6 @@ func _ready():
 		hide_tutorial()
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	if sword_hovered:
 		if Input.is_action_just_pressed("LeftClick"):

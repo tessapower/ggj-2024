@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://d2ust2kqxaike"]
 
 [ext_resource type="Script" path="res://scripts/ui/high_score_entry.gd" id="1_54yt5"]
-[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/Fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_tih3e"]
+[ext_resource type="FontFile" uid="uid://xc3r2otv1jqa" path="res://assets/graphics/fonts/CartaMagna/Carta_Magna-line-demo-FFP.ttf" id="1_tih3e"]
 
 [node name="HighScoreEntry" type="Window"]
 initial_position = 2

@@ -1,17 +1,18 @@
 extends Node2D
 
-# game.gd: This script controls the main game scene, and is used to load/unload
-#          the mini-games as well as transition from the game to game over
-#          scene.
-#
-# Author(s): Adam Goodyear, Tessa Power
+## game.gd: This script controls the main game scene, and is used to load/unload
+##          the mini-games as well as transition from the game to game over
+##          scene.
+##
+## Author(s): Adam Goodyear, Tessa Power
 
-#King States
-const king_asleep = preload("res://assets/King_Asleep.png")
-const king_bored = preload("res://assets/King_Bored.png")
-const king_laughing = preload("res://assets/King_Laughing.png")
-const king_neutral = preload("res://assets/King_Neutral.png")
-const king_pleased = preload("res://assets/King_Pleased.png")
+# King States
+# TODO: turn this into a dictionary
+const king_asleep = preload("res://assets/graphics/king/king_asleep.png")
+const king_bored = preload("res://assets/graphics/king/king_bored.png")
+const king_laughing = preload("res://assets/graphics/king/king_laugh.png")
+const king_neutral = preload("res://assets/graphics/king/king_neutral.png")
+const king_pleased = preload("res://assets/graphics/king/king_pleased.png")
 
 # Mini-games
 var mini_games : Array = []
@@ -52,6 +53,7 @@ func _ready():
 
 
 func _process(_delta):
+	# TODO: Tidy this up with an enum or function
 	if GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 4):
 		$CanvasLayer/king.texture = king_laughing
 	elif GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 3):

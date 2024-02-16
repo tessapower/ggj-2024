@@ -1,12 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bcb2f8o11jadh"]
 
 [ext_resource type="Script" path="res://scripts/ui/submenu.gd" id="1_6wa3a"]
-[ext_resource type="Texture2D" uid="uid://bbi2slctbi4xo" path="res://assets/graphics/woodPanel.png" id="2_bvwqe"]
-[ext_resource type="FontFile" uid="uid://dao4lk1xb6owj" path="res://assets/graphics/Fonts/Aniron/anirb___.ttf" id="3_y6ca1"]
-[ext_resource type="Texture2D" uid="uid://c3stf4wialwd5" path="res://assets/graphics/scroll_lowQuality.png" id="4_ykf5b"]
-[ext_resource type="Texture2D" uid="uid://b4xxp0ogw7jw6" path="res://assets/graphics/scroll_lowQuality_Pressed.png" id="5_7jyj0"]
-[ext_resource type="Texture2D" uid="uid://s5snjrkv6e0e" path="res://assets/graphics/scroll_lowQuality_Hovered.png" id="6_vv0gi"]
-[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf" id="7_bboup"]
+[ext_resource type="Texture2D" uid="uid://bbi2slctbi4xo" path="res://assets/graphics/ui/wood_panel.png" id="2_pncmi"]
+[ext_resource type="FontFile" uid="uid://dao4lk1xb6owj" path="res://assets/graphics/fonts/Aniron/anirb___.ttf" id="3_y6ca1"]
+[ext_resource type="Texture2D" uid="uid://c3stf4wialwd5" path="res://assets/graphics/ui/scroll_low_quality.png" id="4_k05kk"]
+[ext_resource type="Texture2D" uid="uid://b4xxp0ogw7jw6" path="res://assets/graphics/ui/scroll_low_quality_pressed.png" id="5_65umi"]
+[ext_resource type="Texture2D" uid="uid://s5snjrkv6e0e" path="res://assets/graphics/ui/scroll_low_quality_hover.png" id="6_d700d"]
+[ext_resource type="FontFile" uid="uid://cwdmo3e1666lq" path="res://assets/graphics/fonts/PrinceValiant/PrinceValiant.ttf" id="7_bboup"]
 
 [node name="Submenu" type="Window"]
 transparent_bg = true
@@ -34,7 +34,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
-texture = ExtResource("2_bvwqe")
+texture = ExtResource("2_pncmi")
 
 [node name="Content" type="VBoxContainer" parent="."]
 anchors_preset = 8
@@ -80,9 +80,9 @@ fit_content = true
 process_mode = 3
 layout_mode = 2
 size_flags_horizontal = 4
-texture_normal = ExtResource("4_ykf5b")
-texture_pressed = ExtResource("5_7jyj0")
-texture_hover = ExtResource("6_vv0gi")
+texture_normal = ExtResource("4_k05kk")
+texture_pressed = ExtResource("5_65umi")
+texture_hover = ExtResource("6_d700d")
 
 [node name="Label" type="Label" parent="Content/Close"]
 layout_mode = 1

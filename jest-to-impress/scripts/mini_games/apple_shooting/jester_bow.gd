@@ -1,11 +1,9 @@
 extends Node2D
 
+## jester_bow.gd: Handles pointing the jester with a bow in the direction of
+##                the mouse.
+##
+## Author(s): Adam Goodyear
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$TopHalf.look_at(get_global_mouse_position())

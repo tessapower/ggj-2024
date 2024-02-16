@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://cwdmo3e1666lq"
-path="res://.godot/imported/PrinceValiant.ttf-817e859d90546b9e549302da84152f53.fontdata"
+path="res://.godot/imported/PrinceValiant.ttf-3f59b7fa10b5d3f252f8eb44962b26cb.fontdata"
 
 [deps]
 
-source_file="res://assets/graphics/Fonts/PrinceValiant/PrinceValiant.ttf"
-dest_files=["res://.godot/imported/PrinceValiant.ttf-817e859d90546b9e549302da84152f53.fontdata"]
+source_file="res://assets/graphics/fonts/PrinceValiant/PrinceValiant.ttf"
+dest_files=["res://.godot/imported/PrinceValiant.ttf-3f59b7fa10b5d3f252f8eb44962b26cb.fontdata"]
 
 [params]
 

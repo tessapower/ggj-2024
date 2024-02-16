@@ -1,9 +1,9 @@
 extends Window
 
-# pause.gd: This script handles showing and hiding a pause menu intended to be
-#           used in the game scene.
-#
-# Author(s): Tessa Power
+## pause.gd: This script handles showing and hiding a pause menu intended to be
+##           used in the game scene.
+##
+## Author(s): Tessa Power
 
 # SFX
 @export_category("Sound Effects")
