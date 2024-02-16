@@ -13,6 +13,7 @@ config_version=5
 config/name="Jest to Impress"
 run/main_scene="res://scenes/ui/start_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+config/icon="res://assets/graphics/ui/jest_to_impress_logo.png"
 
 [autoload]
 
