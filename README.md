@@ -11,31 +11,32 @@ A game made while participating in GGJ 2024 via the Wellington, NZ jam site, aff
 
 ## Theme
 
-To be announced...
+"Make me laugh"
 
-## The Game
+## Jest to Impress
 
-TODO...
+![Main Title](./screenshots/main.png)
 
-(Link to Studio Damascus itch.io page)
+Welcome to the whimsical world of Jest to Impress, where you take on the role of a charismatic jester with the daunting task of entertaining a discerning king through a series of challenging mini-games. As the royal jester, your performance is key to maintaining the king's attention, and you must dazzle him with your wit, skill, and agility to avoid losing his favor.
 
-### Screenshots / Video
 
-TODO...
-❓Can we embed the game here??
+**How long can you last?**
 
-### Description
+Your ultimate goal is to maintain the king's attention for as long as possible. Successfully completing mini-games will earn you applause and admiration, while mistakes may lead to a decrease in the king's interest. Lose the king's attention entirely, and the game will be over – your chance to impress will have slipped away.
 
-TODO...
+"Jest to Impress" is a delightful and challenging game that combines quick thinking, skillful execution, and a touch of humor to keep players entertained. Do you have what it takes to captivate the royal court and become the most celebrated jester in the kingdom? It's time to put on your brightest smile, unleash your inner performer, and Jest to Impress!
 
-### Game Mechanics
+🔗 [itch.io page](https://studiodamascus.itch.io/jest-to-impress)
 
-TODO...
+### Screenshots
 
-### How to Play
-
-TODO...
+![](./screenshots/apple-shooting.png)
+![](./screenshots/jokes.png)
+![](./screenshots/juggling.png)
+![](./screenshots/knife-throwing.png)
+![](./screenshots/sword-swallowing.png)
 
 ## Attributions
 
-TODO...
+- All artwork was original, hand drawn and animated by Adam and Tim.
+- All music and sound effects were original, composed and produced by Josef.
