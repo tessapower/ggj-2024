@@ -20,6 +20,7 @@ func _ready():
 
 	for i in range(0, 3):
 		var apple_instance = APPLE.instantiate()
+		# TODO: Add ReferenceRect as spawning area
 		var random_pos_x = rng.randi_range(-get_viewport_rect().size[0] / 2 + 200, get_viewport_rect().size[0] / 2 - 200)
 		var random_pos_y = rng.randi_range(-get_viewport_rect().size[1] / 2 + 200, get_viewport_rect().size[1] / 2 - 200)
 		apple_instance.global_position = Vector2(random_pos_x,random_pos_y)
