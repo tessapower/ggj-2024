@@ -1,8 +1,8 @@
 extends MiniGame
 
-# juggling.gd: This script contains the code for the juggling mini-game.
-#
-# Author(s): Adam Goodyear
+## juggling.gd: This script contains the code for the juggling mini-game.
+##
+## Author(s): Adam Goodyear
 
 var has_clicked : bool = false
 var clickable : bool = false

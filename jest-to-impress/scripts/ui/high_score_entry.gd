@@ -1,10 +1,10 @@
 extends Window
 
-# high_score_entry.gd: A popup that allows players to enter their initials when
-#                      they get a high score. Will handle adding the score to
-#                      the leaderboard.
-#
-# Author(s): Tessa Power
+## high_score_entry.gd: A popup that allows players to enter their initials when
+##                      they get a high score. Will handle adding the score to
+##                      the leaderboard.
+##
+## Author(s): Tessa Power
 
 @onready var text_entry = $Content/TextEntry
 @onready var submit_button = $Content/Submit

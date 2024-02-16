@@ -1,9 +1,9 @@
 extends Node2D
 
-# attention_meter.gd: This script manages the graphical representation of the
-#                     attention meter.
-#
-# Author(s): Adam Goodyear
+## attention_meter.gd: This script manages the graphical representation of the
+##                     attention meter.
+##
+## Author(s): Adam Goodyear
 
 @onready var progress_bar = get_node("CanvasLayer/TextureProgressBar")
 

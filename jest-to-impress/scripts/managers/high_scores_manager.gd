@@ -1,8 +1,8 @@
 extends Node
 
-# high_scores_manager.gd: Manages loading and saving high scores for the game.
-#
-# Author(s): Tessa Power
+## high_scores_manager.gd: Manages loading and saving high scores for the game.
+##
+## Author(s): Tessa Power
 
 # High Scores Data
 var high_scores: Array = []

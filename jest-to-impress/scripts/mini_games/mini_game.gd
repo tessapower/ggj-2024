@@ -1,8 +1,8 @@
 class_name MiniGame extends Node2D
 
-# mini_game.gd: This script contains the base code for a mini-game.
-#
-# Author(s): Adam Goodyear, Tessa Power
+## mini_game.gd: This script contains the base code for a mini-game.
+##
+## Author(s): Adam Goodyear, Tessa Power
 
 signal failure
 signal finished

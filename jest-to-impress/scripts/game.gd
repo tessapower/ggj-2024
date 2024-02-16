@@ -1,11 +1,10 @@
 extends Node2D
 
-# game.gd: This script controls the main game scene, and is used to load/unload
-#          the mini-games as well as transition from the game to game over
-#          scene.
-#
-# Author(s): Adam Goodyear, Tessa Power
-
+## game.gd: This script controls the main game scene, and is used to load/unload
+##          the mini-games as well as transition from the game to game over
+##          scene.
+##
+## Author(s): Adam Goodyear, Tessa Power
 
 # King States
 # TODO: turn this into a dictionary
@@ -54,6 +53,7 @@ func _ready():
 
 
 func _process(_delta):
+	# TODO: Tidy this up with an enum or function
 	if GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 4):
 		$CanvasLayer/king.texture = king_laughing
 	elif GamestateManager.attention_meter.time_left > (GamestateManager.ATTENTION_METER_MAX / 5 * 3):

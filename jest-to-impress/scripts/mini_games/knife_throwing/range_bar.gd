@@ -1,9 +1,9 @@
 class_name RangeBar extends TextureRect
 
-# range_bar.gd: This script contains the code for for the range bars used in the
-#               knife-throwing mini-game.
-#
-# Author(s): Tessa Power
+## range_bar.gd: This script contains the code for for the range bars used in the
+##               knife-throwing mini-game.
+##
+## Author(s): Tessa Power
 
 @onready var missed = get_node("Missed")
 @onready var average = get_node("Average")

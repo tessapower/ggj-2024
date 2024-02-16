@@ -1,9 +1,9 @@
 extends Node
 
-# high_scores_popup.gd: Reads the high scores and creates a list to display in
-#                       the popup on the start menu.
-#
-# Author(s): Tessa Power
+## high_scores_popup.gd: Reads the high scores and creates a list to display in
+##                       the popup on the start menu.
+##
+## Author(s): Tessa Power
 
 const EMPTY_TEXT : String = "[center][b]High Scores[/b][/center]
 [center]There are no high scores yet.[/center]"

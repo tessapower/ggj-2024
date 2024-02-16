@@ -1,13 +1,13 @@
 extends Node2D
 
-# gamestate_manager.gd: This is a global node that is autoloaded and can be
-#                       accessed anywhere in the game. It keeps track of the
-#                       current mini-game, the player's score, and whether the
-#                       game is paused. It also contains functions to register
-#                       mini-games, pause the game, resume the game, and reset
-#                       the game to the default state.
-#
-# Author(s): Adam Goodyear, Tessa Power
+## gamestate_manager.gd: This is a global node that is autoloaded and can be
+##                       accessed anywhere in the game. It keeps track of the
+##                       current mini-game, the player's score, and whether the
+##                       game is paused. It also contains functions to register
+##                       mini-games, pause the game, resume the game, and reset
+##                       the game to the default state.
+##
+## Author(s): Adam Goodyear, Tessa Power
 
 # Player Score
 var score : int = 0

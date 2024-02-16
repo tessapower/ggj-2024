@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-# start_menu.gd: This script handles responding to button being clicked and
-#                submenus opening/closing on the start menu.
-#
-# Author(s): Tessa Power
+## start_menu.gd: This script handles responding to button being clicked and
+##                submenus opening/closing on the start menu.
+##
+## Author(s): Tessa Power
 
 @onready var buttons: Array = $Content/Buttons.get_children()
 

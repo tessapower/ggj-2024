@@ -1,9 +1,9 @@
 class_name Submenu extends Window
 
-# submenu.gd: This script handles showing and hiding a submenu window intended
-#             to be used on the start menu.
-#
-# Author(s): Tessa Power
+## submenu.gd: This script handles showing and hiding a submenu window intended
+##             to be used on the start menu.
+##
+## Author(s): Tessa Power
 
 @export_multiline var text_content : String = "Hello, this is a test."
 @onready var click_sound: AudioStream = load("res://assets/audio/sfx/ui/button_pressed.mp3")

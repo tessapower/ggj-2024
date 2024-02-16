@@ -162,9 +162,9 @@ text = "Exit"
 [node name="HighScoreEntry" parent="." instance=ExtResource("5_piy7r")]
 visible = false
 
-[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
+[connection signal="pressed" from="Content/Buttons/PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Content/Buttons/ReturnToStart" to="." method="_on_return_to_start_pressed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Content/Buttons/Exit" to="." method="_on_button_pressed"]
